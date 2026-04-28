@@ -1,0 +1,108 @@
+{
+  "workspace": [
+    "./examples",
+    "./kz/core",
+    "./kz/logging",
+    "./kz/pattern",
+    "./kz/util",
+    "./kz/warn"
+  ],
+  "importMap": "./import_map.json",
+  "tasks": {
+    "cov:analyze": "deno coverage --ignore=\"**/*.fixture.ts,.github\" coverage/",
+    "cov:gen": "deno task cov:analyze --lcov --output=cov.lcov",
+    "cov:view": "deno task cov:analyze --html",
+    "lint:copyright": "deno run --allow-read --allow-write ./.build/copyright_files.ts",
+    "lint:exports": "deno run --allow-read ./.build/export_star_check.ts",
+    "lint:clean": "deno run --allow-read --allow-write ./.build/clean_files.ts",
+    "lint:code": "deno lint --config ./deno.json",
+    "test:code": "deno test --allow-all --coverage=coverage --trace-leaks --clean",
+    "docs:core": "deno doc --html --output=docs/kz/core --name='@kz/core' ./kz/core/mod.ts ./kz/core/*/mod.ts",
+    "docs:logging": "deno doc --html --output=docs/kz/logging --name='@kz/logging' ./kz/logging/mod.ts",
+    "docs:pattern": "deno doc --html --output=docs/kz/pattern --name='@kz/pattern' ./kz/pattern/mod.ts ./kz/pattern/*/mod.ts",
+    "docs:util": "deno doc --html --output=docs/kz/util --name='@kz/util' ./kz/util/mod.ts ./kz/util/*/mod.ts",
+    "docs:warn": "deno doc --html --output=docs/kz/warn --name='@kz/warn' ./kz/warn/mod.ts ./kz/warn/*/mod.ts",
+    "docs:x": "deno run --allow-read --allow-write ./.build/build_docs_index.ts",
+    "lint": {
+      "description": "Run all linters on all packages",
+      "command": "deno task lint:code && deno task lint:exports && deno task lint:copyright && deno task lint:clean"
+    },
+    "docs": {
+      "description": "Generate documentation for all packages",
+      "command": "deno task \"docs:*\""
+    },
+    "test": {
+      "description": "Run tests for all packages including docs",
+      "command": "deno test --allow-all --doc --coverage=coverage --trace-leaks --clean"
+    },
+    "cov": {
+      "description": "Run all coverage tasks",
+      "command": "deno task cov:gen && deno task cov:view"
+    },
+    "checks": {
+      "description": "Run all checks for all packages",
+      "command": "deno task lint && deno fmt && deno fmt --check && deno task test && deno task cov"
+    },
+    "pre-commit": {
+      "description": "Run pre-commit checks",
+      "command": "deno task checks && deno task docs && deno publish --dry-run --allow-dirty"
+    }
+  },
+  "lint": {
+    "rules": {
+      "tags": [
+        "recommended"
+      ],
+      "include": [
+        "ban-untagged-todo",
+        "camelcase",
+        "default-param-last",
+        "eqeqeq",
+        "explicit-function-return-type",
+        "no-throw-literal",
+        "verbatim-module-syntax",
+        "prefer-ascii",
+        "no-undef",
+        "no-sync-fn-in-async-fn",
+        "no-sparse-arrays",
+        "no-self-compare",
+        "no-non-null-assertion",
+        "no-non-null-asserted-optional-chain",
+        "no-external-import",
+        "no-eval",
+        "no-const-assign",
+        "no-boolean-literal-for-arguments",
+        "no-await-in-loop",
+        "guard-for-in",
+        "explicit-module-boundary-types"
+      ]
+    }
+  },
+  "fmt": {
+    "indentWidth": 2,
+    "lineWidth": 80,
+    "proseWrap": "preserve",
+    "useTabs": false,
+    "singleQuote": true,
+    "semiColons": true
+  },
+  "exclude": [
+    ".git",
+    "cov",
+    "coverage",
+    "docs"
+  ],
+  "publish": {
+    "include": [
+      "README.md",
+      "LICENSE",
+      "**/*.ts",
+      "deno.json",
+      "deno.lock",
+      "**/*.json"
+    ],
+    "exclude": [
+      "**/*.test.ts"
+    ]
+  }
+}

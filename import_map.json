@@ -1,0 +1,24 @@
+{
+  "imports": {
+    "@std/assert": "jsr:@std/assert@^1.0.13",
+    "@std/testing/mock": "jsr:@std/testing@^1.0.13/mock",
+    "@std/testing/time": "jsr:@std/testing@^1.0.13/time",
+    "@std/testing/bdd": "jsr:@std/testing@^1.0.13/bdd",
+    "@std/testing/types": "jsr:@std/testing@^1.0.13/types",
+
+    "@kz/core": "jsr:@kz/core@^0.0.1",
+    "@kz/core/exception": "jsr:@kz/core@^0.0.1/exception",
+    "@kz/core/type": "jsr:@kz/core@^0.0.1/type",
+
+    "@kz/util/async": "jsr:@kz/util@^0.0.1/async",
+    "@kz/util/boolean": "jsr:@kz/util@^0.0.1/boolean",
+    "@kz/util/list": "jsr:@kz/util@^0.0.1/list",
+    "@kz/util/object": "jsr:@kz/util@^0.0.1/object",
+    "@kz/util/capability": "jsr:@kz/util@^0.0.1/capability",
+    "@kz/util/lint": "jsr:@kz/util@^0.0.1/lint",
+    "@kz/util/json": "jsr:@kz/util@^0.0.1/json",
+    "@kz/util/logic": "jsr:@kz/util@^0.0.1/logic",
+    "@kz/util/numeric": "jsr:@kz/util@^0.0.1/numeric",
+    "@kz/util/type": "jsr:@kz/util@^0.0.1/type"
+  }
+}

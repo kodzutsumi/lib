@@ -1,0 +1,32 @@
+{
+  "deno.codeLens.implementations": true,
+  "deno.codeLens.references": true,
+  "deno.codeLens.referencesAllFunctions": true,
+  "deno.codeLens.test": true,
+  "deno.enable": true,
+  "deno.lint": true,
+  "deno.path": "/home/codespace/.asdf/shims/deno",
+  "deno.documentPreloadLimit": 1000,
+  "js/ts.suggest.autoImports": true,
+  "deno.importMap": "./import_map.json",
+  "cSpell.customDictionaries": {
+    "i11n-words": {
+      "name": "i11n-words",
+      "description": "integereleven dictionary",
+      "path": "./.vscode/i11n.dic"
+    },
+    "codebase-words": {
+      "name": "codebase-words",
+      "description": "codebase dictionary",
+      "path": "./.vscode/codebase.dic"
+    },
+    "testing-words": {
+      "name": "testing-words",
+      "description": "testing dictionary",
+      "path": "./.vscode/testing.dic"
+    }
+  },
+  "livePreview.openPreviewTarget": "External Browser",
+  "livePreview.serverRoot": "./docs/kz",
+  "csv.columnColorMode": "type"
+}

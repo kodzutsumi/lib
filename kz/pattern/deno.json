@@ -1,0 +1,11 @@
+{
+  "name": "@kz/patterns",
+  "version": "0.0.1",
+  "exports": {
+    ".": "./mod.ts",
+    "./dispose": "./dispose/mod.ts",
+    "./mediator": "./mediator/mod.ts",
+    "./observer": "./observer/mod.ts",
+    "./pubsub": "./pubsub/mod.ts"
+  }
+}

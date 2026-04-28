@@ -1,0 +1,2 @@
+ID,Name,TargetType,UseOfType,UseCollection,UseStrict,UseSafe,UseUnified,Description
+default,Default,string,None,N/A,N/A,N/A,N/A,"With no `Of<Type>` provided, all other options are ignored. Will simply return `string`."

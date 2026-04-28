@@ -1,0 +1,1901 @@
+[0m[38;5;245mrunning 1 test from ./kz/core/exception/_internal/defined_args.test.ts[0m
+definedArgs ...
+  definedArgs(...args) ...
+    should return true if all the arguments are defined ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+    should return false if any of the arguments are not defined ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return false if any of the arguments are null ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return false if any of the arguments are false ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return false if any of the arguments are an empty string ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  definedArgs(...args) ... [0m[32mok[0m [0m[38;5;245m(7ms)[0m
+definedArgs ... [0m[32mok[0m [0m[38;5;245m(9ms)[0m
+[0m[38;5;245mrunning 0 tests from ./kz/core/exception/_internal/hash_exception.test.ts[0m
+[0m[38;5;245mrunning 0 tests from ./kz/core/exception/exception.test.ts[0m
+[0m[38;5;245mrunning 0 tests from ./kz/core/exception/exception_data.test.ts[0m
+[0m[38;5;245mrunning 0 tests from ./kz/core/exception/type/base_exception_data.test.ts[0m
+[0m[38;5;245mrunning 0 tests from ./kz/core/exception/type/common_exception_data.test.ts[0m
+[0m[38;5;245mrunning 1 test from ./kz/core/type/i_hashable.test.ts[0m
+IHashable ...
+  should match expected structure ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+IHashable ... [0m[32mok[0m [0m[38;5;245m(2ms)[0m
+[0m[38;5;245mrunning 1 test from ./kz/core/type/i_helpful.test.ts[0m
+IHelpful ...
+  should match expected structure ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+IHelpful ... [0m[32mok[0m [0m[38;5;245m(2ms)[0m
+[0m[38;5;245mrunning 0 tests from ./kz/util/async/type/$promise.test.ts[0m
+[0m[38;5;245mrunning 0 tests from ./kz/util/async/type/await.test.ts[0m
+[0m[38;5;245mrunning 1 test from ./kz/util/boolean/type/falsy.test.ts[0m
+Falsy ...
+  type ...
+    should be a union of falsy values ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  type ... [0m[32mok[0m [0m[38;5;245m(2ms)[0m
+  validation ...
+    should be true for falsy values ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  validation ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+Falsy ... [0m[32mok[0m [0m[38;5;245m(4ms)[0m
+[0m[38;5;245mrunning 0 tests from ./kz/util/boolean/type/non_falsy.test.ts[0m
+[0m[38;5;245mrunning 1 test from ./kz/util/capability/type/cap_set.test.ts[0m
+CapSet ...
+  structure ...
+    should be a union of capability types ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  structure ... [0m[32mok[0m [0m[38;5;245m(2ms)[0m
+CapSet ... [0m[32mok[0m [0m[38;5;245m(8ms)[0m
+[0m[38;5;245mrunning 1 test from ./kz/util/capability/type/get_cap.test.ts[0m
+GetCap ...
+  UseAsync ...
+    should return boolean for signature ... [0m[32mok[0m [0m[38;5;245m(11ms)[0m
+    should return true for AsAsync ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return false for AsSync ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return the default when missing ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  UseAsync ... [0m[32mok[0m [0m[38;5;245m(19ms)[0m
+  UseBuiltin ...
+    should return boolean for signature ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return true for AsBuiltin ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return false for AsCustom ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return the default when missing ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  UseBuiltin ... [0m[32mok[0m [0m[38;5;245m(5ms)[0m
+  UseCollection ...
+    should return CollectionTarget for signature ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return CollectionTarget for Collection ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return idents for CollectionIdents ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return values for CollectionValues ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return the default when missing ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  UseCollection ... [0m[32mok[0m [0m[38;5;245m(10ms)[0m
+  UseOptional ...
+    should return boolean for signature ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return true for AsOptional ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return false for AsRequired ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return the default when missing ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  UseOptional ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  UseDefault ...
+    should return any for signature ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return string for DefaultOf<string> ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return number for DefaultOf<number> ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return the default when missing ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  UseDefault ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  UseDepth ...
+    should return boolean | DepthLevel for signature ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return true for AsDeep ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return false for AsShallow ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return 1 for LevelOf<1> ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return 2 for LevelOf<2> ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return 3 for LevelOf<3> ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return 4 for LevelOf<4> ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return 5 for LevelOf<5> ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return 6 for LevelOf<6> ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return 7 for LevelOf<7> ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return 8 for LevelOf<8> ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return 9 for LevelOf<9> ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return 10 for LevelOf<10> ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return the default when missing ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  UseDepth ... [0m[32mok[0m [0m[38;5;245m(11ms)[0m
+  UseReverse ...
+    should return boolean for signature ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return true for AsReversed ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return false for AsForward ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return the default when missing ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  UseReverse ... [0m[32mok[0m [0m[38;5;245m(4ms)[0m
+  UseElse ...
+    should return any for signature ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return string for Else<string> ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return number for Else<number> ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+    should return the default when missing ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  UseElse ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  UseExclusion ...
+    should return boolean for signature ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return true for AsExclude ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return false for AsInclude ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return the default when missing ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  UseExclusion ... [0m[32mok[0m [0m[38;5;245m(2ms)[0m
+  UseStream ...
+    should return boolean for signature ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return true for AsFilter ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return false for AsPredicate ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return the default when missing ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  UseStream ... [0m[32mok[0m [0m[38;5;245m(2ms)[0m
+  InversionKey ...
+    should return boolean for signature ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return true for AsInverted ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return the default when missing ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  InversionKey ... [0m[32mok[0m [0m[38;5;245m(2ms)[0m
+  UseIdents ...
+    should return PropertyKey for signature ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return 'first' | 'last' for IdentsOf<Type, 'first' | 'last'> ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return 'age' for IdentsOf<Type, 'age'> ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return the default when missing ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  UseIdents ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  UseImmutable ...
+    should return boolean for signature ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return true for AsImmutable ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return false for AsMutable ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return the default when missing ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  UseImmutable ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  UseSafe ...
+    should return boolean for signature ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return true for AsSafe ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+    should return false for AsUnsafe ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return the default when missing ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  UseSafe ... [0m[32mok[0m [0m[38;5;245m(3ms)[0m
+  UseAccessor ...
+    should return boolean for signature ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return true for AsSetter ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return false for AsGetter ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return the default when missing ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  UseAccessor ... [0m[32mok[0m [0m[38;5;245m(2ms)[0m
+  UseStrict ...
+    should return boolean for signature ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return true for AsStrict ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return false for AsLoose ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+    should return the default when missing ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  UseStrict ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  UseThen ...
+    should return any for signature ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return string for Then<string> ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return number for Then<number> ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return the default when missing ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  UseThen ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+GetCap ... [0m[32mok[0m [0m[38;5;245m(84ms)[0m
+[0m[38;5;245mrunning 1 test from ./kz/util/capability/type/pick_cap.test.ts[0m
+PickCap ...
+  UseAsync ...
+    should return UseAsync for signature ... [0m[32mok[0m [0m[38;5;245m(18ms)[0m
+    should return AsAsync for AsAsync ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return AsSync for AsSync ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return the default when missing ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  UseAsync ... [0m[32mok[0m [0m[38;5;245m(23ms)[0m
+  UseBuiltin ...
+    should return UseBuiltin for signature ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return AsBuiltin for AsBuiltin ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return AsCustom for AsCustom ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return the default when missing ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  UseBuiltin ... [0m[32mok[0m [0m[38;5;245m(3ms)[0m
+  UseCollection ...
+    should return UseCollection for signature ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return Collection for Collection ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return CollectionIdents for CollectionIdents ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return CollectionValues for CollectionValues ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return the default when missing ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  UseCollection ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  UseOptional ...
+    should return UseOptional for signature ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return AsOptional for AsOptional ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return AsRequired for AsRequired ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return the default when missing ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  UseOptional ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  UseDefault ...
+    should return any for signature ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return DefaultOf<string> for DefaultOf<string> ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return DefaultOf<number> for DefaultOf<number> ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return the default when missing ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  UseDefault ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  UseDepth ...
+    should return UseDepth for signature ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return AsDeep for AsDeep ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return AsShallow for AsShallow ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+    should return LevelOf<1> for LevelOf<1> ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return LevelOf<2> for LevelOf<2> ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return LevelOf<3> for LevelOf<3> ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return LevelOf<4> for LevelOf<4> ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return LevelOf<5> for LevelOf<5> ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return LevelOf<6> for LevelOf<6> ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return LevelOf<7> for LevelOf<7> ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return LevelOf<8> for LevelOf<8> ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return LevelOf<9> for LevelOf<9> ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return LevelOf<10> for LevelOf<10> ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return the default when missing ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  UseDepth ... [0m[32mok[0m [0m[38;5;245m(5ms)[0m
+  UseReverse ...
+    should return UseReverse for signature ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return AsReversed for AsReversed ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return AsForward for AsForward ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return the default when missing ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  UseReverse ... [0m[32mok[0m [0m[38;5;245m(3ms)[0m
+  UseElse ...
+    should return UseElse for signature ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return Else<string> for Else<string> ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return Else<number> for Else<number> ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return the default when missing ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  UseElse ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  UseExclusion ...
+    should return UseExclusion for signature ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return AsExclude for AsExclude ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return AsInclude for AsInclude ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return the default when missing ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  UseExclusion ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  UseStream ...
+    should return UseStream for signature ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return AsFilter for AsFilter ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return AsPredicate for AsPredicate ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return the default when missing ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  UseStream ... [0m[32mok[0m [0m[38;5;245m(2ms)[0m
+  UseInversion ...
+    should return UseInversion for signature ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return AsInverted for AsInverted ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return the default when missing ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  UseInversion ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  UseIdents ...
+    should return UseIdents for signature ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return IdentsOf<Type, 'first' | 'last'> for IdentsOf<Type, 'first' | 'last'> ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return IdentsOf<Type, 'age'> for IdentsOf<Type, 'age'> ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return the default when missing ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  UseIdents ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  UseImmutable ...
+    should return UseImmutable for signature ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return AsImmutable for AsImmutable ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return AsMutable for AsMutable ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return the default when missing ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  UseImmutable ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  UseSafe ...
+    should return UseSafe for signature ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return AsSafe for AsSafe ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return AsUnsafe for AsUnsafe ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return the default when missing ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  UseSafe ... [0m[32mok[0m [0m[38;5;245m(2ms)[0m
+  UseAccessor ...
+    should return UseAccessor for signature ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return AsSetter for AsSetter ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return AsGetter for AsGetter ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return the default when missing ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  UseAccessor ... [0m[32mok[0m [0m[38;5;245m(2ms)[0m
+  UseStrict ...
+    should return UseStrict for signature ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return AsStrict for AsStrict ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return AsLoose for AsLoose ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return the default when missing ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  UseStrict ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  UseThen ...
+    should return UseThen for signature ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return Then<string> for Then<string> ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return Then<number> for Then<number> ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return the default when missing ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  UseThen ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+PickCap ... [0m[32mok[0m [0m[38;5;245m(63ms)[0m
+[0m[38;5;245mrunning 0 tests from ./kz/util/capability/type/resolve_boolean.test.ts[0m
+[0m[38;5;245mrunning 1 test from ./kz/util/capability/type/use_accessor.test.ts[0m
+UseAccessor ...
+  AccessorKeyString ...
+    should be the correct string literal ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  AccessorKeyString ... [0m[32mok[0m [0m[38;5;245m(7ms)[0m
+  AccessorKey ...
+    should be the type of AccessorKeyString ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  AccessorKey ... [0m[32mok[0m [0m[38;5;245m(3ms)[0m
+  UseAccessor ...
+    should be an object type with the AccessorKeyString property of boolean value ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  UseAccessor ... [0m[32mok[0m [0m[38;5;245m(17ms)[0m
+  AsSetter ...
+    should be a UseAccessor type with the AccessorKeyString property set to true ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  AsSetter ... [0m[32mok[0m [0m[38;5;245m(4ms)[0m
+  AsGetter ...
+    should be a UseAccessor type with the AccessorKeyString property set to false ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  AsGetter ... [0m[32mok[0m [0m[38;5;245m(10ms)[0m
+  PickAccessor ...
+    should return AsSetter ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return AsGetter ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return the default setting ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  PickAccessor ... [0m[32mok[0m [0m[38;5;245m(22ms)[0m
+  GetAccessor ...
+    should return true ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return false ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return the default setting ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  GetAccessor ... [0m[32mok[0m [0m[38;5;245m(3ms)[0m
+UseAccessor ... [0m[32mok[0m [0m[38;5;245m(94ms)[0m
+[0m[38;5;245mrunning 1 test from ./kz/util/capability/type/use_async.test.ts[0m
+UseAsync ...
+  AsyncKeyString ...
+    should be the correct string literal ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  AsyncKeyString ... [0m[32mok[0m [0m[38;5;245m(2ms)[0m
+  AsyncKey ...
+    should be the type of AsyncKeyString ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  AsyncKey ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  UseAsync ...
+    should be an object type with the AsyncKeyString property of boolean value ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  UseAsync ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  AsAsync ...
+    should be a UseAsync type with the AsyncKeyString property set to true ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  AsAsync ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  AsSync ...
+    should be a UseAsync type with the AsyncKeyString property set to false ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  AsSync ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  PickAsync ...
+    should return AsAsync ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return AsSync ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return the default setting ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  PickAsync ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  GetAsync ...
+    should return true ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return false ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return the default setting ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  GetAsync ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+UseAsync ... [0m[32mok[0m [0m[38;5;245m(10ms)[0m
+[0m[38;5;245mrunning 1 test from ./kz/util/capability/type/use_builtin.test.ts[0m
+UseBuiltin ...
+  BuiltinKeyString ...
+    should be the correct string literal ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  BuiltinKeyString ... [0m[32mok[0m [0m[38;5;245m(3ms)[0m
+  BuiltinKey ...
+    should be the type of BuiltinKeyString ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  BuiltinKey ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  UseBuiltin ...
+    should be an object type with the BuiltinKeyString property of boolean value ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  UseBuiltin ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  AsBuiltin ...
+    should be a UseBuiltin type with the BuiltinKeyString property set to true ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  AsBuiltin ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  AsCustom ...
+    should be a UseBuiltin type with the BuiltinKeyString property set to false ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  AsCustom ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  PickBuiltin ...
+    should return AsBuiltin ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return AsCustom ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return the default setting ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  PickBuiltin ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  GetBuiltin ...
+    should return true ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return false ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return the default setting ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  GetBuiltin ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+UseBuiltin ... [0m[32mok[0m [0m[38;5;245m(16ms)[0m
+[0m[38;5;245mrunning 1 test from ./kz/util/capability/type/use_collection.test.ts[0m
+UseCollection ...
+  CollectionKeyString ...
+    should be the correct string literal ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  CollectionKeyString ... [0m[32mok[0m [0m[38;5;245m(2ms)[0m
+  CollectionKey ...
+    should be the type of CollectionKeyString ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  CollectionKey ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  UseCollection ...
+    should be an object type with the CollectionKeyString property of any value ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  UseCollection ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  Collection ...
+    should be an object type with the CollectionKeyString property of 'collection' ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  Collection ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  CollectionIdents ...
+    should be an object type with the CollectionKeyString property of 'idents' ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  CollectionIdents ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  CollectionValues ...
+    should be an object type with the CollectionKeyString property of 'values' ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  CollectionValues ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  PickCollection ...
+    should return Else ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return Collection ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return CollectionIdents ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return CollectionValues ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return the default setting ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  PickCollection ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  GetCollection ...
+    should return CollectionTarget ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return 'collection' ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return 'idents' ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return 'values' ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return the default setting ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  GetCollection ... [0m[32mok[0m [0m[38;5;245m(2ms)[0m
+UseCollection ... [0m[32mok[0m [0m[38;5;245m(11ms)[0m
+[0m[38;5;245mrunning 1 test from ./kz/util/capability/type/use_condition.test.ts[0m
+UseCondition ...
+  UseCondition ...
+    default behavior ...
+      should return a union of UseThen and UseElse ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    default behavior ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+    strict behavior ...
+      should return an intersection of UseThen and UseElse ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    strict behavior ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  UseCondition ... [0m[32mok[0m [0m[38;5;245m(3ms)[0m
+  UseSafeCondition ...
+    should be a shortcut for UseCondition with AsUnsafe ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  UseSafeCondition ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  ConditionOf ...
+    should be an intersection of Then and Else with the specified types ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  ConditionOf ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  AsCondition ...
+    should be a ConditionOf<true, false> ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  AsCondition ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  PickCondition ...
+    should return the Then and Else ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return the Else and the default for Then ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return the Then and the default for Else ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return the default for both Then and Else ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  PickCondition ... [0m[32mok[0m [0m[38;5;245m(4ms)[0m
+UseCondition ... [0m[32mok[0m [0m[38;5;245m(12ms)[0m
+[0m[38;5;245mrunning 1 test from ./kz/util/capability/type/use_default.test.ts[0m
+UseDefault ...
+  DefaultKeyString ...
+    should be the correct string literal ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  DefaultKeyString ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  DefaultKey ...
+    should be the type of DefaultKeyString ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  DefaultKey ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  UseDefault ...
+    should be an object type with the DefaultKeyString property of any value ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  UseDefault ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  Default ...
+    should be a UseDefault type with the DefaultKeyString property set to any ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  Default ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  Default<Type> ...
+    should be a UseDefault type with the DefaultKeyString property set to string ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  Default<Type> ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  PickDefault ...
+    should return Default ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return Default<string> ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return the default setting ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  PickDefault ... [0m[32mok[0m [0m[38;5;245m(2ms)[0m
+  GetDefault ...
+    should return any ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return string ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return the default setting ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  GetDefault ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+UseDefault ... [0m[32mok[0m [0m[38;5;245m(10ms)[0m
+[0m[38;5;245mrunning 1 test from ./kz/util/capability/type/use_depth.test.ts[0m
+UseDepth ...
+  DepthKeyString ...
+    should be the correct string literal ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  DepthKeyString ... [0m[32mok[0m [0m[38;5;245m(4ms)[0m
+  DepthKey ...
+    should be the type of DepthKeyString ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  DepthKey ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  DepthLevel ...
+    should be a union of the numbers 1 - 10 ... [0m[32mok[0m [0m[38;5;245m(2ms)[0m
+  DepthLevel ... [0m[32mok[0m [0m[38;5;245m(2ms)[0m
+  UseDepth ...
+    should be an object type with the DepthKeyString property of boolean or DepthLevel ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  UseDepth ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  AsDeep ...
+    should be a UseDepth type with the DepthKeyString property set to true ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  AsDeep ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  AsShallow ...
+    should be a UseDepth type with the DepthKeyString property set to false ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  AsShallow ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  LevelOf<1> ...
+    should be a UseDepth type with the DepthKeyString property set to 1 ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  LevelOf<1> ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  LevelOf<2> ...
+    should be a UseDepth type with the DepthKeyString property set to 2 ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  LevelOf<2> ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  LevelOf<3> ...
+    should be a UseDepth type with the DepthKeyString property set to 3 ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  LevelOf<3> ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  LevelOf<4> ...
+    should be a UseDepth type with the DepthKeyString property set to 4 ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  LevelOf<4> ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  LevelOf<5> ...
+    should be a UseDepth type with the DepthKeyString property set to 5 ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  LevelOf<5> ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  LevelOf<6> ...
+    should be a UseDepth type with the DepthKeyString property set to 6 ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  LevelOf<6> ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  LevelOf<7> ...
+    should be a UseDepth type with the DepthKeyString property set to 7 ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  LevelOf<7> ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  LevelOf<8> ...
+    should be a UseDepth type with the DepthKeyString property set to 8 ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  LevelOf<8> ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  LevelOf<9> ...
+    should be a UseDepth type with the DepthKeyString property set to 9 ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  LevelOf<9> ... [0m[32mok[0m [0m[38;5;245m(9ms)[0m
+  LevelOf<10> ...
+    should be a UseDepth type with the DepthKeyString property set to 10 ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  LevelOf<10> ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  DecrementDepth ...
+    should decrement return AsShallow ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should decrement return AsShallow ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should decrement return AsShallow ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should decrement return LevelOf<2> ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should decrement return LevelOf<3> ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should decrement return LevelOf<4> ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should decrement return LevelOf<5> ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should decrement return LevelOf<6> ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should decrement return LevelOf<7> ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should decrement return LevelOf<8> ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should decrement return LevelOf<9> ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should decrement return LevelOf<9> ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  DecrementDepth ... [0m[32mok[0m [0m[38;5;245m(3ms)[0m
+  IsDeep ...
+    should return false for AsShallow ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return true for LevelOf<1> ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return true for LevelOf<2> ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return true for LevelOf<3> ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+    should return true for LevelOf<4> ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return true for LevelOf<5> ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return true for LevelOf<6> ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return true for LevelOf<7> ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return true for LevelOf<8> ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return true for LevelOf<9> ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return true for LevelOf<10> ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+    should return true for AsDeep ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  IsDeep ... [0m[32mok[0m [0m[38;5;245m(4ms)[0m
+  PickDepth ...
+    should return UseDepth ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return AsDeep ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return AsShallow ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return LevelOf<4> ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return the default setting ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  PickDepth ... [0m[32mok[0m [0m[38;5;245m(2ms)[0m
+  GetDepth ...
+    should return boolean | DepthLevel ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return true ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return false ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return 4 ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return the default setting ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  GetDepth ... [0m[32mok[0m [0m[38;5;245m(2ms)[0m
+UseDepth ... [0m[32mok[0m [0m[38;5;245m(48ms)[0m
+[0m[38;5;245mrunning 1 test from ./kz/util/capability/type/use_else.test.ts[0m
+UseElse ...
+  ElseKeyString ...
+    should be the correct string literal ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  ElseKeyString ... [0m[32mok[0m [0m[38;5;245m(2ms)[0m
+  ElseKey ...
+    should be the type of ElseKeyString ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  ElseKey ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  UseElse ...
+    should be an object type with the ElseKeyString property of any value ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  UseElse ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  Else ...
+    should be a UseElse type with the ElseKeyString property set to any ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  Else ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  Else<Type> ...
+    should be a UseElse type with the ElseKeyString property set to string ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  Else<Type> ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  PickElse ...
+    should return Else ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return Else<string> ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+    should return the default setting ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  PickElse ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  GetElse ...
+    should return any ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+    should return string ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return the default setting ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  GetElse ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+UseElse ... [0m[32mok[0m [0m[38;5;245m(8ms)[0m
+[0m[38;5;245mrunning 1 test from ./kz/util/capability/type/use_exclusion.test.ts[0m
+UseExclusion ...
+  ExclusionKeyString ...
+    should be the correct string literal ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  ExclusionKeyString ... [0m[32mok[0m [0m[38;5;245m(2ms)[0m
+  ExclusionKey ...
+    should be the type of ExclusionKeyString ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  ExclusionKey ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  UseExclusion ...
+    should be an object type with the ExclusionKeyString property of boolean value ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  UseExclusion ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  AsExclude ...
+    should be a UseExclusion type with the ExclusionKeyString property set to true ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  AsExclude ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  AsInclude ...
+    should be a UseExclusion type with the ExclusionKeyString property set to false ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  AsInclude ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  PickExclusion ...
+    should return AsExclude ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return AsInclude ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return the default setting ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  PickExclusion ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  GetExclusion ...
+    should return true ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return false ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return the default setting ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  GetExclusion ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+UseExclusion ... [0m[32mok[0m [0m[38;5;245m(11ms)[0m
+[0m[38;5;245mrunning 1 test from ./kz/util/capability/type/use_idents.test.ts[0m
+UseIdents ...
+  IdentsKeyString ...
+    should be the correct string literal ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  IdentsKeyString ... [0m[32mok[0m [0m[38;5;245m(2ms)[0m
+  ReferenceTypeKeyString ...
+    should be the correct string literal ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  ReferenceTypeKeyString ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  ReferenceTypeKey ...
+    should be the type of ReferenceTypeKeyString ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  ReferenceTypeKey ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  ReferenceTypeKey ...
+    should be the type of ReferenceTypeKeyString ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  ReferenceTypeKey ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  UseIdents ...
+    should be an object type with the IdentsKeyString property of any key of the any in ReferenceTypeKeyString ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  UseIdents ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  IdentsOf ...
+    should be a UseIdents type with the IdentsKeyString property of any key of the any in ReferenceTypeKeyString ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  IdentsOf ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  IdentsOf<Type> ...
+    should be a UseIdents type with the IdentsKeyString property set to keys of the type in ReferenceTypeKeyString ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  IdentsOf<Type> ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  IdentsOf<Type, 'first' | 'last' | 'middle'> ...
+    should be a UseIdents type with the IdentsKeyString property set to keys of the type in ReferenceTypeKeyString ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  IdentsOf<Type, 'first' | 'last' | 'middle'> ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  PickIdents ...
+    should return IdentsOf ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return Else<string> ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return the default setting ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  PickIdents ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  GetIdents ...
+    should return PropertyKey ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return keyof Test ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return the default setting ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  GetIdents ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  GetReferenceType ...
+    should return PropertyKey ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return Test ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return the default setting ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  GetReferenceType ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+UseIdents ... [0m[32mok[0m [0m[38;5;245m(11ms)[0m
+[0m[38;5;245mrunning 1 test from ./kz/util/capability/type/use_immutable.test.ts[0m
+UseImmutable ...
+  ImmutableKeyString ...
+    should be the correct string literal ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  ImmutableKeyString ... [0m[32mok[0m [0m[38;5;245m(2ms)[0m
+  ImmutableKey ...
+    should be the type of ImmutableKeyString ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  ImmutableKey ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  UseImmutable ...
+    should be an object type with the ImmutableKeyString property of boolean value ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  UseImmutable ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  AsImmutable ...
+    should be a UseImmutable type with the ImmutableKeyString property set to true ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  AsImmutable ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  AsMutable ...
+    should be a UseImmutable type with the ImmutableKeyString property set to false ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  AsMutable ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  PickImmutable ...
+    should return AsImmutable ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return AsMutable ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return the default setting ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  PickImmutable ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  GetImmutable ...
+    should return true ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return false ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return the default setting ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  GetImmutable ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+UseImmutable ... [0m[32mok[0m [0m[38;5;245m(10ms)[0m
+[0m[38;5;245mrunning 1 test from ./kz/util/capability/type/use_inversion.test.ts[0m
+UseInversion ...
+  InversionKeyString ...
+    should be the correct string literal ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  InversionKeyString ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  InversionKey ...
+    should be the type of InversionKeyString ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  InversionKey ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  UseInversion ...
+    should be an object type with the InversionKeyString property of boolean value ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  UseInversion ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  AsInverted ...
+    should be a UseInversion type with the InversionKeyString property set to true ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  AsInverted ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  AsInitial ...
+    should be a UseInversion type with the InversionKeyString property set to false ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  AsInitial ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  PickInversion ...
+    should return AsInverted ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return AsInitial ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return the default setting ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  PickInversion ... [0m[32mok[0m [0m[38;5;245m(2ms)[0m
+  GetInversion ...
+    should return true ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return false ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return the default setting ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  GetInversion ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+UseInversion ... [0m[32mok[0m [0m[38;5;245m(12ms)[0m
+[0m[38;5;245mrunning 1 test from ./kz/util/capability/type/use_null_option.test.ts[0m
+UseNullOption ...
+  UseNullOption ...
+    should be an empty object ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  UseNullOption ... [0m[32mok[0m [0m[38;5;245m(3ms)[0m
+  AsNullOption ...
+    should be an empty object ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  AsNullOption ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  IsNullOption ...
+    defaults ...
+      should return true for an empty object ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+      should return false for a non-empty object ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    defaults ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+    with Then<string> ...
+      should return string ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+      should return false ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    with Then<string> ... [0m[32mok[0m [0m[38;5;245m(2ms)[0m
+    with Else<number> ...
+      should return true ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+      should return number ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    with Else<number> ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+    with ConditionOf<string, number> ...
+      should return string ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+      should return number ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    with ConditionOf<string, number> ... [0m[32mok[0m [0m[38;5;245m(2ms)[0m
+  IsNullOption ... [0m[32mok[0m [0m[38;5;245m(8ms)[0m
+UseNullOption ... [0m[32mok[0m [0m[38;5;245m(16ms)[0m
+[0m[38;5;245mrunning 1 test from ./kz/util/capability/type/use_of_type.test.ts[0m
+UseOfType ...
+  OfTypeKeyString ...
+    should be the correct string literal ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  OfTypeKeyString ... [0m[32mok[0m [0m[38;5;245m(2ms)[0m
+  OfTypeKey ...
+    should be the type of OfTypeKeyString ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  OfTypeKey ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  UseOfType ...
+    should be an object type with the OfTypeKeyString property of any value ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  UseOfType ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  OfType ...
+    should be a UseOfType type with the OfTypeKeyString property set to any ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  OfType ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  OfType<Type> ...
+    should be a UseOfType type with the OfTypeKeyString property set to string ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  OfType<Type> ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  PickOfType ...
+    should return OfType ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return OfType<string> ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return the OfType setting ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  PickOfType ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  GetOfType ...
+    should return any ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return string ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return the OfType setting ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  GetOfType ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+UseOfType ... [0m[32mok[0m [0m[38;5;245m(9ms)[0m
+[0m[38;5;245mrunning 1 test from ./kz/util/capability/type/use_optional.test.ts[0m
+UseOptional ...
+  OptionalKeyString ...
+    should be the correct string literal ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  OptionalKeyString ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  OptionalKey ...
+    should be the type of OptionalKeyString ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  OptionalKey ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  UseOptional ...
+    should be an object type with the OptionalKeyString property of boolean value ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  UseOptional ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  AsRequired ...
+    should be a UseOptional type with the OptionalKeyString property set to true ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  AsRequired ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  AsRequired ...
+    should be a UseOptional type with the OptionalKeyString property set to false ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  AsRequired ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  PickOptional ...
+    should return AsOptional ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return AsRequired ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return the default setting ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  PickOptional ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  GetOptional ...
+    should return true ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return false ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return the default setting ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  GetOptional ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+UseOptional ... [0m[32mok[0m [0m[38;5;245m(8ms)[0m
+[0m[38;5;245mrunning 1 test from ./kz/util/capability/type/use_reverse.test.ts[0m
+UseReverse ...
+  ReverseKeyString ...
+    should be the correct string literal ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  ReverseKeyString ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  ReverseKey ...
+    should be the type of ReverseKeyString ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  ReverseKey ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  UseReverse ...
+    should be an object type with the ReverseKeyString property of boolean value ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  UseReverse ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  AsReversed ...
+    should be a UseReverse type with the ReverseKeyString property set to true ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  AsReversed ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  AsForward ...
+    should be a UseReverse type with the ReverseKeyString property set to false ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  AsForward ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  PickReverse ...
+    should return AsReversed ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return AsForward ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return the default setting ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  PickReverse ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  GetReverse ...
+    should return true ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return false ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return the default setting ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  GetReverse ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+UseReverse ... [0m[32mok[0m [0m[38;5;245m(10ms)[0m
+[0m[38;5;245mrunning 1 test from ./kz/util/capability/type/use_safe.test.ts[0m
+UseSafe ...
+  SafeKeyString ...
+    should be the correct string literal ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  SafeKeyString ... [0m[32mok[0m [0m[38;5;245m(2ms)[0m
+  SafeKey ...
+    should be the type of SafeKeyString ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  SafeKey ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  UseSafe ...
+    should be an object type with the SafeKeyString property of boolean value ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  UseSafe ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  AsSafe ...
+    should be a UseSafe type with the SafeKeyString property set to true ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  AsSafe ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  AsUnsafe ...
+    should be a UseSafe type with the SafeKeyString property set to false ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  AsUnsafe ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  PickSafe ...
+    should return AsSafe ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return AsUnsafe ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return the default setting ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  PickSafe ... [0m[32mok[0m [0m[38;5;245m(2ms)[0m
+  GetSafe ...
+    should return true ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return false ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return the default setting ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  GetSafe ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+UseSafe ... [0m[32mok[0m [0m[38;5;245m(11ms)[0m
+[0m[38;5;245mrunning 1 test from ./kz/util/capability/type/use_stream.test.ts[0m
+UseStream ...
+  StreamKeyString ...
+    should be the correct string literal ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  StreamKeyString ... [0m[32mok[0m [0m[38;5;245m(2ms)[0m
+  StreamKey ...
+    should be the type of StreamKeyString ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  StreamKey ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  UseStream ...
+    should be an object type with the StreamKeyString property of boolean value ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  UseStream ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  AsFilter ...
+    should be a UseStream type with the StreamKeyString property set to true ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  AsFilter ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  AsPredicate ...
+    should be a UseStream type with the StreamKeyString property set to false ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  AsPredicate ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  PickStream ...
+    should Stream AsFilter ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return AsPredicate ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return the default setting ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  PickStream ... [0m[32mok[0m [0m[38;5;245m(2ms)[0m
+  GetStream ...
+    should return true ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return false ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return the default setting ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  GetStream ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+UseStream ... [0m[32mok[0m [0m[38;5;245m(9ms)[0m
+[0m[38;5;245mrunning 1 test from ./kz/util/capability/type/use_strict.test.ts[0m
+UseStrict ...
+  StrictKeyString ...
+    should be the correct string literal ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  StrictKeyString ... [0m[32mok[0m [0m[38;5;245m(2ms)[0m
+  StrictKey ...
+    should be the type of StrictKeyString ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  StrictKey ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  UseStrict ...
+    should be an object type with the StrictKeyString property of boolean value ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  UseStrict ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  AsStrict ...
+    should be a UseStrict type with the StrictKeyString property set to true ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  AsStrict ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  AsLoose ...
+    should be a UseStrict type with the StrictKeyString property set to false ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  AsLoose ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  PickStrict ...
+    should return AsStrict ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return AsLoose ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return the default setting ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  PickStrict ... [0m[32mok[0m [0m[38;5;245m(2ms)[0m
+  GetStrict ...
+    should return true ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return false ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return the default setting ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  GetStrict ... [0m[32mok[0m [0m[38;5;245m(2ms)[0m
+UseStrict ... [0m[32mok[0m [0m[38;5;245m(12ms)[0m
+[0m[38;5;245mrunning 1 test from ./kz/util/capability/type/use_then.test.ts[0m
+UseThen ...
+  ThenKeyString ...
+    should be the correct string literal ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  ThenKeyString ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  ThenKey ...
+    should be the type of ThenKeyString ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  ThenKey ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  UseThen ...
+    should be an object type with the ThenKeyString property of any value ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  UseThen ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  Then ...
+    should be a UseThen type with the ThenKeyString property set to any ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  Then ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  Then<Type> ...
+    should be a UseThen type with the ThenKeyString property set to string ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  Then<Type> ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  PickThen ...
+    should return Then ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return Then<string> ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+    should return the default setting ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  PickThen ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  GetThen ...
+    should return any ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return string ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return the default setting ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  GetThen ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+UseThen ... [0m[32mok[0m [0m[38;5;245m(9ms)[0m
+[0m[38;5;245mrunning 1 test from ./kz/util/lint/type/_internal/banned_type_permitter.test.ts[0m
+BannedTypePermitter ...
+  requires a reason for permitting a banned type ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  will not accept an empty reason ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  permits the any type with a reason ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  permits the Function type with a reason ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  permits the Boolean type with a reason ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  permits the Number type with a reason ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  permits the String type with a reason ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  permits the Symbol type with a reason ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  permits the Object type with a reason ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  permits the `{}` (any non-nullish) type with a reason ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+BannedTypePermitter ... [0m[32mok[0m [0m[38;5;245m(6ms)[0m
+[0m[38;5;245mrunning 1 test from ./kz/util/lint/type/banned_types.test.ts[0m
+BannedTypes ...
+  type support ...
+    supports the `any` type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    supports the `Function` type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    supports the `Boolean` type ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+    supports the `Number` type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    supports the `String` type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    supports the `Symbol` type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    supports the `Object` type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    supports the `{}` type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  type support ... [0m[32mok[0m [0m[38;5;245m(6ms)[0m
+BannedTypes ... [0m[32mok[0m [0m[38;5;245m(8ms)[0m
+[0m[38;5;245mrunning 1 test from ./kz/util/lint/type/permit.test.ts[0m
+Permit ...
+  requires a reason for permitting a banned type ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  will not accept an empty reason ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  permits the any type with a reason ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  permits the Function type with a reason ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  permits the Boolean type with a reason ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  permits the Number type with a reason ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  permits the String type with a reason ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  permits the Symbol type with a reason ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  permits the Object type with a reason ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  permits the `{}` (any non-nullish) type with a reason ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+Permit ... [0m[32mok[0m [0m[38;5;245m(5ms)[0m
+[0m[38;5;245mrunning 1 test from ./kz/util/logic/type/and.test.ts[0m
+Logic - And ...
+  with defaults ...
+    should return true ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return false ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return false ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return false ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  with defaults ... [0m[32mok[0m [0m[38;5;245m(5ms)[0m
+  with Then option ...
+    should return the Then type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  with Then option ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  with Else option ...
+    should return the Else type ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  with Else option ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  with both Then and Else options ...
+    should return the Then type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return the Else type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  with both Then and Else options ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  AsFilter ...
+    Defaults ...
+      should return true ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+      should return never ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    Defaults ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+    custom DefaultOf ...
+      should return the DefaultOf type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+      should return never ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    custom DefaultOf ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  AsFilter ... [0m[32mok[0m [0m[38;5;245m(2ms)[0m
+  with AsInverted ...
+    with defaults ...
+      should return false ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+      should return true ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+      should return true ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+      should return true ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    with defaults ... [0m[32mok[0m [0m[38;5;245m(2ms)[0m
+    with Then option ...
+      should return false ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    with Then option ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    with Else option ...
+      should return true ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    with Else option ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    with both Then and Else options ...
+      should return the Else type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+      should return the Then type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    with both Then and Else options ... [0m[32mok[0m [0m[38;5;245m(9ms)[0m
+    AsFilter ...
+      Defaults ...
+        should return never ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+        should return true ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+      Defaults ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+      custom DefaultOf ...
+        should return never ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+        should return the DefaultOf type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+      custom DefaultOf ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    AsFilter ... [0m[32mok[0m [0m[38;5;245m(3ms)[0m
+  with AsInverted ... [0m[32mok[0m [0m[38;5;245m(16ms)[0m
+Logic - And ... [0m[32mok[0m [0m[38;5;245m(30ms)[0m
+[0m[38;5;245mrunning 1 test from ./kz/util/logic/type/if.test.ts[0m
+Logic - If ...
+  with defaults ...
+    should return true ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+    should return false ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  with defaults ... [0m[32mok[0m [0m[38;5;245m(3ms)[0m
+  with Then option ...
+    should return the Then type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  with Then option ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  with Else option ...
+    should return the Else type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  with Else option ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  with both Then and Else options ...
+    should return the Then type ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+    should return the Else type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  with both Then and Else options ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  AsFilter ...
+    Defaults ...
+      should return true ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+      should return never ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    Defaults ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    custom DefaultOf ...
+      should return the DefaultOf type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+      should return never ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    custom DefaultOf ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  AsFilter ... [0m[32mok[0m [0m[38;5;245m(2ms)[0m
+  with AsInverted ...
+    with defaults ...
+      should return false ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+      should return true ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    with defaults ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    with Then option ...
+      should return false ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    with Then option ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+    with Else option ...
+      should return true ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    with Else option ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    with both Then and Else options ...
+      should return the Else type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+      should return the Then type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    with both Then and Else options ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+    AsFilter ...
+      Defaults ...
+        should return never ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+        should return the DefaultOf type ... [0m[32mok[0m [0m[38;5;245m(14ms)[0m
+      Defaults ... [0m[32mok[0m [0m[38;5;245m(15ms)[0m
+      custom DefaultOf ...
+        should return never ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+        should return the DefaultOf type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+      custom DefaultOf ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+    AsFilter ... [0m[32mok[0m [0m[38;5;245m(16ms)[0m
+  with AsInverted ... [0m[32mok[0m [0m[38;5;245m(23ms)[0m
+Logic - If ... [0m[32mok[0m [0m[38;5;245m(35ms)[0m
+[0m[38;5;245mrunning 1 test from ./kz/util/logic/type/not.test.ts[0m
+Logic - Not ...
+  with defaults ...
+    should return false ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return true ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  with defaults ... [0m[32mok[0m [0m[38;5;245m(2ms)[0m
+  with Then option ...
+    should return the Then type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  with Then option ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  with Else option ...
+    should return the Else type ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  with Else option ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  with both Then and Else options ...
+    should return the Else type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return the Then type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  with both Then and Else options ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  AsFilter ...
+    Defaults ...
+      should return never ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+      should return true ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    Defaults ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+    custom DefaultOf ...
+      should return never ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+      should return the DefaultOf type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    custom DefaultOf ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  AsFilter ... [0m[32mok[0m [0m[38;5;245m(3ms)[0m
+  with AsInverted ...
+    with defaults ...
+      should return true ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+      should return false ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    with defaults ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+    with Then option ...
+      should return false ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    with Then option ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+    with Else option ...
+      should return true ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    with Else option ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+    with both Then and Else options ...
+      should return the Then type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+      should return the else type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    with both Then and Else options ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+    AsFilter ...
+      Defaults ...
+        should return true ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+        should return never ... [0m[32mok[0m [0m[38;5;245m(13ms)[0m
+      Defaults ... [0m[32mok[0m [0m[38;5;245m(14ms)[0m
+      custom DefaultOf ...
+        should return the DefaultOf type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+        should return never ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+      custom DefaultOf ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    AsFilter ... [0m[32mok[0m [0m[38;5;245m(16ms)[0m
+  with AsInverted ... [0m[32mok[0m [0m[38;5;245m(21ms)[0m
+Logic - Not ... [0m[32mok[0m [0m[38;5;245m(32ms)[0m
+[0m[38;5;245mrunning 1 test from ./kz/util/logic/type/or.test.ts[0m
+Logic - Or ...
+  with defaults ...
+    should return true ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+    should return true ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return true ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return false ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  with defaults ... [0m[32mok[0m [0m[38;5;245m(3ms)[0m
+  with Then option ...
+    should return the Then type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  with Then option ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  with Else option ...
+    should return the Then type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  with Else option ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  with both Then and Else options ...
+    should return the Then type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return the Then type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  with both Then and Else options ... [0m[32mok[0m [0m[38;5;245m(2ms)[0m
+  AsFilter ...
+    Defaults ...
+      should return true ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+      should return never ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    Defaults ... [0m[32mok[0m [0m[38;5;245m(2ms)[0m
+    custom DefaultOf ...
+      should return the DefaultOf type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+      should return never ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    custom DefaultOf ... [0m[32mok[0m [0m[38;5;245m(2ms)[0m
+  AsFilter ... [0m[32mok[0m [0m[38;5;245m(4ms)[0m
+  with AsInverted ...
+    with defaults ...
+      should return false ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+      should return false ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+      should return false ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+      should return true ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    with defaults ... [0m[32mok[0m [0m[38;5;245m(3ms)[0m
+    with Then option ...
+      should return false ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    with Then option ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    with Else option ...
+      should return the Else type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    with Else option ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+    with both Then and Else options ...
+      should return the Else type ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+      should return the Else type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    with both Then and Else options ... [0m[32mok[0m [0m[38;5;245m(16ms)[0m
+    AsFilter ...
+      Defaults ...
+        should return never ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+        should return true ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+      Defaults ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+      custom DefaultOf ...
+        should return never ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+        should return the DefaultOf type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+      custom DefaultOf ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    AsFilter ... [0m[32mok[0m [0m[38;5;245m(3ms)[0m
+  with AsInverted ... [0m[32mok[0m [0m[38;5;245m(29ms)[0m
+Logic - Or ... [0m[32mok[0m [0m[38;5;245m(48ms)[0m
+[0m[38;5;245mrunning 1 test from ./kz/util/logic/type/xnor.test.ts[0m
+Logic - Xnor ...
+  with defaults ...
+    should return true ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return false ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return false ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return true ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  with defaults ... [0m[32mok[0m [0m[38;5;245m(2ms)[0m
+  with Then option ...
+    should return the Then type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  with Then option ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  with Else option ...
+    should return the Else type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  with Else option ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  with both Then Or Else options ...
+    should return the Then type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return the Else type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return the Then type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  with both Then Or Else options ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  AsFilter ...
+    Defaults ...
+      should return never ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+      should return true ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    Defaults ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    custom DefaultOf ...
+      should return never ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+      should return the DefaultOf type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    custom DefaultOf ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  AsFilter ... [0m[32mok[0m [0m[38;5;245m(2ms)[0m
+  with AsInverted ...
+    with defaults ...
+      should return false ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+      should return true ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+      should return true ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+      should return false ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    with defaults ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+    with Then option ...
+      should return false ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    with Then option ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+    with Else option ...
+      should return true ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    with Else option ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    with both Then Or Else options ...
+      should return the Else type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+      should return the Then type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+      should return the Else type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    with both Then Or Else options ... [0m[32mok[0m [0m[38;5;245m(14ms)[0m
+    AsFilter ...
+      Defaults ...
+        should return true ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+        should return never ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+      Defaults ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+      custom DefaultOf ...
+        should return the DefaultOf type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+        should return never ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+      custom DefaultOf ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    AsFilter ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  with AsInverted ... [0m[32mok[0m [0m[38;5;245m(19ms)[0m
+Logic - Xnor ... [0m[32mok[0m [0m[38;5;245m(36ms)[0m
+[0m[38;5;245mrunning 1 test from ./kz/util/logic/type/xor.test.ts[0m
+Logic - Xor ...
+  with defaults ...
+    should return false ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return true ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+    should return true ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return false ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  with defaults ... [0m[32mok[0m [0m[38;5;245m(6ms)[0m
+  with Then option ...
+    should return the Else type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  with Then option ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  with Else option ...
+    should return the Then type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  with Else option ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  with both Then Or Else options ...
+    should return the Else type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    should return the Then type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  with both Then Or Else options ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  AsFilter ...
+    Defaults ...
+      should return true ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+      should return never ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    Defaults ... [0m[32mok[0m [0m[38;5;245m(2ms)[0m
+    custom DefaultOf ...
+      should return the DefaultOf type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+      should return never ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    custom DefaultOf ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  AsFilter ... [0m[32mok[0m [0m[38;5;245m(3ms)[0m
+  with AsInverted ...
+    with defaults ...
+      should return true ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+      should return false ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+      should return false ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+      should return true ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    with defaults ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+    with Then option ...
+      should return the Then type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    with Then option ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    with Else option ...
+      should return the Else type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    with Else option ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    with both Then Or Else options ...
+      should return the Then type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+      should return the Else type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    with both Then Or Else options ... [0m[32mok[0m [0m[38;5;245m(23ms)[0m
+    AsFilter ...
+      Defaults ...
+        should return never ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+        should return true ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+      Defaults ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+      custom DefaultOf ...
+        should return never ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+        should return the DefaultOf type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+      custom DefaultOf ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    AsFilter ... [0m[32mok[0m [0m[38;5;245m(2ms)[0m
+  with AsInverted ... [0m[32mok[0m [0m[38;5;245m(30ms)[0m
+Logic - Xor ... [0m[32mok[0m [0m[38;5;245m(48ms)[0m
+[0m[38;5;245mrunning 1 test from ./kz/util/nominal/type/brand.test.ts[0m
+Brand ...
+  should create a branded type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  should be able to assign a value with a type assertion ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  should allow sub-typing ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  should widen to the unbranded type ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+Brand ... [0m[32mok[0m [0m[38;5;245m(3ms)[0m
+[0m[38;5;245mrunning 1 test from ./kz/util/nominal/type/extract_tagged_metadata.test.ts[0m
+ExtractTaggedMetadata ...
+  should extract metadata from a tagged type ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  should extract metadata from a tagged union type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+ExtractTaggedMetadata ... [0m[32mok[0m [0m[38;5;245m(3ms)[0m
+[0m[38;5;245mrunning 1 test from ./kz/util/nominal/type/flavor.test.ts[0m
+Flavor ...
+  should create a flavored type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  should be able to assign a value with a type assertion ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  should allow sub-typing ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  should widen to the unflavored type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+Flavor ... [0m[32mok[0m [0m[38;5;245m(3ms)[0m
+[0m[38;5;245mrunning 1 test from ./kz/util/nominal/type/struct.test.ts[0m
+Struct ...
+  should create a struct type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  should be able to assign a value with a type assertion ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  should allow sub-typing ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  should widen to the unstructured type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+Struct ... [0m[32mok[0m [0m[38;5;245m(18ms)[0m
+[0m[38;5;245mrunning 1 test from ./kz/util/nominal/type/tagged.test.ts[0m
+Tagged ...
+  should create a Tagged type ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  should be able to assign a value with a type assertion ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  should allow sub-typing ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  should allow metadata ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  should widen to the untagged type ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+Tagged ... [0m[32mok[0m [0m[38;5;245m(8ms)[0m
+[0m[38;5;245mrunning 1 test from ./kz/util/nominal/type/tagged_union.test.ts[0m
+TaggedUnion ...
+  should create a tagged union ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  should extract tagged union keys ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  should extract metadata from a tagged union ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  should widen to the untagged type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+TaggedUnion ... [0m[32mok[0m [0m[38;5;245m(4ms)[0m
+[0m[38;5;245mrunning 1 test from ./kz/util/nominal/type/tagged_union_keys.test.ts[0m
+TaggedUnionKeys ...
+  should extract tagged union keys ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  should extract tagged union keys with custom tag ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+TaggedUnionKeys ... [0m[32mok[0m [0m[38;5;245m(3ms)[0m
+[0m[38;5;245mrunning 1 test from ./kz/util/type/type/_internal/apply_default.test.ts[0m
+ApplyDefault ...
+  should apply the default type when UseDefault is not present ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  should return the settings when UseDefault is present ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+ApplyDefault ... [0m[32mok[0m [0m[38;5;245m(3ms)[0m
+[0m[38;5;245mrunning 1 test from ./kz/util/type/type/_internal/apply_unified.test.ts[0m
+ApplyUnified ...
+  should apply the unified type when UseUnified is not present ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  should return the settings when UseUnified is present ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+ApplyUnified ... [0m[32mok[0m [0m[38;5;245m(7ms)[0m
+[0m[38;5;245mrunning 1 test from ./kz/util/type/type/_internal/check_type.test.ts[0m
+CheckType ...
+  any ...
+    AsStrict (default) ...
+      AsSafe (default) ...
+        AsUnified (default) ...
+          should return true for any type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return false for never type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return false for void type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return false for unknown type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return false for string type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+        AsUnified (default) ... [0m[32mok[0m [0m[38;5;245m(4ms)[0m
+        AsDistributed ...
+          should return true for any type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return false for never type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return false for void type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return false for unknown type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return false for string type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+        AsDistributed ... [0m[32mok[0m [0m[38;5;245m(3ms)[0m
+      AsSafe (default) ... [0m[32mok[0m [0m[38;5;245m(9ms)[0m
+      AsUnsafe ...
+        AsUnified (default) ...
+          should return true for any type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return false for never type ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+          should return false for void type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return false for unknown type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return false for string type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+        AsUnified (default) ... [0m[32mok[0m [0m[38;5;245m(4ms)[0m
+        AsDistributed ...
+          should return true for any type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return false for never type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return false for void type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return false for unknown type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return false for string type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+        AsDistributed ... [0m[32mok[0m [0m[38;5;245m(2ms)[0m
+      AsUnsafe ... [0m[32mok[0m [0m[38;5;245m(9ms)[0m
+    AsStrict (default) ... [0m[32mok[0m [0m[38;5;245m(21ms)[0m
+    AsLoose ...
+      AsSafe (default) ...
+        AsUnified (default) ...
+          should return true for any type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return boolean for never type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return boolean for void type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return true for unknown type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return boolean for string type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+        AsUnified (default) ... [0m[32mok[0m [0m[38;5;245m(2ms)[0m
+        AsDistributed ...
+          should return true for any type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return boolean for never type ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+          should return boolean for void type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return true for unknown type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return boolean for string type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+        AsDistributed ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+      AsSafe (default) ... [0m[32mok[0m [0m[38;5;245m(4ms)[0m
+      AsUnsafe ...
+        AsUnified (default) ...
+          should return true for any type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return true for never type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return true for void type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return true for unknown type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return true for string type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+        AsUnified (default) ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+        AsDistributed ...
+          should return true for any type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return true for never type ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+          should return true for void type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return true for unknown type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return true for string type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+        AsDistributed ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+      AsUnsafe ... [0m[32mok[0m [0m[38;5;245m(4ms)[0m
+    AsLoose ... [0m[32mok[0m [0m[38;5;245m(11ms)[0m
+  any ... [0m[32mok[0m [0m[38;5;245m(37ms)[0m
+  unknown ...
+    AsStrict (default) ...
+      AsSafe (default) ...
+        AsUnified (default) ...
+          should return true for any type ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+          should return true for never type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return true for void type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return true for unknown type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return true for string type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+        AsUnified (default) ... [0m[32mok[0m [0m[38;5;245m(2ms)[0m
+        AsDistributed ...
+          should return true for any type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return true for never type ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+          should return true for void type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return true for unknown type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return true for string type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+        AsDistributed ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+      AsSafe (default) ... [0m[32mok[0m [0m[38;5;245m(4ms)[0m
+      AsUnsafe ...
+        AsUnified (default) ...
+          should return true for any type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return true for never type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return true for void type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return true for unknown type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return true for string type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+        AsUnified (default) ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+        AsDistributed ...
+          should return true for any type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return true for never type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return true for void type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return true for unknown type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return true for string type ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+        AsDistributed ... [0m[32mok[0m [0m[38;5;245m(2ms)[0m
+      AsUnsafe ... [0m[32mok[0m [0m[38;5;245m(4ms)[0m
+    AsStrict (default) ... [0m[32mok[0m [0m[38;5;245m(10ms)[0m
+    AsLoose ...
+      AsSafe (default) ...
+        AsUnified (default) ...
+          should return true for any type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return false for never type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return false for void type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return true for unknown type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return false for string type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+        AsUnified (default) ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+        AsDistributed ...
+          should return true for any type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return false for never type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return false for void type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return true for unknown type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return false for string type ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+        AsDistributed ... [0m[32mok[0m [0m[38;5;245m(2ms)[0m
+      AsSafe (default) ... [0m[32mok[0m [0m[38;5;245m(4ms)[0m
+      AsUnsafe ...
+        AsUnified (default) ...
+          should return true for any type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return false for never type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return false for void type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return true for unknown type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return true for string type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+        AsUnified (default) ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+        AsDistributed ...
+          should return true for any type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return true for never type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return true for void type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return true for unknown type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return true for string type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+        AsDistributed ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+      AsUnsafe ... [0m[32mok[0m [0m[38;5;245m(3ms)[0m
+    AsLoose ... [0m[32mok[0m [0m[38;5;245m(10ms)[0m
+  unknown ... [0m[32mok[0m [0m[38;5;245m(26ms)[0m
+  never ...
+    AsStrict (default) ...
+      AsSafe (default) ...
+        AsUnified (default) ...
+          should return false for any type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return true for never type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return false for void type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return false for unknown type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return false for string type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+        AsUnified (default) ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+        AsDistributed ...
+          should return true for any type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return true for never type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return false for void type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return false for unknown type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return false for string type ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+        AsDistributed ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+      AsSafe (default) ... [0m[32mok[0m [0m[38;5;245m(4ms)[0m
+      AsUnsafe ...
+        AsUnified (default) ...
+          should return true for any type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return true for never type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return false for void type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return false for unknown type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return false for string type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+        AsUnified (default) ... [0m[32mok[0m [0m[38;5;245m(4ms)[0m
+        AsDistributed ...
+          should return true for any type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return true for never type ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+          should return false for void type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return false for unknown type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return false for string type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+        AsDistributed ... [0m[32mok[0m [0m[38;5;245m(4ms)[0m
+      AsUnsafe ... [0m[32mok[0m [0m[38;5;245m(10ms)[0m
+    AsStrict (default) ... [0m[32mok[0m [0m[38;5;245m(16ms)[0m
+    AsLoose ...
+      AsSafe (default) ...
+        AsUnified (default) ...
+          should return true for any type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return true for never type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return true for void type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return true for unknown type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return true for string type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+        AsUnified (default) ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+        AsDistributed ...
+          should return true for any type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return true for never type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return true for void type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return true for unknown type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return true for string type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+        AsDistributed ... [0m[32mok[0m [0m[38;5;245m(2ms)[0m
+      AsSafe (default) ... [0m[32mok[0m [0m[38;5;245m(5ms)[0m
+      AsUnsafe ...
+        AsUnified (default) ...
+          should return true for any type ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+          should return true for never type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return false for void type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return true for unknown type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return true for string type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+        AsUnified (default) ... [0m[32mok[0m [0m[38;5;245m(5ms)[0m
+        AsDistributed ...
+          should return true for any type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return true for never type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return true for void type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return true for unknown type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return true for string type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+        AsDistributed ... [0m[32mok[0m [0m[38;5;245m(2ms)[0m
+      AsUnsafe ... [0m[32mok[0m [0m[38;5;245m(8ms)[0m
+    AsLoose ... [0m[32mok[0m [0m[38;5;245m(21ms)[0m
+  never ... [0m[32mok[0m [0m[38;5;245m(42ms)[0m
+  void ...
+    AsStrict (default) ...
+      AsSafe (default) ...
+        AsUnified (default) ...
+          should return true for any type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return true for never type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return true for void type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return false for unknown type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return false for string type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+        AsUnified (default) ... [0m[32mok[0m [0m[38;5;245m(2ms)[0m
+        AsDistributed ...
+          should return true for any type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return true for never type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return true for void type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return false for unknown type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return false for string type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+        AsDistributed ... [0m[32mok[0m [0m[38;5;245m(2ms)[0m
+      AsSafe (default) ... [0m[32mok[0m [0m[38;5;245m(6ms)[0m
+      AsUnsafe ...
+        AsUnified (default) ...
+          should return true for any type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return true for never type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return true for void type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return false for unknown type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return false for string type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+        AsUnified (default) ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+        AsDistributed ...
+          should return true for any type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return true for never type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return true for void type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return false for unknown type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return false for string type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+        AsDistributed ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+      AsUnsafe ... [0m[32mok[0m [0m[38;5;245m(5ms)[0m
+    AsStrict (default) ... [0m[32mok[0m [0m[38;5;245m(12ms)[0m
+    AsLoose ...
+      AsSafe (default) ...
+        AsUnified (default) ...
+          should return true for any type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return false for never type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return true for void type ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+          should return true for unknown type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return false for string type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+        AsUnified (default) ... [0m[32mok[0m [0m[38;5;245m(2ms)[0m
+        AsDistributed ...
+          should return true for any type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return false for never type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return true for void type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return true for unknown type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return false for string type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+        AsDistributed ... [0m[32mok[0m [0m[38;5;245m(2ms)[0m
+      AsSafe (default) ... [0m[32mok[0m [0m[38;5;245m(5ms)[0m
+      AsUnsafe ...
+        AsUnified (default) ...
+          should return true for any type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return false for never type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return true for void type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return true for unknown type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return true for string type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+        AsUnified (default) ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+        AsDistributed ...
+          should return true for any type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return true for never type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return true for void type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return true for unknown type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return true for string type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+        AsDistributed ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+      AsUnsafe ... [0m[32mok[0m [0m[38;5;245m(4ms)[0m
+    AsLoose ... [0m[32mok[0m [0m[38;5;245m(13ms)[0m
+  void ... [0m[32mok[0m [0m[38;5;245m(30ms)[0m
+  string ...
+    AsStrict (default) ...
+      AsSafe (default) ...
+        AsUnified (default) ...
+          should return true for any type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return true for never type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return false for void type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return false for unknown type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return true for string type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+        AsUnified (default) ... [0m[32mok[0m [0m[38;5;245m(3ms)[0m
+        AsDistributed ...
+          should return true for any type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return true for never type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return false for void type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return false for unknown type ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+          should return true for string type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+        AsDistributed ... [0m[32mok[0m [0m[38;5;245m(2ms)[0m
+      AsSafe (default) ... [0m[32mok[0m [0m[38;5;245m(6ms)[0m
+      AsUnsafe ...
+        AsUnified (default) ...
+          should return true for any type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return true for never type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return false for void type ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+          should return false for unknown type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return true for string type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+        AsUnified (default) ... [0m[32mok[0m [0m[38;5;245m(3ms)[0m
+        AsDistributed ...
+          should return true for any type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return true for never type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return false for void type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return false for unknown type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return true for string type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+        AsDistributed ... [0m[32mok[0m [0m[38;5;245m(3ms)[0m
+      AsUnsafe ... [0m[32mok[0m [0m[38;5;245m(7ms)[0m
+    AsStrict (default) ... [0m[32mok[0m [0m[38;5;245m(16ms)[0m
+    AsLoose ...
+      AsSafe (default) ...
+        AsUnified (default) ...
+          should return true for any type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return false for never type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return false for void type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return true for unknown type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return true for string type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+        AsUnified (default) ... [0m[32mok[0m [0m[38;5;245m(2ms)[0m
+        AsDistributed ...
+          should return true for any type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return false for never type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return false for void type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return true for unknown type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return true for string type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+        AsDistributed ... [0m[32mok[0m [0m[38;5;245m(2ms)[0m
+      AsSafe (default) ... [0m[32mok[0m [0m[38;5;245m(6ms)[0m
+      AsUnsafe ...
+        AsUnified (default) ...
+          should return true for any type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return false for never type ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+          should return false for void type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return true for unknown type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return true for string type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+        AsUnified (default) ... [0m[32mok[0m [0m[38;5;245m(2ms)[0m
+        AsDistributed ...
+          should return true for any type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return true for never type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return true for void type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return true for unknown type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return true for string type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+        AsDistributed ... [0m[32mok[0m [0m[38;5;245m(2ms)[0m
+      AsUnsafe ... [0m[32mok[0m [0m[38;5;245m(6ms)[0m
+    AsLoose ... [0m[32mok[0m [0m[38;5;245m(15ms)[0m
+  string ... [0m[32mok[0m [0m[38;5;245m(38ms)[0m
+  Nil ...
+    AsStrict (default) ...
+      AsSafe (default) ...
+        AsUnified (default) ...
+          should return true for any type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return true for never type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return false for void type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return false for unknown type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return false for string type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+        AsUnified (default) ... [0m[32mok[0m [0m[38;5;245m(2ms)[0m
+        AsDistributed ...
+          should return true for any type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return true for never type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return false for void type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return false for unknown type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return false for string type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+        AsDistributed ... [0m[32mok[0m [0m[38;5;245m(2ms)[0m
+      AsSafe (default) ... [0m[32mok[0m [0m[38;5;245m(6ms)[0m
+      AsUnsafe ...
+        AsUnified (default) ...
+          should return true for any type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return true for never type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return false for void type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return false for unknown type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return false for string type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+        AsUnified (default) ... [0m[32mok[0m [0m[38;5;245m(3ms)[0m
+        AsDistributed ...
+          should return true for any type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return true for never type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return false for void type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return false for unknown type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return false for string type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+        AsDistributed ... [0m[32mok[0m [0m[38;5;245m(3ms)[0m
+      AsUnsafe ... [0m[32mok[0m [0m[38;5;245m(7ms)[0m
+    AsStrict (default) ... [0m[32mok[0m [0m[38;5;245m(17ms)[0m
+    AsLoose ...
+      AsSafe (default) ...
+        AsUnified (default) ...
+          should return true for any type ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+          should return false for never type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return false for void type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return true for unknown type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return false for string type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+        AsUnified (default) ... [0m[32mok[0m [0m[38;5;245m(3ms)[0m
+        AsDistributed ...
+          should return true for any type ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+          should return false for never type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return false for void type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return true for unknown type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return false for string type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+        AsDistributed ... [0m[32mok[0m [0m[38;5;245m(4ms)[0m
+      AsSafe (default) ... [0m[32mok[0m [0m[38;5;245m(8ms)[0m
+      AsUnsafe ...
+        AsUnified (default) ...
+          should return true for any type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return false for never type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return false for void type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return true for unknown type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return true for string type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+        AsUnified (default) ... [0m[32mok[0m [0m[38;5;245m(2ms)[0m
+        AsDistributed ...
+          should return true for any type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return true for never type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return true for void type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return true for unknown type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return true for string type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+        AsDistributed ... [0m[32mok[0m [0m[38;5;245m(2ms)[0m
+      AsUnsafe ... [0m[32mok[0m [0m[38;5;245m(6ms)[0m
+    AsLoose ... [0m[32mok[0m [0m[38;5;245m(17ms)[0m
+  Nil ... [0m[32mok[0m [0m[38;5;245m(40ms)[0m
+  Object ...
+    AsStrict (default) ...
+      AsSafe (default) ...
+        AsUnified (default) ...
+          should return true for any type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return true for never type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return false for void type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return false for unknown type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return false for string type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return true for Subtype ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+        AsUnified (default) ... [0m[32mok[0m [0m[38;5;245m(3ms)[0m
+        AsDistributed ...
+          should return true for any type ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+          should return true for never type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return false for void type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return false for unknown type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return false for string type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return true for Subtype ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+        AsDistributed ... [0m[32mok[0m [0m[38;5;245m(3ms)[0m
+      AsSafe (default) ... [0m[32mok[0m [0m[38;5;245m(7ms)[0m
+      AsUnsafe ...
+        AsUnified (default) ...
+          should return true for any type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return true for never type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return false for void type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return false for unknown type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return false for string type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return true for Subtype ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+        AsUnified (default) ... [0m[32mok[0m [0m[38;5;245m(3ms)[0m
+        AsDistributed ...
+          should return true for any type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return true for never type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return false for void type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return false for unknown type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return false for string type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return true for Subtype ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+        AsDistributed ... [0m[32mok[0m [0m[38;5;245m(3ms)[0m
+      AsUnsafe ... [0m[32mok[0m [0m[38;5;245m(8ms)[0m
+    AsStrict (default) ... [0m[32mok[0m [0m[38;5;245m(18ms)[0m
+    AsLoose ...
+      AsSafe (default) ...
+        AsUnified (default) ...
+          should return true for any type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return false for never type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return false for void type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return true for unknown type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return false for string type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return false for Subtype ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+        AsUnified (default) ... [0m[32mok[0m [0m[38;5;245m(2ms)[0m
+        AsDistributed ...
+          should return true for any type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return false for never type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return false for void type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return true for unknown type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return false for string type ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+          should return false for Subtype ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+        AsDistributed ... [0m[32mok[0m [0m[38;5;245m(2ms)[0m
+      AsSafe (default) ... [0m[32mok[0m [0m[38;5;245m(5ms)[0m
+      AsUnsafe ...
+        AsUnified (default) ...
+          should return true for any type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return false for never type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return false for void type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return true for unknown type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return true for string type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return false for Subtype ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+        AsUnified (default) ... [0m[32mok[0m [0m[38;5;245m(2ms)[0m
+        AsDistributed ...
+          should return true for any type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return true for never type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return true for void type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return true for unknown type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return true for string type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+          should return false for Subtype ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+        AsDistributed ... [0m[32mok[0m [0m[38;5;245m(2ms)[0m
+      AsUnsafe ... [0m[32mok[0m [0m[38;5;245m(5ms)[0m
+    AsLoose ... [0m[32mok[0m [0m[38;5;245m(13ms)[0m
+  Object ... [0m[32mok[0m [0m[38;5;245m(35ms)[0m
+CheckType ... [0m[32mok[0m [0m[38;5;245m(283ms)[0m
+[0m[38;5;245mrunning 0 tests from ./kz/util/type/type/_internal/for_type.test.ts[0m
+[0m[38;5;245mrunning 1 test from ./kz/util/type/type/_internal/is_any.test.ts[0m
+IsAny ...
+  should return true for any type ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  should return false for string types ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  should return false for number types ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  should return false for boolean types ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  should return false for unknown types ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  should return false for never types ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+IsAny ... [0m[32mok[0m [0m[38;5;245m(8ms)[0m
+[0m[38;5;245mrunning 1 test from ./kz/util/type/type/_internal/is_special.test.ts[0m
+IsSpecial ...
+  should return false for any type ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  should return false for string types ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  should return false for number types ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  should return false for boolean types ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  should return true for unknown types ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  should return true for never types ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  should return true for void types ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+IsSpecial ... [0m[32mok[0m [0m[38;5;245m(12ms)[0m
+[0m[38;5;245mrunning 1 test from ./kz/util/type/type/any.test.ts[0m
+Any ...
+  should be assignable to any type with a documented reason ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  should not be assignable to any type without a documented reason ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+Any ... [0m[32mok[0m [0m[38;5;245m(4ms)[0m
+[0m[38;5;245mrunning 1 test from ./kz/util/type/type/clean.test.ts[0m
+Clean ...
+  should clean up the types ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+Clean ... [0m[32mok[0m [0m[38;5;245m(6ms)[0m
+[0m[38;5;245mrunning 1 test from ./kz/util/type/type/extends.test.ts[0m
+Extends ...
+  should check if a type contains another type ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  should support non-distributive types ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  should allow for conditional types ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+Extends ... [0m[32mok[0m [0m[38;5;245m(3ms)[0m
+[0m[38;5;245mrunning 0 tests from ./kz/util/type/type/is_nil.test.ts[0m
+[0m[38;5;245mrunning 1 test from ./kz/util/type/type/nil.test.ts[0m
+Nil ...
+  should be `undefined | null` ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+Nil ... [0m[32mok[0m [0m[38;5;245m(2ms)[0m
+[0m[38;5;245mrunning 1 test from ./kz/util/type/type/widen.test.ts[0m
+Widen ...
+  should widen string literal types to string ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  should widen number literal types to number ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  should widen boolean literal types to boolean ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  should widen array types (shallow) ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  should widen array types (deep) ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  should widen object types (shallow) ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  should widen object types (deep) ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  should widen branded, flavored, and tagged types to their base type ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+Widen ... [0m[32mok[0m [0m[38;5;245m(5ms)[0m
+
+[0m[32mok[0m | 53 passed (1336 steps) | 0 failed [0m[38;5;245m(5s)[0m
+
