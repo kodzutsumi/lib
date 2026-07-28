@@ -1,7 +1,5 @@
 // Copyright 2020 - present integereleven. All rights reserved. MIT license.
 
-export * from './type/mod.ts';
-
 /**
  * > [!NOTE]
  * > This is a types-only sub-module.
@@ -35,3 +33,5 @@ export * from './type/mod.ts';
  *
  * @module
  */
+
+export * from './type/mod.ts';

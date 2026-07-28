@@ -1,6 +1,5 @@
-// Copyright 2020 - present integereleven. All rights reserved. MIT license.
-
 // deno-lint-ignore-file no-boolean-literal-for-arguments no-explicit-any ban-types
+
 import { describe, it } from '@std/testing/bdd';
 import { assertType, type IsExact } from '@std/testing/types';
 
@@ -8,62 +7,82 @@ import type { BannedTypePermitter } from './banned_type_permitter.ts';
 
 describe('BannedTypePermitter', () => {
   it('requires a reason for permitting a banned type', () => {
-    type PermitAny = BannedTypePermitter<'any', 'Testing'>;
+    type Expected = any;
+    type Actual = BannedTypePermitter<'any', 'Testing'>;
+    type Result = IsExact<Actual, Expected>;
 
-    assertType<IsExact<PermitAny, any>>(true);
+    assertType<Result>(true);
   });
 
   it('will not accept an empty reason', () => {
-    type PermitAny = BannedTypePermitter<'any', ''>;
+    type Expected = never;
+    type Actual = BannedTypePermitter<'any', ''>;
+    type Result = IsExact<Actual, Expected>;
 
-    assertType<IsExact<PermitAny, never>>(true);
+    assertType<Result>(true);
   });
 
   it('permits the any type with a reason', () => {
-    type PermittedAny = BannedTypePermitter<'any', 'Testing'>;
+    type Expected = any;
+    type Actual = BannedTypePermitter<'any', 'Testing'>;
+    type Result = IsExact<Actual, Expected>;
 
-    assertType<IsExact<PermittedAny, any>>(true);
+    assertType<Result>(true);
   });
 
   it('permits the Function type with a reason', () => {
-    type PermittedFunction = BannedTypePermitter<'Function', 'Testing'>;
+    type Expected = Function;
+    type Actual = BannedTypePermitter<'Function', 'Testing'>;
+    type Result = IsExact<Actual, Expected>;
 
-    assertType<IsExact<PermittedFunction, Function>>(true);
+    assertType<Result>(true);
   });
 
   it('permits the Boolean type with a reason', () => {
-    type PermittedBoolean = BannedTypePermitter<'Boolean', 'Testing'>;
+    type Expected = Boolean;
+    type Actual = BannedTypePermitter<'Boolean', 'Testing'>;
+    type Result = IsExact<Actual, Expected>;
 
-    assertType<IsExact<PermittedBoolean, Boolean>>(true);
+    assertType<Result>(true);
   });
 
   it('permits the Number type with a reason', () => {
-    type PermittedNumber = BannedTypePermitter<'Number', 'Testing'>;
+    type Expected = Number;
+    type Actual = BannedTypePermitter<'Number', 'Testing'>;
+    type Result = IsExact<Actual, Expected>;
 
-    assertType<IsExact<PermittedNumber, Number>>(true);
+    assertType<Result>(true);
   });
 
   it('permits the String type with a reason', () => {
-    type PermittedString = BannedTypePermitter<'String', 'Testing'>;
+    type Expected = String;
+    type Actual = BannedTypePermitter<'String', 'Testing'>;
+    type Result = IsExact<Actual, Expected>;
 
-    assertType<IsExact<PermittedString, String>>(true);
+    assertType<Result>(true);
   });
 
   it('permits the Symbol type with a reason', () => {
-    type PermittedSymbol = BannedTypePermitter<'Symbol', 'Testing'>;
+    type Expected = Symbol;
+    type Actual = BannedTypePermitter<'Symbol', 'Testing'>;
+    type Result = IsExact<Actual, Expected>;
 
-    assertType<IsExact<PermittedSymbol, Symbol>>(true);
+    assertType<Result>(true);
   });
 
   it('permits the Object type with a reason', () => {
-    type PermittedObject = BannedTypePermitter<'Object', 'Testing'>;
+    type Expected = Object;
+    type Actual = BannedTypePermitter<'Object', 'Testing'>;
+    type Result = IsExact<Actual, Expected>;
 
-    assertType<IsExact<PermittedObject, Object>>(true);
+    assertType<Result>(true);
   });
 
   it('permits the `{}` (any non-nullish) type with a reason', () => {
-    type PermittedObjectType = BannedTypePermitter<'{}', 'Testing'>;
+    type Expected = {};
+    type Actual = BannedTypePermitter<'{}', 'Testing'>;
+    type Result = IsExact<Actual, Expected>;
 
-    assertType<IsExact<PermittedObjectType, {}>>(true);
+    assertType<Result>(true);
   });
 });

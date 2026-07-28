@@ -1,5 +1,3 @@
-// Copyright 2020 - present integereleven. All rights reserved. MIT license.
-
 // deno-lint-ignore-file ban-types no-explicit-any
 
 /**

@@ -1,185 +1,976 @@
-// Copyright 2020 - present integereleven. All rights reserved. MIT license.
-
-// deno-lint-ignore-file no-boolean-literal-for-arguments
-
 import { describe, it } from '@std/testing/bdd';
 import { assertType, type IsExact } from '@std/testing/types';
-
 import type {
-  AsFilter,
-  AsInverted,
-  DefaultOf,
-  Else,
-  Then,
+  $AsInverted,
+  $AsMajority,
+  $AsUnsafe,
+  $ConditionOf,
+  $Else,
+  $Then,
 } from '@kz/util/capability';
 import type { Not } from '@kz/util/logic';
 
-describe('Logic - Not', () => {
-  describe('with defaults', () => {
-    it('should return false', () => {
-      type Actual = Not<true>;
-      type Expected = false;
+const IS_TRUE = true;
 
-      assertType<IsExact<Actual, Expected>>(true);
-    });
+describe('Not', () => {
+  describe('$AsCondition (default/implied)', () => {
+    describe('$AsInitial (default/implied)', () => {
+      describe('$AsSafe (default/implied)', () => {
+        describe('$AsRunoff (default/implied)', () => {
+          it('should return false for true', () => {
+            type Expected = false;
+            type Actual = Not<true>;
+            type Result = IsExact<Expected, Actual>;
 
-    it('should return true', () => {
-      type Actual = Not<false>;
-      type Expected = true;
+            assertType<Result>(IS_TRUE);
+          });
 
-      assertType<IsExact<Actual, Expected>>(true);
-    });
-  });
+          it('should return true for false', () => {
+            type Expected = true;
+            type Actual = Not<false>;
+            type Result = IsExact<Expected, Actual>;
 
-  describe('with Then option', () => {
-    it('should return the Then type', () => {
-      type Actual = Not<false, Then<string>>;
-      type Expected = string;
+            assertType<Result>(IS_TRUE);
+          });
 
-      assertType<IsExact<Actual, Expected>>(true);
-    });
-  });
+          it('should return boolean for boolean', () => {
+            type Expected = boolean;
+            type Actual = Not<boolean>;
+            type Result = IsExact<Expected, Actual>;
 
-  describe('with Else option', () => {
-    it('should return the Else type', () => {
-      type Actual = Not<true, Else<number>>;
-      type Expected = number;
-
-      assertType<IsExact<Actual, Expected>>(true);
-    });
-  });
-
-  describe('with both Then and Else options', () => {
-    it('should return the Else type', () => {
-      type Actual = Not<true, Then<string> & Else<number>>;
-      type Expected = number;
-
-      assertType<IsExact<Actual, Expected>>(true);
-    });
-
-    it('should return the Then type', () => {
-      type Actual = Not<false, Then<string> & Else<number>>;
-      type Expected = string;
-
-      assertType<IsExact<Actual, Expected>>(true);
-    });
-  });
-
-  describe('AsFilter', () => {
-    describe('Defaults', () => {
-      it('should return never', () => {
-        type Actual = Not<true, AsFilter>;
-        type Expected = never;
-
-        assertType<IsExact<Actual, Expected>>(true);
-      });
-
-      it('should return true', () => {
-        type Actual = Not<false, AsFilter>;
-        type Expected = true;
-
-        assertType<IsExact<Actual, Expected>>(true);
-      });
-    });
-
-    describe('custom DefaultOf', () => {
-      it('should return never', () => {
-        type Actual = Not<true, AsFilter & DefaultOf<string>>;
-        type Expected = never;
-
-        assertType<IsExact<Actual, Expected>>(true);
-      });
-
-      it('should return the DefaultOf type', () => {
-        type Actual = Not<false, AsFilter & DefaultOf<string>>;
-        type Expected = string;
-
-        assertType<IsExact<Actual, Expected>>(true);
-      });
-    });
-  });
-
-  describe('with AsInverted', () => {
-    describe('with defaults', () => {
-      it('should return true', () => {
-        type Actual = Not<true, AsInverted>;
-        type Expected = true;
-
-        assertType<IsExact<Actual, Expected>>(true);
-      });
-
-      it('should return false', () => {
-        type Actual = Not<false, AsInverted>;
-        type Expected = false;
-
-        assertType<IsExact<Actual, Expected>>(true);
-      });
-    });
-
-    describe('with Then option', () => {
-      it('should return false', () => {
-        type Actual = Not<false, Then<string> & AsInverted>;
-        type Expected = false;
-
-        assertType<IsExact<Actual, Expected>>(true);
-      });
-    });
-
-    describe('with Else option', () => {
-      it('should return true', () => {
-        type Actual = Not<true, Else<number> & AsInverted>;
-        type Expected = true;
-
-        assertType<IsExact<Actual, Expected>>(true);
-      });
-    });
-
-    describe('with both Then and Else options', () => {
-      it('should return the Then type', () => {
-        type Actual = Not<true, Then<string> & Else<number> & AsInverted>;
-        type Expected = string;
-
-        assertType<IsExact<Actual, Expected>>(true);
-      });
-
-      it('should return the else type', () => {
-        type Actual = Not<false, Then<string> & Else<number> & AsInverted>;
-        type Expected = number;
-
-        assertType<IsExact<Actual, Expected>>(true);
-      });
-    });
-
-    describe('AsFilter', () => {
-      describe('Defaults', () => {
-        it('should return true', () => {
-          type Actual = Not<true, AsFilter & AsInverted>;
-          type Expected = true;
-
-          assertType<IsExact<Actual, Expected>>(true);
+            assertType<Result>(IS_TRUE);
+          });
         });
 
-        it('should return never', () => {
-          type Actual = Not<false, AsFilter & AsInverted>;
-          type Expected = never;
+        describe('$AsMajority', () => {
+          type Settings = $AsMajority;
 
-          assertType<IsExact<Actual, Expected>>(true);
+          it('should return false for true', () => {
+            type Expected = false;
+            type Actual = Not<true, Settings>;
+            type Result = IsExact<Expected, Actual>;
+
+            assertType<Result>(IS_TRUE);
+          });
+
+          it('should return true for false', () => {
+            type Expected = true;
+            type Actual = Not<false, Settings>;
+            type Result = IsExact<Expected, Actual>;
+
+            assertType<Result>(IS_TRUE);
+          });
+
+          it('should return boolean for boolean', () => {
+            type Expected = boolean;
+            type Actual = Not<boolean, Settings>;
+            type Result = IsExact<Expected, Actual>;
+
+            assertType<Result>(IS_TRUE);
+          });
         });
       });
 
-      describe('custom DefaultOf', () => {
-        it('should return the DefaultOf type', () => {
-          type Actual = Not<true, AsFilter & DefaultOf<string> & AsInverted>;
-          type Expected = string;
+      describe('$AsUnsafe', () => {
+        describe('$AsRunoff (default/implied)', () => {
+          type Settings = $AsUnsafe;
 
-          assertType<IsExact<Actual, Expected>>(true);
+          it('should return false for true', () => {
+            type Expected = false;
+            type Actual = Not<true, Settings>;
+            type Result = IsExact<Expected, Actual>;
+
+            assertType<Result>(IS_TRUE);
+          });
+
+          it('should return true for false', () => {
+            type Expected = true;
+            type Actual = Not<false, Settings>;
+            type Result = IsExact<Expected, Actual>;
+
+            assertType<Result>(IS_TRUE);
+          });
+
+          it('should return false for boolean', () => {
+            type Expected = false;
+            type Actual = Not<boolean, Settings>;
+            type Result = IsExact<Expected, Actual>;
+
+            assertType<Result>(IS_TRUE);
+          });
         });
 
-        it('should return never', () => {
-          type Actual = Not<false, AsFilter & DefaultOf<string> & AsInverted>;
-          type Expected = never;
+        describe('$AsMajority', () => {
+          type Settings = $AsMajority & $AsUnsafe;
 
-          assertType<IsExact<Actual, Expected>>(true);
+          it('should return false for true', () => {
+            type Expected = false;
+            type Actual = Not<true, Settings>;
+            type Result = IsExact<Expected, Actual>;
+
+            assertType<Result>(IS_TRUE);
+          });
+
+          it('should return true for false', () => {
+            type Expected = true;
+            type Actual = Not<false, Settings>;
+            type Result = IsExact<Expected, Actual>;
+
+            assertType<Result>(IS_TRUE);
+          });
+
+          it('should return false for boolean', () => {
+            type Expected = false;
+            type Actual = Not<boolean, Settings>;
+            type Result = IsExact<Expected, Actual>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+      });
+    });
+
+    describe('$AsInverted', () => {
+      describe('$AsSafe (default/implied)', () => {
+        describe('$AsRunoff (default/implied)', () => {
+          type Settings = $AsInverted;
+
+          it('should return true for true', () => {
+            type Expected = true;
+            type Actual = Not<true, Settings>;
+            type Result = IsExact<Expected, Actual>;
+
+            assertType<Result>(IS_TRUE);
+          });
+
+          it('should return false for false', () => {
+            type Expected = false;
+            type Actual = Not<false, Settings>;
+            type Result = IsExact<Expected, Actual>;
+
+            assertType<Result>(IS_TRUE);
+          });
+
+          it('should return boolean for boolean', () => {
+            type Expected = boolean;
+            type Actual = Not<boolean, Settings>;
+            type Result = IsExact<Expected, Actual>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('$AsMajority', () => {
+          type Settings = $AsMajority & $AsInverted;
+
+          it('should return true for true', () => {
+            type Expected = true;
+            type Actual = Not<true, Settings>;
+            type Result = IsExact<Expected, Actual>;
+
+            assertType<Result>(IS_TRUE);
+          });
+
+          it('should return false for false', () => {
+            type Expected = false;
+            type Actual = Not<false, Settings>;
+            type Result = IsExact<Expected, Actual>;
+
+            assertType<Result>(IS_TRUE);
+          });
+
+          it('should return boolean for boolean', () => {
+            type Expected = boolean;
+            type Actual = Not<boolean, Settings>;
+            type Result = IsExact<Expected, Actual>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+      });
+
+      describe('$AsUnsafe', () => {
+        describe('$AsRunoff (default/implied)', () => {
+          type Settings = $AsUnsafe & $AsInverted;
+
+          it('should return true for true', () => {
+            type Expected = true;
+            type Actual = Not<true, Settings>;
+            type Result = IsExact<Expected, Actual>;
+
+            assertType<Result>(IS_TRUE);
+          });
+
+          it('should return false for false', () => {
+            type Expected = false;
+            type Actual = Not<false, Settings>;
+            type Result = IsExact<Expected, Actual>;
+
+            assertType<Result>(IS_TRUE);
+          });
+
+          it('should return true for boolean', () => {
+            type Expected = true;
+            type Actual = Not<boolean, Settings>;
+            type Result = IsExact<Expected, Actual>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('$AsMajority', () => {
+          type Settings = $AsMajority & $AsUnsafe & $AsInverted;
+
+          it('should return true for true', () => {
+            type Expected = true;
+            type Actual = Not<true, Settings>;
+            type Result = IsExact<Expected, Actual>;
+
+            assertType<Result>(IS_TRUE);
+          });
+
+          it('should return false for false', () => {
+            type Expected = false;
+            type Actual = Not<false, Settings>;
+            type Result = IsExact<Expected, Actual>;
+
+            assertType<Result>(IS_TRUE);
+          });
+
+          it('should return true for boolean', () => {
+            type Expected = true;
+            type Actual = Not<boolean, Settings>;
+            type Result = IsExact<Expected, Actual>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+      });
+    });
+  });
+
+  describe('$Then<string>', () => {
+    describe('$AsInitial (default/implied)', () => {
+      describe('$AsSafe (default/implied)', () => {
+        describe('$AsRunoff (default/implied)', () => {
+          type Settings = $Then<string>;
+
+          it('should return false for true', () => {
+            type Expected = false;
+            type Actual = Not<true, Settings>;
+            type Result = IsExact<Expected, Actual>;
+
+            assertType<Result>(IS_TRUE);
+          });
+
+          it('should return string for false', () => {
+            type Expected = string;
+            type Actual = Not<false, Settings>;
+            type Result = IsExact<Expected, Actual>;
+
+            assertType<Result>(IS_TRUE);
+          });
+
+          it('should return string | false for boolean', () => {
+            type Expected = string | false;
+            type Actual = Not<boolean, Settings>;
+            type Result = IsExact<Expected, Actual>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('$AsMajority', () => {
+          type Settings = $AsMajority & $Then<string>;
+
+          it('should return false for true', () => {
+            type Expected = false;
+            type Actual = Not<true, Settings>;
+            type Result = IsExact<Expected, Actual>;
+
+            assertType<Result>(IS_TRUE);
+          });
+
+          it('should return string for false', () => {
+            type Expected = string;
+            type Actual = Not<false, Settings>;
+            type Result = IsExact<Expected, Actual>;
+
+            assertType<Result>(IS_TRUE);
+          });
+
+          it('should return string | false for boolean', () => {
+            type Expected = string | false;
+            type Actual = Not<boolean, Settings>;
+            type Result = IsExact<Expected, Actual>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+      });
+
+      describe('$AsUnsafe', () => {
+        describe('$AsRunoff (default/implied)', () => {
+          type Settings = $AsUnsafe & $Then<string>;
+
+          it('should return false for true', () => {
+            type Expected = false;
+            type Actual = Not<true, Settings>;
+            type Result = IsExact<Expected, Actual>;
+
+            assertType<Result>(IS_TRUE);
+          });
+
+          it('should return string for false', () => {
+            type Expected = string;
+            type Actual = Not<false, Settings>;
+            type Result = IsExact<Expected, Actual>;
+
+            assertType<Result>(IS_TRUE);
+          });
+
+          it('should return false for boolean', () => {
+            type Expected = false;
+            type Actual = Not<boolean, Settings>;
+            type Result = IsExact<Expected, Actual>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('$AsMajority', () => {
+          type Settings = $AsMajority & $AsUnsafe & $Then<string>;
+
+          it('should return false for true', () => {
+            type Expected = false;
+            type Actual = Not<true, Settings>;
+            type Result = IsExact<Expected, Actual>;
+
+            assertType<Result>(IS_TRUE);
+          });
+
+          it('should return string for false', () => {
+            type Expected = string;
+            type Actual = Not<false, Settings>;
+            type Result = IsExact<Expected, Actual>;
+
+            assertType<Result>(IS_TRUE);
+          });
+
+          it('should return false for boolean', () => {
+            type Expected = false;
+            type Actual = Not<boolean, Settings>;
+            type Result = IsExact<Expected, Actual>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+      });
+    });
+
+    describe('$AsInverted', () => {
+      describe('$AsSafe (default/implied)', () => {
+        describe('$AsRunoff (default/implied)', () => {
+          type Settings = $AsInverted & $Then<string>;
+
+          it('should return string for true', () => {
+            type Expected = string;
+            type Actual = Not<true, Settings>;
+            type Result = IsExact<Expected, Actual>;
+
+            assertType<Result>(IS_TRUE);
+          });
+
+          it('should return false for false', () => {
+            type Expected = false;
+            type Actual = Not<false, Settings>;
+            type Result = IsExact<Expected, Actual>;
+
+            assertType<Result>(IS_TRUE);
+          });
+
+          it('should return string | false for boolean', () => {
+            type Expected = string | false;
+            type Actual = Not<boolean, Settings>;
+            type Result = IsExact<Expected, Actual>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('$AsMajority', () => {
+          type Settings = $AsMajority & $AsInverted & $Then<string>;
+
+          it('should return string for true', () => {
+            type Expected = string;
+            type Actual = Not<true, Settings>;
+            type Result = IsExact<Expected, Actual>;
+
+            assertType<Result>(IS_TRUE);
+          });
+
+          it('should return false for false', () => {
+            type Expected = false;
+            type Actual = Not<false, Settings>;
+            type Result = IsExact<Expected, Actual>;
+
+            assertType<Result>(IS_TRUE);
+          });
+
+          it('should return string | false for boolean', () => {
+            type Expected = string | false;
+            type Actual = Not<boolean, Settings>;
+            type Result = IsExact<Expected, Actual>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+      });
+
+      describe('$AsUnsafe', () => {
+        describe('$AsRunoff (default/implied)', () => {
+          type Settings = $AsUnsafe & $AsInverted & $Then<string>;
+
+          it('should return string for true', () => {
+            type Expected = string;
+            type Actual = Not<true, Settings>;
+            type Result = IsExact<Expected, Actual>;
+
+            assertType<Result>(IS_TRUE);
+          });
+
+          it('should return false for false', () => {
+            type Expected = false;
+            type Actual = Not<false, Settings>;
+            type Result = IsExact<Expected, Actual>;
+
+            assertType<Result>(IS_TRUE);
+          });
+
+          it('should return string for boolean', () => {
+            type Expected = string;
+            type Actual = Not<boolean, Settings>;
+            type Result = IsExact<Expected, Actual>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('$AsMajority', () => {
+          type Settings = $AsMajority & $AsUnsafe & $AsInverted & $Then<string>;
+
+          it('should return string for true', () => {
+            type Expected = string;
+            type Actual = Not<true, Settings>;
+            type Result = IsExact<Expected, Actual>;
+
+            assertType<Result>(IS_TRUE);
+          });
+
+          it('should return false for false', () => {
+            type Expected = false;
+            type Actual = Not<false, Settings>;
+            type Result = IsExact<Expected, Actual>;
+
+            assertType<Result>(IS_TRUE);
+          });
+
+          it('should return string for boolean', () => {
+            type Expected = string;
+            type Actual = Not<boolean, Settings>;
+            type Result = IsExact<Expected, Actual>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+      });
+    });
+  });
+
+  describe('$Else<number>', () => {
+    describe('$AsInitial (default/implied)', () => {
+      describe('$AsSafe (default/implied)', () => {
+        describe('$AsRunoff (default/implied)', () => {
+          type Settings = $Else<number>;
+
+          it('should return number for true', () => {
+            type Expected = number;
+            type Actual = Not<true, Settings>;
+            type Result = IsExact<Expected, Actual>;
+
+            assertType<Result>(IS_TRUE);
+          });
+
+          it('should return true for false', () => {
+            type Expected = true;
+            type Actual = Not<false, Settings>;
+            type Result = IsExact<Expected, Actual>;
+
+            assertType<Result>(IS_TRUE);
+          });
+
+          it('should return number | true for boolean', () => {
+            type Expected = number | true;
+            type Actual = Not<boolean, Settings>;
+            type Result = IsExact<Expected, Actual>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('$AsMajority', () => {
+          type Settings = $AsMajority & $Else<number>;
+
+          it('should return number for true', () => {
+            type Expected = number;
+            type Actual = Not<true, Settings>;
+            type Result = IsExact<Expected, Actual>;
+
+            assertType<Result>(IS_TRUE);
+          });
+
+          it('should return true for false', () => {
+            type Expected = true;
+            type Actual = Not<false, Settings>;
+            type Result = IsExact<Expected, Actual>;
+
+            assertType<Result>(IS_TRUE);
+          });
+
+          it('should return number | true for boolean', () => {
+            type Expected = number | true;
+            type Actual = Not<boolean, Settings>;
+            type Result = IsExact<Expected, Actual>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+      });
+
+      describe('$AsUnsafe', () => {
+        describe('$AsRunoff (default/implied)', () => {
+          type Settings = $AsUnsafe & $Else<number>;
+
+          it('should return number for true', () => {
+            type Expected = number;
+            type Actual = Not<true, Settings>;
+            type Result = IsExact<Expected, Actual>;
+
+            assertType<Result>(IS_TRUE);
+          });
+
+          it('should return true for false', () => {
+            type Expected = true;
+            type Actual = Not<false, Settings>;
+            type Result = IsExact<Expected, Actual>;
+
+            assertType<Result>(IS_TRUE);
+          });
+
+          it('should return number for boolean', () => {
+            type Expected = number;
+            type Actual = Not<boolean, Settings>;
+            type Result = IsExact<Expected, Actual>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('$AsMajority', () => {
+          type Settings = $AsMajority & $AsUnsafe & $Else<number>;
+
+          it('should return number for true', () => {
+            type Expected = number;
+            type Actual = Not<true, Settings>;
+            type Result = IsExact<Expected, Actual>;
+
+            assertType<Result>(IS_TRUE);
+          });
+
+          it('should return true for false', () => {
+            type Expected = true;
+            type Actual = Not<false, Settings>;
+            type Result = IsExact<Expected, Actual>;
+
+            assertType<Result>(IS_TRUE);
+          });
+
+          it('should return number for boolean', () => {
+            type Expected = number;
+            type Actual = Not<boolean, Settings>;
+            type Result = IsExact<Expected, Actual>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+      });
+    });
+
+    describe('$AsInverted', () => {
+      describe('$AsSafe (default/implied)', () => {
+        describe('$AsRunoff (default/implied)', () => {
+          type Settings = $AsInverted & $Else<number>;
+
+          it('should return true for true', () => {
+            type Expected = true;
+            type Actual = Not<true, Settings>;
+            type Result = IsExact<Expected, Actual>;
+
+            assertType<Result>(IS_TRUE);
+          });
+
+          it('should return number for false', () => {
+            type Expected = number;
+            type Actual = Not<false, Settings>;
+            type Result = IsExact<Expected, Actual>;
+
+            assertType<Result>(IS_TRUE);
+          });
+
+          it('should return number | true for boolean', () => {
+            type Expected = number | true;
+            type Actual = Not<boolean, Settings>;
+            type Result = IsExact<Expected, Actual>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('$AsMajority', () => {
+          type Settings = $AsMajority & $AsInverted & $Else<number>;
+
+          it('should return true for true', () => {
+            type Expected = true;
+            type Actual = Not<true, Settings>;
+            type Result = IsExact<Expected, Actual>;
+
+            assertType<Result>(IS_TRUE);
+          });
+
+          it('should return number for false', () => {
+            type Expected = number;
+            type Actual = Not<false, Settings>;
+            type Result = IsExact<Expected, Actual>;
+
+            assertType<Result>(IS_TRUE);
+          });
+
+          it('should return number | true for boolean', () => {
+            type Expected = number | true;
+            type Actual = Not<boolean, Settings>;
+            type Result = IsExact<Expected, Actual>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+      });
+
+      describe('$AsUnsafe', () => {
+        describe('$AsRunoff (default/implied)', () => {
+          type Settings = $AsUnsafe & $AsInverted & $Else<number>;
+
+          it('should return true for true', () => {
+            type Expected = true;
+            type Actual = Not<true, Settings>;
+            type Result = IsExact<Expected, Actual>;
+
+            assertType<Result>(IS_TRUE);
+          });
+
+          it('should return number for false', () => {
+            type Expected = number;
+            type Actual = Not<false, Settings>;
+            type Result = IsExact<Expected, Actual>;
+
+            assertType<Result>(IS_TRUE);
+          });
+
+          it('should return true for boolean', () => {
+            type Expected = true;
+            type Actual = Not<boolean, Settings>;
+            type Result = IsExact<Expected, Actual>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('$AsMajority', () => {
+          type Settings = $AsMajority & $AsUnsafe & $AsInverted & $Else<number>;
+
+          it('should return true for true', () => {
+            type Expected = true;
+            type Actual = Not<true, Settings>;
+            type Result = IsExact<Expected, Actual>;
+
+            assertType<Result>(IS_TRUE);
+          });
+
+          it('should return number for false', () => {
+            type Expected = number;
+            type Actual = Not<false, Settings>;
+            type Result = IsExact<Expected, Actual>;
+
+            assertType<Result>(IS_TRUE);
+          });
+
+          it('should return true for boolean', () => {
+            type Expected = true;
+            type Actual = Not<boolean, Settings>;
+            type Result = IsExact<Expected, Actual>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+      });
+    });
+  });
+
+  describe('$ConditionOf<string, number>', () => {
+    describe('$AsInitial (default/implied)', () => {
+      describe('$AsSafe (default/implied)', () => {
+        describe('$AsRunoff (default/implied)', () => {
+          type Settings = $ConditionOf<string, number>;
+
+          it('should return number for true', () => {
+            type Expected = number;
+            type Actual = Not<true, Settings>;
+            type Result = IsExact<Expected, Actual>;
+
+            assertType<Result>(IS_TRUE);
+          });
+
+          it('should return string for false', () => {
+            type Expected = string;
+            type Actual = Not<false, Settings>;
+            type Result = IsExact<Expected, Actual>;
+
+            assertType<Result>(IS_TRUE);
+          });
+
+          it('should return string | number for boolean', () => {
+            type Expected = string | number;
+            type Actual = Not<boolean, Settings>;
+            type Result = IsExact<Expected, Actual>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('$AsMajority', () => {
+          type Settings = $AsMajority & $ConditionOf<string, number>;
+
+          it('should return number for true', () => {
+            type Expected = number;
+            type Actual = Not<true, Settings>;
+            type Result = IsExact<Expected, Actual>;
+
+            assertType<Result>(IS_TRUE);
+          });
+
+          it('should return string for false', () => {
+            type Expected = string;
+            type Actual = Not<false, Settings>;
+            type Result = IsExact<Expected, Actual>;
+
+            assertType<Result>(IS_TRUE);
+          });
+
+          it('should return string | number for boolean', () => {
+            type Expected = string | number;
+            type Actual = Not<boolean, Settings>;
+            type Result = IsExact<Expected, Actual>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+      });
+
+      describe('$AsUnsafe', () => {
+        describe('$AsRunoff (default/implied)', () => {
+          type Settings = $AsUnsafe & $ConditionOf<string, number>;
+
+          it('should return number for true', () => {
+            type Expected = number;
+            type Actual = Not<true, Settings>;
+            type Result = IsExact<Expected, Actual>;
+
+            assertType<Result>(IS_TRUE);
+          });
+
+          it('should return string for false', () => {
+            type Expected = string;
+            type Actual = Not<false, Settings>;
+            type Result = IsExact<Expected, Actual>;
+
+            assertType<Result>(IS_TRUE);
+          });
+
+          it('should return number for boolean', () => {
+            type Expected = number;
+            type Actual = Not<boolean, Settings>;
+            type Result = IsExact<Expected, Actual>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('$AsMajority', () => {
+          type Settings =
+            & $AsMajority
+            & $AsUnsafe
+            & $ConditionOf<string, number>;
+
+          it('should return number for true', () => {
+            type Expected = number;
+            type Actual = Not<true, Settings>;
+            type Result = IsExact<Expected, Actual>;
+
+            assertType<Result>(IS_TRUE);
+          });
+
+          it('should return string for false', () => {
+            type Expected = string;
+            type Actual = Not<false, Settings>;
+            type Result = IsExact<Expected, Actual>;
+
+            assertType<Result>(IS_TRUE);
+          });
+
+          it('should return number for boolean', () => {
+            type Expected = number;
+            type Actual = Not<boolean, Settings>;
+            type Result = IsExact<Expected, Actual>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+      });
+    });
+
+    describe('$AsInverted', () => {
+      describe('$AsSafe (default/implied)', () => {
+        describe('$AsRunoff (default/implied)', () => {
+          type Settings = $AsInverted & $ConditionOf<string, number>;
+
+          it('should return string for true', () => {
+            type Expected = string;
+            type Actual = Not<true, Settings>;
+            type Result = IsExact<Expected, Actual>;
+
+            assertType<Result>(IS_TRUE);
+          });
+
+          it('should return number for false', () => {
+            type Expected = number;
+            type Actual = Not<false, Settings>;
+            type Result = IsExact<Expected, Actual>;
+
+            assertType<Result>(IS_TRUE);
+          });
+
+          it('should return string | number for boolean', () => {
+            type Expected = string | number;
+            type Actual = Not<boolean, Settings>;
+            type Result = IsExact<Expected, Actual>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('$AsMajority', () => {
+          type Settings =
+            & $AsMajority
+            & $AsInverted
+            & $ConditionOf<string, number>;
+
+          it('should return string for true', () => {
+            type Expected = string;
+            type Actual = Not<true, Settings>;
+            type Result = IsExact<Expected, Actual>;
+
+            assertType<Result>(IS_TRUE);
+          });
+
+          it('should return number for false', () => {
+            type Expected = number;
+            type Actual = Not<false, Settings>;
+            type Result = IsExact<Expected, Actual>;
+
+            assertType<Result>(IS_TRUE);
+          });
+
+          it('should return string | number for boolean', () => {
+            type Expected = string | number;
+            type Actual = Not<boolean, Settings>;
+            type Result = IsExact<Expected, Actual>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+      });
+
+      describe('$AsUnsafe', () => {
+        describe('$AsRunoff (default/implied)', () => {
+          type Settings =
+            & $AsUnsafe
+            & $AsInverted
+            & $ConditionOf<string, number>;
+
+          it('should return string for true', () => {
+            type Expected = string;
+            type Actual = Not<true, Settings>;
+            type Result = IsExact<Expected, Actual>;
+
+            assertType<Result>(IS_TRUE);
+          });
+
+          it('should return number for false', () => {
+            type Expected = number;
+            type Actual = Not<false, Settings>;
+            type Result = IsExact<Expected, Actual>;
+
+            assertType<Result>(IS_TRUE);
+          });
+
+          it('should return string for boolean', () => {
+            type Expected = string;
+            type Actual = Not<boolean, Settings>;
+            type Result = IsExact<Expected, Actual>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('$AsMajority', () => {
+          type Settings =
+            & $AsMajority
+            & $AsUnsafe
+            & $AsInverted
+            & $ConditionOf<string, number>;
+
+          it('should return string for true', () => {
+            type Expected = string;
+            type Actual = Not<true, Settings>;
+            type Result = IsExact<Expected, Actual>;
+
+            assertType<Result>(IS_TRUE);
+          });
+
+          it('should return number for false', () => {
+            type Expected = number;
+            type Actual = Not<false, Settings>;
+            type Result = IsExact<Expected, Actual>;
+
+            assertType<Result>(IS_TRUE);
+          });
+
+          it('should return string for boolean', () => {
+            type Expected = string;
+            type Actual = Not<boolean, Settings>;
+            type Result = IsExact<Expected, Actual>;
+
+            assertType<Result>(IS_TRUE);
+          });
         });
       });
     });

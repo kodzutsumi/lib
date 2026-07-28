@@ -3,10 +3,9 @@
 import type {
   AsCondition,
   AsExclude,
-  Of,
   UseExclusion,
 } from '@kz/util/capability';
-import type { If, LogicCapabilities, LogicDefaultSettings, PickLogicCapabilities } from '@kz/util/logic';
+import type { If, LogicCapabilities, PickLogicCapabilities } from '@kz/util/logic';
 
 import type {
   CheckType,
@@ -14,7 +13,6 @@ import type {
   StandardCapabilities,
   StandardDefaultSettings,
 } from './_internal/check_type/mod.ts';
-import type { TypeException } from './type_exception.ts';
 
 export type IsTypeCapabilities =
   | StandardCapabilities
@@ -43,13 +41,9 @@ export type IsTypeDefaultSettings = AsCondition & StandardDefaultSettings;
  */
 export type IsType<
   TargetType,
+  OfType,
   Settings extends IsTypeCapabilities = IsTypeDefaultSettings,
-> = Settings extends Of<infer OfType>
-  ? If<
+> = If<
     CheckType<TargetType, OfType, PickStandardCapabilities<Settings>>,
     PickLogicCapabilities<Settings>
-  >
-  : TypeException<
-    StandardCapabilities,
-    '0x1'
   >;

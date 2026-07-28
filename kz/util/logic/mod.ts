@@ -1,9 +1,8 @@
 // Copyright 2020 - present integereleven. All rights reserved. MIT license.
 
-export * from './type/mod.ts';
-
 /**
  * # Logic
  *
  * @module
  */
+export * from './type/mod.ts';
