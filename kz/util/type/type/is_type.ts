@@ -1,11 +1,10 @@
 // Copyright 2020 - present integereleven. All rights reserved. MIT license.
 
+import type { $AsCondition, AsExclude, UseExclusion } from '@kz/util/capability';
 import type {
-  AsCondition,
-  AsExclude,
-  UseExclusion,
-} from '@kz/util/capability';
-import type { If, LogicCapabilities, PickLogicCapabilities } from '@kz/util/logic';
+  If,
+  LogicCapabilities,
+} from '@kz/util/logic';
 
 import type {
   CheckType,
@@ -17,7 +16,7 @@ import type {
 export type IsTypeCapabilities =
   | StandardCapabilities
   | LogicCapabilities;
-export type IsTypeDefaultSettings = AsCondition & StandardDefaultSettings;
+export type IsTypeDefaultSettings = $AsCondition & StandardDefaultSettings;
 
 /**
  * Determines if `Type` matches `TargetType` based on the specified `Settings`.
@@ -29,7 +28,7 @@ export type IsTypeDefaultSettings = AsCondition & StandardDefaultSettings;
  * - If `AsUnsafe` is included, it casts the result to `true` if the check not `false`.
  * - If `AsUnified` is included, it performs a non-distributive check.
  * - If `AsDistributed` is included, it distributes the check over unions in both `TargetType` and `Type`.
- * - If `AsCondition` is included, it returns a conditional type instead of a boolean.
+ * - If `$AsCondition` is included, it returns a conditional type instead of a boolean.
  * - If `UseStream` is included, it returns a stream of results for each member of a union.
  * - If `UseInversion` is included, it inverts the result of the check.
  * - If `UseDefault` is included, it allows specifying a default type to return when the check fails.
@@ -44,6 +43,6 @@ export type IsType<
   OfType,
   Settings extends IsTypeCapabilities = IsTypeDefaultSettings,
 > = If<
-    CheckType<TargetType, OfType, PickStandardCapabilities<Settings>>,
-    PickLogicCapabilities<Settings>
-  >;
+  CheckType<TargetType, OfType, PickStandardCapabilities<Settings>>,
+  Settings
+>;

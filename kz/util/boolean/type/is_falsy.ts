@@ -1,12 +1,12 @@
 // Copyright 2020 - present integereleven. All rights reserved. MIT license.
 
-import type { ConditionOf, Else, Then } from '@kz/util/capability';
+import type { $AsCondition, $UseCondition } from '@kz/util/capability';
 import type { Extends } from '@kz/util/type';
 
 import type { Falsy } from './falsy.ts';
 
-type FalsyOptions = Then | Else;
-type FalsyDefaults = ConditionOf<true, false>;
+type FalsyOptions = $UseCondition;
+type FalsyDefaults = $AsCondition;
 
 /**
  * Checks if `Type` is a {@linkcode Falsy} value.

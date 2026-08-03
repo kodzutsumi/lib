@@ -11,35 +11,35 @@ import type { LogicDefaults } from './logic_defaults.ts';
  * import { assertType, type IsExact } from '@std/testing/types';
  * import type { And } from '@kz/util/logic';
  * import type { $ConditionOf } from '@kz/util/capability';
- * 
+ *
  * type Model = {
  *   id?: string;
  *   [key: string]: unknown;
  * };
- * 
+ *
  * type Metadata = {
  *   createdAt: Date;
  *   updatedAt: Date;
  *   deletedAt?: Date;
  * };
- * 
+ *
  * type BusObj = {
  *   id: string;
  *   createdAt: Date;
  *   updatedAt: Date;
  * };
- * 
+ *
  * type AsBusinessObject<Type> = And<
  *   Type extends Model ? true : false,
  *   Type extends Metadata ? true : false,
  *   $ConditionOf<Type, never>
  * >;
- * 
+ *
  * type Result = AsBusinessObject<BusObj>;
- * 
+ *
  * assertType<IsExact<Result, BusObj>>(true);
  * ```
- * 
+ *
  * @template OperandA - The first boolean operand.
  * @template OperandB - The second boolean operand.
  * @template Settings - The logic capabilities settings.

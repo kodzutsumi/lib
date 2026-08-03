@@ -1,4 +1,4 @@
-import type { AsStrict, AsUnified, DefaultOf } from '@kz/util/capability';
+import type { $AsStrict, $AsUnified, $DefaultOf } from '@kz/util/capability';
 
 import type { StandardCapabilities, StandardDefaultSettings } from './types.ts';
 
@@ -15,20 +15,20 @@ export type UpdateValue<
   TargetType,
   OfType,
   Settings extends StandardCapabilities = StandardDefaultSettings,
-> = Settings extends DefaultOf<infer DefaultType>
-  ? Settings extends AsStrict
+> = Settings extends $DefaultOf<infer DefaultType>
+  ? Settings extends $AsStrict
     ? OfType extends TargetType
-      ? Settings extends AsUnified ? Exclude<OfType, TargetType> & DefaultType
+      ? Settings extends $AsUnified ? Exclude<OfType, TargetType> & DefaultType
       : Exclude<OfType, TargetType> | DefaultType
-    : Settings extends AsUnified ? Exclude<OfType, TargetType> & DefaultType
+    : Settings extends $AsUnified ? Exclude<OfType, TargetType> & DefaultType
     : Exclude<OfType, TargetType> | DefaultType
-  : Settings extends AsUnified ? Exclude<OfType, TargetType> & DefaultType
+  : Settings extends $AsUnified ? Exclude<OfType, TargetType> & DefaultType
   : Exclude<OfType, TargetType> | DefaultType
-  : Settings extends AsStrict
+  : Settings extends $AsStrict
     ? OfType extends TargetType
-      ? Settings extends AsUnified ? Exclude<OfType, TargetType> & TargetType
+      ? Settings extends $AsUnified ? Exclude<OfType, TargetType> & TargetType
       : Exclude<OfType, TargetType> | TargetType
-    : Settings extends AsUnified ? Exclude<OfType, TargetType> & TargetType
+    : Settings extends $AsUnified ? Exclude<OfType, TargetType> & TargetType
     : Exclude<OfType, TargetType> | TargetType
-  : Settings extends AsUnified ? Exclude<OfType, TargetType> & TargetType
+  : Settings extends $AsUnified ? Exclude<OfType, TargetType> & TargetType
   : Exclude<OfType, TargetType> | TargetType;

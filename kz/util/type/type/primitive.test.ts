@@ -10,27 +10,27 @@ describe('Primitive', () => {
   it('should contain string', () => {
     assertType<Has<Primitive, string>>(true);
   });
-  
+
   it('should contain number', () => {
     assertType<Has<Primitive, number>>(true);
   });
-  
+
   it('should contain boolean', () => {
     assertType<Has<Primitive, boolean>>(true);
   });
-  
+
   it('should contain bigint', () => {
     assertType<Has<Primitive, bigint>>(true);
   });
-  
+
   it('should contain symbol', () => {
     assertType<Has<Primitive, symbol>>(true);
   });
-  
+
   it('should contain null', () => {
     assertType<Has<Primitive, null>>(true);
   });
-  
+
   it('should contain undefined', () => {
     assertType<Has<Primitive, undefined>>(true);
   });

@@ -10,7 +10,7 @@ describe('Scalar', () => {
   it('should contain string', () => {
     assertType<Has<Scalar, string>>(true);
   });
-  
+
   it('should contain number', () => {
     assertType<Has<Scalar, number>>(true);
   });

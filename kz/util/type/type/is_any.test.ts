@@ -3,7 +3,7 @@
 // deno-lint-ignore-file no-boolean-literal-for-arguments
 import { describe, it } from '@std/testing/bdd';
 import { assertType, type IsExact } from '@std/testing/types';
-import type { IsAny, Any } from '@kz/util/type';
+import type { Any, IsAny } from '@kz/util/type';
 
 type AnyType = Any<'#i11n:testing'>;
 
@@ -25,14 +25,14 @@ describe('IsAny', () => {
 
         assertType<IsExact<Actual, Expected>>(true);
       });
-      
+
       it('should return false for never', () => {
         type Actual = IsAny<never>;
         type Expected = false;
 
         assertType<IsExact<Actual, Expected>>(true);
       });
-      
+
       it('should return false for void', () => {
         type Actual = IsAny<void>;
         type Expected = false;

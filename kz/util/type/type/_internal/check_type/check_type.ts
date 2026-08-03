@@ -1,5 +1,5 @@
-import type { ApplySafety } from './apply_safety.ts';
-import type { HandleTypeCheck } from './handle_type_check.ts';
+import type { _ApplySafety } from './_apply_safety.ts';
+import type { _HandleTypeCheck } from './_handle_type_check.ts';
 import type { StandardCapabilities, StandardDefaultSettings } from './types.ts';
 
 /**
@@ -25,4 +25,4 @@ export type CheckType<
   TargetType,
   OfType,
   Settings extends StandardCapabilities = StandardDefaultSettings,
-> = ApplySafety<HandleTypeCheck<TargetType, OfType, Settings>, Settings>;
+> = _ApplySafety<_HandleTypeCheck<TargetType, OfType, Settings>, Settings>;

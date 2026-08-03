@@ -1,6 +1,10 @@
 // Copyright 2020 - present integereleven. All rights reserved. MIT license.
 
-export type { IsType, IsTypeCapabilities, IsTypeDefaultSettings } from './is_type.ts';
+export type {
+  IsType,
+  IsTypeCapabilities,
+  IsTypeDefaultSettings,
+} from './is_type.ts';
 export type { Any } from './any.ts';
 export type { Builtin } from './builtin.ts';
 export type { Clean } from './clean.ts';

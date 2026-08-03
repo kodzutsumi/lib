@@ -1,8 +1,8 @@
 // Copyright 2020 - present integereleven. All rights reserved. MIT license.
 
 import type {
+  $UseCondition,
   DefaultOf,
-  UseCondition,
   UseDefault,
   UseNullOption,
   UseStream,

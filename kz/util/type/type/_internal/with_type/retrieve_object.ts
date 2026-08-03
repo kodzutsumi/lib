@@ -1,4 +1,4 @@
-import type { CollectionTarget } from '@kz/util/capability';
+import type { $CollectionTarget } from '@kz/util/capability';
 
 import type { StandardCapabilities, StandardDefaultSettings } from './types.ts';
 import type { RetrieveKey } from './retrieve_key.ts';
@@ -8,7 +8,7 @@ import type { RetrieveKey } from './retrieve_key.ts';
  *
  * @template TargetType - The type to check against.
  * @template OfType - The type from which to retrieve the collection.
- * @template Target - The specific collection target being handled (e.g., 'idents', 'values', 'entries').
+ * @template Target - The specific collection target being handled (e.g., 'keys', 'values', 'entries').
  * @template Settings - A combination of capabilities that determine the behavior of the retrieval (default is `DefaultSettings`).
  * @returns The retrieved collection based on the specified settings and capabilities, or a type exception if the operation is invalid for the given types.
  * @internal
@@ -16,11 +16,11 @@ import type { RetrieveKey } from './retrieve_key.ts';
 export type RetrieveObject<
   TargetType,
   OfType,
-  Target extends CollectionTarget,
+  Target extends $CollectionTarget,
   Settings extends StandardCapabilities = StandardDefaultSettings,
-> = Target extends 'idents' ? {
+> = Target extends 'keys' ? {
     [K in keyof OfType]: RetrieveKey<TargetType, OfType, K, Settings>;
   }[keyof OfType]
   : Target extends 'values'
-    ? OfType[RetrieveObject<TargetType, OfType, 'idents', Settings>]
-  : Pick<OfType, RetrieveObject<TargetType, OfType, 'idents', Settings>>;
+    ? OfType[RetrieveObject<TargetType, OfType, 'keys', Settings>]
+  : Pick<OfType, RetrieveObject<TargetType, OfType, 'keys', Settings>>;

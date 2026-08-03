@@ -1,4 +1,4 @@
-import type { AsExclude, AsLoose, AsUnified } from '@kz/util/capability';
+import type { $AsExcluded, $AsLoose, $AsUnified } from '@kz/util/capability';
 
 import type { StandardCapabilities, StandardDefaultSettings } from './types.ts';
 
@@ -17,20 +17,20 @@ export type RetrieveKey<
   OfType,
   Key extends keyof OfType,
   Settings extends StandardCapabilities = StandardDefaultSettings,
-> = Settings extends AsExclude
-  ? Settings extends AsUnified
-    ? Settings extends AsLoose ? [TargetType] extends [OfType[Key]] ? never
+> = Settings extends $AsExcluded
+  ? Settings extends $AsUnified
+    ? Settings extends $AsLoose ? [TargetType] extends [OfType[Key]] ? never
       : Key
     : [OfType[Key]] extends [TargetType] ? never
     : Key
   : OfType[Key] extends TargetType ? never
   : Key
-  : Settings extends AsUnified
-    ? Settings extends AsLoose ? [TargetType] extends [OfType[Key]] ? Key
+  : Settings extends $AsUnified
+    ? Settings extends $AsLoose ? [TargetType] extends [OfType[Key]] ? Key
       : never
     : [OfType[Key]] extends [TargetType] ? Key
     : never
-  : Settings extends AsLoose ? TargetType extends OfType[Key] ? Key
+  : Settings extends $AsLoose ? TargetType extends OfType[Key] ? Key
     : never
   : OfType[Key] extends TargetType ? Key
   : never;

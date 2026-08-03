@@ -1,4 +1,4 @@
-import type { AsExclude, AsUnified } from '@kz/util/capability';
+import type { $AsExcluded, $AsUnified } from '@kz/util/capability';
 
 import type { StandardCapabilities, StandardDefaultSettings } from './types.ts';
 
@@ -15,10 +15,10 @@ export type RetrieveValue<
   TargetType,
   OfType,
   Settings extends StandardCapabilities = StandardDefaultSettings,
-> = Settings extends AsUnified
+> = Settings extends $AsUnified
   ? [TargetType] extends [OfType]
-    ? Settings extends AsExclude ? Exclude<OfType, TargetType>
+    ? Settings extends $AsExcluded ? Exclude<OfType, TargetType>
     : Extract<OfType, TargetType>
   : OfType
-  : Settings extends AsExclude ? Exclude<OfType, TargetType>
+  : Settings extends $AsExcluded ? Exclude<OfType, TargetType>
   : Extract<OfType, TargetType>;
