@@ -21,12 +21,12 @@ export type _CheckOrdinary<
   Settings extends StandardCapabilities = StandardDefaultSettings,
 > = Settings extends $AsUnified
   ? Settings extends $AsReversed
-    ? ([Type] extends [TargetType] ? true : false) extends true ? true
+    ? ([TargetType] extends [Type] ? true : false) extends true ? true
     : false
-  : ([TargetType] extends [Type] ? true : false) extends true ? true
+  : ([Type] extends [TargetType] ? true : false) extends true ? true
   : false
   : Settings extends $AsReversed
-    ? (Type extends TargetType ? true : false) extends true ? true
+    ? (TargetType extends Type ? true : false) extends true ? true
     : false
-  : (TargetType extends Type ? true : false) extends true ? true
+  : (Type extends TargetType ? true : false) extends true ? true
   : false;

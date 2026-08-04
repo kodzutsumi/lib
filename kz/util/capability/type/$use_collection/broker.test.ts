@@ -11,7 +11,7 @@ const IS_TRUE = true;
 
 describe('$UseCollection - broker', () => {
   describe('$AsEntries (implied default)', () => {
-    it('should be the false (default) variant', () => {
+    it('should be the entries (default) variant', () => {
       type Expected = $UseCollection<'entries'>;
       type Actual = $AsEntries;
       type Result = IsExact<Actual, Expected>;
@@ -29,7 +29,7 @@ describe('$UseCollection - broker', () => {
   });
 
   describe('$AsKeys', () => {
-    it('should be the true variant', () => {
+    it('should be the keys variant', () => {
       type Expected = $UseCollection<'keys'>;
       type Actual = $AsKeys;
       type Result = IsExact<Actual, Expected>;
@@ -47,7 +47,7 @@ describe('$UseCollection - broker', () => {
   });
 
   describe('$AsValues', () => {
-    it('should be the true variant', () => {
+    it('should be the values variant', () => {
       type Expected = $UseCollection<'values'>;
       type Actual = $AsValues;
       type Result = IsExact<Actual, Expected>;

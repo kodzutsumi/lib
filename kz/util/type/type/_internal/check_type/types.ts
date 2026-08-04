@@ -1,10 +1,8 @@
 import type {
   $AsDistributed,
-  $UseStrict,
   $UseOf,
   $UseUnsafe,
   $UseUnified,
-  $AsLoose,
   $AsSafe,
   $UseReversed,
   $AsForward,
@@ -45,7 +43,3 @@ export type StandardDefaultSettings =
   & $AsForward
   & $AsSafe;
 
-export type PickStandardCapabilities<Settings> =
-  Extract<Settings, StandardCapabilities> extends never
-    ? StandardDefaultSettings
-    : Extract<Settings, StandardCapabilities>;

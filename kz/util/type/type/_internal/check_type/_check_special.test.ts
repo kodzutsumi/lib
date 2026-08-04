@@ -1,794 +1,2504 @@
 import { describe, it } from '@std/testing/bdd';
 import { assertType, type IsExact } from '@std/testing/types';
-import type { $AsReversed, $AsUnified } from '@kz/util/capability';
-
-import type { Any } from '../../any.ts';
+import type { Any, Nil } from '@kz/util/type';
+import type {
+  $AsDistributed,
+  $AsForward,
+  $AsReversed,
+  $AsUnified,
+} from '@kz/util/capability';
 
 import type { _CheckSpecial } from './_check_special.ts';
 
 type AnyType = Any<'i11n#testing'>;
+type ObjectType = {
+  firstName: string;
+  lastName: string;
+  office: number;
+};
 
 const IS_TRUE = true;
-//FIX(@ebntly) Fix the defaults and test results
+
 describe('_CheckSpecial', () => {
-  describe('unknown', () => {
-    type TypeToCheck = unknown;
+  describe('$AsForward (default/implied)', () => {
+    describe('$AsDistributed (default/implied)', () => {
+      type Settings = $AsForward & $AsDistributed;
 
-    describe('$AsForward (default)', () => {
-      describe('$AsDistributed (default)', () => {
-        it('should return true for any type', () => {
-          type Expected = true;
-          type Effect = TypeToCheck extends AnyType ? true : false;
-          type IsValid = IsExact<Effect, Expected>;
-          type Actual = _CheckSpecial<
-            TypeToCheck,
-            AnyType
-          >;
-          type Result = IsExact<Actual, Expected>;
+      describe('TargetType: any', () => {
+        type TargetType = AnyType;
 
-          assertType<IsValid>(IS_TRUE);
-          assertType<Result>(IS_TRUE);
+        describe('Type: any', () => {
+          type Type = AnyType;
+
+          it('should return true', () => {
+            type Expected = true;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
         });
 
-        it('should return false for never type', () => {
-          type Expected = false;
-          type Effect = TypeToCheck extends never ? true : false;
-          type IsValid = IsExact<Effect, Expected>;
-          type Actual = _CheckSpecial<
-            TypeToCheck,
-            never
-          >;
-          type Result = IsExact<Actual, Expected>;
+        describe('Type: unknown', () => {
+          type Type = unknown;
 
-          assertType<IsValid>(IS_TRUE);
-          assertType<Result>(IS_TRUE);
+          it('should return true', () => {
+            type Expected = true;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
         });
 
-        it('should return false for void type', () => {
-          type Expected = false;
-          type Effect = TypeToCheck extends void ? true : false;
-          type IsValid = IsExact<Effect, Expected>;
-          type Actual = _CheckSpecial<
-            TypeToCheck,
-            void
-          >;
-          type Result = IsExact<Actual, Expected>;
+        describe('Type: never', () => {
+          type Type = never;
 
-          assertType<IsValid>(IS_TRUE);
-          assertType<Result>(IS_TRUE);
+          it('should return true', () => {
+            type Expected = true;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
         });
 
-        it('should return true for unknown type', () => {
-          type Expected = true;
-          type Effect = TypeToCheck extends unknown ? true : false;
-          type IsValid = IsExact<Effect, Expected>;
-          type Actual = _CheckSpecial<
-            TypeToCheck,
-            unknown
-          >;
-          type Result = IsExact<Actual, Expected>;
+        describe('Type: void', () => {
+          type Type = void;
 
-          assertType<IsValid>(IS_TRUE);
-          assertType<Result>(IS_TRUE);
+          it('should return true', () => {
+            type Expected = true;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
         });
 
-        it('should return false for string type', () => {
-          type Expected = false;
-          type Effect = TypeToCheck extends string ? true : false;
-          type IsValid = IsExact<Effect, Expected>;
-          type Actual = _CheckSpecial<
-            TypeToCheck,
-            string
-          >;
-          type Result = IsExact<Actual, Expected>;
+        describe('Type: string', () => {
+          type Type = string;
 
-          assertType<IsValid>(IS_TRUE);
-          assertType<Result>(IS_TRUE);
+          it('should return true', () => {
+            type Expected = true;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('Type: Nil', () => {
+          type Type = Nil;
+
+          it('should return true', () => {
+            type Expected = true;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('Type: object', () => {
+          type Type = ObjectType;
+
+          it('should return true', () => {
+            type Expected = true;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
         });
       });
 
-      describe('$AsUnified', () => {
-        type Settings = $AsUnified;
+      describe('TargetType: unknown', () => {
+        type TargetType = unknown;
 
-        it('should return true for any type', () => {
-          type Expected = true;
-          type Effect = [TypeToCheck] extends [AnyType] ? true : false;
-          type IsValid = IsExact<Effect, Expected>;
-          type Actual = _CheckSpecial<TypeToCheck, AnyType, Settings>;
-          type Result = IsExact<Actual, Expected>;
+        describe('Type: any', () => {
+          type Type = AnyType;
 
-          assertType<IsValid>(IS_TRUE);
-          assertType<Result>(IS_TRUE);
+          it('should return true', () => {
+            type Expected = true;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
         });
 
-        it('should return false for never type', () => {
-          type Expected = false;
-          type Effect = [TypeToCheck] extends [never] ? true : false;
-          type IsValid = IsExact<Effect, Expected>;
-          type Actual = _CheckSpecial<TypeToCheck, never, Settings>;
-          type Result = IsExact<Actual, Expected>;
+        describe('Type: unknown', () => {
+          type Type = unknown;
 
-          assertType<IsValid>(IS_TRUE);
-          assertType<Result>(IS_TRUE);
+          it('should return true', () => {
+            type Expected = true;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
         });
 
-        it('should return false for void type', () => {
-          type Expected = false;
-          type Effect = [TypeToCheck] extends [void] ? true : false;
-          type IsValid = IsExact<Effect, Expected>;
-          type Actual = _CheckSpecial<TypeToCheck, void, Settings>;
-          type Result = IsExact<Actual, Expected>;
+        describe('Type: never', () => {
+          type Type = never;
 
-          assertType<IsValid>(IS_TRUE);
-          assertType<Result>(IS_TRUE);
+          it('should return true', () => {
+            type Expected = true;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
         });
 
-        it('should return true for unknown type', () => {
-          type Expected = true;
-          type Effect = [TypeToCheck] extends [unknown] ? true : false;
-          type IsValid = IsExact<Effect, Expected>;
-          type Actual = _CheckSpecial<TypeToCheck, unknown, Settings>;
-          type Result = IsExact<Actual, Expected>;
+        describe('Type: void', () => {
+          type Type = void;
 
-          assertType<IsValid>(IS_TRUE);
-          assertType<Result>(IS_TRUE);
+          it('should return true', () => {
+            type Expected = true;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
         });
 
-        it('should return false for string type', () => {
-          type Expected = false;
-          type Effect = [TypeToCheck] extends [string] ? true : false;
-          type IsValid = IsExact<Effect, Expected>;
-          type Actual = _CheckSpecial<TypeToCheck, string, Settings>;
-          type Result = IsExact<Actual, Expected>;
+        describe('Type: string', () => {
+          type Type = string;
 
-          assertType<IsValid>(IS_TRUE);
-          assertType<Result>(IS_TRUE);
+          it('should return true', () => {
+            type Expected = true;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('Type: Nil', () => {
+          type Type = Nil;
+
+          it('should return true', () => {
+            type Expected = true;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('Type: object', () => {
+          type Type = ObjectType;
+
+          it('should return true', () => {
+            type Expected = true;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+      });
+
+      describe('TargetType: never', () => {
+        type TargetType = never;
+
+        describe('Type: any', () => {
+          type Type = AnyType;
+
+          it('should return false', () => {
+            type Expected = false;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('Type: unknown', () => {
+          type Type = unknown;
+
+          it('should return false', () => {
+            type Expected = false;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('Type: never', () => {
+          type Type = never;
+
+          it('should return true', () => {
+            type Expected = true;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('Type: void', () => {
+          type Type = void;
+
+          it('should return false', () => {
+            type Expected = false;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('Type: string', () => {
+          type Type = string;
+
+          it('should return false', () => {
+            type Expected = false;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('Type: Nil', () => {
+          type Type = Nil;
+
+          it('should return false', () => {
+            type Expected = false;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('Type: object', () => {
+          type Type = ObjectType;
+
+          it('should return false', () => {
+            type Expected = false;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+      });
+
+      describe('TargetType: void', () => {
+        type TargetType = void;
+
+        describe('Type: any', () => {
+          type Type = AnyType;
+
+          it('should return false', () => {
+            type Expected = false;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('Type: unknown', () => {
+          type Type = unknown;
+
+          it('should return false', () => {
+            type Expected = false;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('Type: never', () => {
+          type Type = never;
+
+          it('should return true', () => {
+            type Expected = true;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('Type: void', () => {
+          type Type = void;
+
+          it('should return true', () => {
+            type Expected = true;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('Type: string', () => {
+          type Type = string;
+
+          it('should return false', () => {
+            type Expected = false;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('Type: Nil', () => {
+          type Type = Nil;
+
+          it('should return false', () => {
+            type Expected = false;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('Type: object', () => {
+          type Type = ObjectType;
+
+          it('should return false', () => {
+            type Expected = false;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+      });
+
+      describe('TargetType: string', () => {
+        type TargetType = string;
+
+        describe('Type: any', () => {
+          type Type = AnyType;
+
+          it('should return false', () => {
+            type Expected = false;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('Type: unknown', () => {
+          type Type = unknown;
+
+          it('should return false', () => {
+            type Expected = false;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('Type: never', () => {
+          type Type = never;
+
+          it('should return true', () => {
+            type Expected = true;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('Type: void', () => {
+          type Type = void;
+
+          it('should return false', () => {
+            type Expected = false;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('Type: string', () => {
+          type Type = string;
+
+          it('should return true', () => {
+            type Expected = true;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('Type: Nil', () => {
+          type Type = Nil;
+
+          it('should return false', () => {
+            type Expected = false;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('Type: object', () => {
+          type Type = ObjectType;
+
+          it('should return false', () => {
+            type Expected = false;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+      });
+
+      describe('TargetType: Nil', () => {
+        type TargetType = Nil;
+
+        describe('Type: any', () => {
+          type Type = AnyType;
+
+          it('should return false', () => {
+            type Expected = false;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('Type: unknown', () => {
+          type Type = unknown;
+
+          it('should return false', () => {
+            type Expected = false;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('Type: never', () => {
+          type Type = never;
+
+          it('should return true', () => {
+            type Expected = true;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('Type: void', () => {
+          type Type = void;
+
+          it('should return false', () => {
+            type Expected = false;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('Type: string', () => {
+          type Type = string;
+
+          it('should return false', () => {
+            type Expected = false;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('Type: Nil', () => {
+          type Type = Nil;
+
+          it('should return true', () => {
+            type Expected = true;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('Type: object', () => {
+          type Type = ObjectType;
+
+          it('should return false', () => {
+            type Expected = false;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+      });
+
+      describe('TargetType: object', () => {
+        type TargetType = ObjectType;
+
+        describe('Type: any', () => {
+          type Type = AnyType;
+
+          it('should return false', () => {
+            type Expected = false;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('Type: unknown', () => {
+          type Type = unknown;
+
+          it('should return false', () => {
+            type Expected = false;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('Type: never', () => {
+          type Type = never;
+
+          it('should return true', () => {
+            type Expected = true;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('Type: void', () => {
+          type Type = void;
+
+          it('should return false', () => {
+            type Expected = false;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('Type: string', () => {
+          type Type = string;
+
+          it('should return false', () => {
+            type Expected = false;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('Type: Nil', () => {
+          type Type = Nil;
+
+          it('should return false', () => {
+            type Expected = false;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('Type: object', () => {
+          type Type = ObjectType;
+
+          it('should return true', () => {
+            type Expected = true;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
         });
       });
     });
+    
+    describe('$AsUnified', () => {
+      type Settings = $AsForward & $AsUnified;
 
-    describe('$AsReversed', () => {
-      describe('$AsDistributed (default)', () => {
-        type Settings = $AsReversed;
+      describe('TargetType: any', () => {
+        type TargetType = AnyType;
 
-        it('should return true for any type', () => {
-          type Expected = true;
-          type Effect = TypeToCheck extends AnyType ? true : false;
-          type IsValid = IsExact<Effect, Expected>;
-          type Actual = _CheckSpecial<
-            TypeToCheck,
-            AnyType,
-            Settings
-          >;
-          type Result = IsExact<Actual, Expected>;
+        describe('Type: any', () => {
+          type Type = AnyType;
 
-          assertType<IsValid>(IS_TRUE);
-          assertType<Result>(IS_TRUE);
+          it('should return true', () => {
+            type Expected = true;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
         });
 
-        it('should return true for never type', () => {
-          type Expected = true;
-          type Effect = never extends TypeToCheck ? true : false;
-          type IsValid = IsExact<Effect, Expected>;
-          type Actual = _CheckSpecial<TypeToCheck, never, Settings>;
-          type Result = IsExact<Actual, Expected>;
+        describe('Type: unknown', () => {
+          type Type = unknown;
 
-          assertType<IsValid>(IS_TRUE);
-          assertType<Result>(IS_TRUE);
+          it('should return false', () => {
+            type Expected = false;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
         });
 
-        it('should return true for void type', () => {
-          type Expected = true;
-          type Effect = void extends TypeToCheck ? true : false;
-          type IsValid = IsExact<Effect, Expected>;
-          type Actual = _CheckSpecial<TypeToCheck, void, Settings>;
-          type Result = IsExact<Actual, Expected>;
+        describe('Type: never', () => {
+          type Type = never;
 
-          assertType<IsValid>(IS_TRUE);
-          assertType<Result>(IS_TRUE);
+          it('should return false', () => {
+            type Expected = false;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
         });
 
-        it('should return true for unknown type', () => {
-          type Expected = true;
-          type Effect = unknown extends TypeToCheck ? true : false;
-          type IsValid = IsExact<Effect, Expected>;
-          type Actual = _CheckSpecial<TypeToCheck, unknown, Settings>;
-          type Result = IsExact<Actual, Expected>;
+        describe('Type: void', () => {
+          type Type = void;
 
-          assertType<IsValid>(IS_TRUE);
-          assertType<Result>(IS_TRUE);
+          it('should return false', () => {
+            type Expected = false;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
         });
 
-        it('should return true for string type', () => {
-          type Expected = true;
-          type Effect = string extends TypeToCheck ? true : false;
-          type IsValid = IsExact<Effect, Expected>;
-          type Actual = _CheckSpecial<TypeToCheck, string, Settings>;
-          type Result = IsExact<Actual, Expected>;
+        describe('Type: string', () => {
+          type Type = string;
 
-          assertType<IsValid>(IS_TRUE);
-          assertType<Result>(IS_TRUE);
+          it('should return false', () => {
+            type Expected = false;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('Type: Nil', () => {
+          type Type = Nil;
+
+          it('should return false', () => {
+            type Expected = false;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('Type: object', () => {
+          type Type = ObjectType;
+
+          it('should return false', () => {
+            type Expected = false;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
         });
       });
 
-      describe('$AsUnified', () => {
-        type Settings = $AsReversed & $AsUnified;
+      describe('TargetType: unknown', () => {
+        type TargetType = unknown;
 
-        it('should return true for any type', () => {
-          type Expected = true;
-          type Effect = TypeToCheck extends AnyType ? true : false;
-          type IsValid = IsExact<Effect, Expected>;
-          type Actual = _CheckSpecial<TypeToCheck, AnyType, Settings>;
-          type Result = IsExact<Actual, Expected>;
+        describe('Type: any', () => {
+          type Type = AnyType;
 
-          assertType<IsValid>(IS_TRUE);
-          assertType<Result>(IS_TRUE);
+          it('should return true', () => {
+            type Expected = true;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
         });
 
-        it('should return true for never type', () => {
-          type Expected = true;
-          type Effect = never extends TypeToCheck ? true : false;
-          type IsValid = IsExact<Effect, Expected>;
-          type Actual = _CheckSpecial<TypeToCheck, never, Settings>;
-          type Result = IsExact<Actual, Expected>;
+        describe('Type: unknown', () => {
+          type Type = unknown;
 
-          assertType<IsValid>(IS_TRUE);
-          assertType<Result>(IS_TRUE);
+          it('should return true', () => {
+            type Expected = true;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
         });
 
-        it('should return true for void type', () => {
-          type Expected = true;
-          type Effect = void extends TypeToCheck ? true : false;
-          type IsValid = IsExact<Effect, Expected>;
-          type Actual = _CheckSpecial<TypeToCheck, void, Settings>;
-          type Result = IsExact<Actual, Expected>;
+        describe('Type: never', () => {
+          type Type = never;
 
-          assertType<IsValid>(IS_TRUE);
-          assertType<Result>(IS_TRUE);
+          it('should return false', () => {
+            type Expected = false;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
         });
 
-        it('should return true for unknown type', () => {
-          type Expected = true;
-          type Effect = unknown extends TypeToCheck ? true : false;
-          type IsValid = IsExact<Effect, Expected>;
-          type Actual = _CheckSpecial<TypeToCheck, unknown, Settings>;
-          type Result = IsExact<Actual, Expected>;
+        describe('Type: void', () => {
+          type Type = void;
 
-          assertType<IsValid>(IS_TRUE);
-          assertType<Result>(IS_TRUE);
+          it('should return false', () => {
+            type Expected = false;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
         });
 
-        it('should return true for string type', () => {
-          type Expected = true;
-          type Effect = string extends TypeToCheck ? true : false;
-          type IsValid = IsExact<Effect, Expected>;
-          type Actual = _CheckSpecial<TypeToCheck, string, Settings>;
-          type Result = IsExact<Actual, Expected>;
+        describe('Type: string', () => {
+          type Type = string;
 
-          assertType<IsValid>(IS_TRUE);
-          assertType<Result>(IS_TRUE);
+          it('should return true', () => {
+            type Expected = true;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('Type: Nil', () => {
+          type Type = Nil;
+
+          it('should return true', () => {
+            type Expected = true;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('Type: object', () => {
+          type Type = ObjectType;
+
+          it('should return true', () => {
+            type Expected = true;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+      });
+
+      describe('TargetType: never', () => {
+        type TargetType = never;
+
+        describe('Type: any', () => {
+          type Type = AnyType;
+
+          it('should return false', () => {
+            type Expected = false;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('Type: unknown', () => {
+          type Type = unknown;
+
+          it('should return false', () => {
+            type Expected = false;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('Type: never', () => {
+          type Type = never;
+
+          it('should return true', () => {
+            type Expected = true;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('Type: void', () => {
+          type Type = void;
+
+          it('should return false', () => {
+            type Expected = false;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('Type: string', () => {
+          type Type = string;
+
+          it('should return false', () => {
+            type Expected = false;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('Type: Nil', () => {
+          type Type = Nil;
+
+          it('should return false', () => {
+            type Expected = false;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('Type: object', () => {
+          type Type = ObjectType;
+
+          it('should return false', () => {
+            type Expected = false;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+      });
+
+      describe('TargetType: void', () => {
+        type TargetType = void;
+
+        describe('Type: any', () => {
+          type Type = AnyType;
+
+          it('should return true', () => {
+            type Expected = true;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('Type: unknown', () => {
+          type Type = unknown;
+
+          it('should return false', () => {
+            type Expected = false;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('Type: never', () => {
+          type Type = never;
+
+          it('should return false', () => {
+            type Expected = false;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('Type: void', () => {
+          type Type = void;
+
+          it('should return true', () => {
+            type Expected = true;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('Type: string', () => {
+          type Type = string;
+
+          it('should return false', () => {
+            type Expected = false;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('Type: Nil', () => {
+          type Type = Nil;
+
+          it('should return false', () => {
+            type Expected = false;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('Type: object', () => {
+          type Type = ObjectType;
+
+          it('should return false', () => {
+            type Expected = false;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+      });
+
+      describe('TargetType: string', () => {
+        type TargetType = string;
+
+        describe('Type: any', () => {
+          type Type = AnyType;
+
+          it('should return true', () => {
+            type Expected = true;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('Type: unknown', () => {
+          type Type = unknown;
+
+          it('should return false', () => {
+            type Expected = false;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('Type: never', () => {
+          type Type = never;
+
+          it('should return false', () => {
+            type Expected = false;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('Type: void', () => {
+          type Type = void;
+
+          it('should return false', () => {
+            type Expected = false;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('Type: string', () => {
+          type Type = string;
+
+          it('should return true', () => {
+            type Expected = true;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('Type: Nil', () => {
+          type Type = Nil;
+
+          it('should return false', () => {
+            type Expected = false;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('Type: object', () => {
+          type Type = ObjectType;
+
+          it('should return false', () => {
+            type Expected = false;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+      });
+
+      describe('TargetType: Nil', () => {
+        type TargetType = Nil;
+
+        describe('Type: any', () => {
+          type Type = AnyType;
+
+          it('should return true', () => {
+            type Expected = true;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('Type: unknown', () => {
+          type Type = unknown;
+
+          it('should return false', () => {
+            type Expected = false;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('Type: never', () => {
+          type Type = never;
+
+          it('should return false', () => {
+            type Expected = false;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('Type: void', () => {
+          type Type = void;
+
+          it('should return false', () => {
+            type Expected = false;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('Type: string', () => {
+          type Type = string;
+
+          it('should return false', () => {
+            type Expected = false;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('Type: Nil', () => {
+          type Type = Nil;
+
+          it('should return true', () => {
+            type Expected = true;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('Type: object', () => {
+          type Type = ObjectType;
+
+          it('should return false', () => {
+            type Expected = false;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+      });
+
+      describe('TargetType: object', () => {
+        type TargetType = ObjectType;
+
+        describe('Type: any', () => {
+          type Type = AnyType;
+
+          it('should return true', () => {
+            type Expected = true;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('Type: unknown', () => {
+          type Type = unknown;
+
+          it('should return false', () => {
+            type Expected = false;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('Type: never', () => {
+          type Type = never;
+
+          it('should return false', () => {
+            type Expected = false;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('Type: void', () => {
+          type Type = void;
+
+          it('should return false', () => {
+            type Expected = false;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('Type: string', () => {
+          type Type = string;
+
+          it('should return false', () => {
+            type Expected = false;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('Type: Nil', () => {
+          type Type = Nil;
+
+          it('should return false', () => {
+            type Expected = false;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('Type: object', () => {
+          type Type = ObjectType;
+
+          it('should return true', () => {
+            type Expected = true;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
         });
       });
     });
   });
+  
+  describe('$AsReversed', () => {
+    describe('$AsDistributed (default/implied)', () => {
+      type Settings = $AsReversed & $AsDistributed;
 
-  describe('never', () => {
-    type TypeToCheck = never;
+      describe('TargetType: any', () => {
+        type TargetType = AnyType;
 
-    describe('$AsForward (default)', () => {
-      describe('$AsDistributed (default)', () => {
-        it('should return true for any type', () => {
-          type Expected = true;
-          type Effect = TypeToCheck extends AnyType ? true : false;
-          type IsValid = IsExact<Effect, Expected>;
-          type Actual = _CheckSpecial<
-            TypeToCheck,
-            AnyType
-          >;
-          type Result = IsExact<Actual, Expected>;
+        describe('Type: any', () => {
+          type Type = AnyType;
 
-          assertType<IsValid>(IS_TRUE);
-          assertType<Result>(IS_TRUE);
+          it('should return true', () => {
+            type Expected = true;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
         });
 
-        it('should return true for never type', () => {
-          type Expected = true;
-          type Effect = TypeToCheck extends never ? true : false;
-          type IsValid = IsExact<Effect, Expected>;
-          type Actual = _CheckSpecial<
-            TypeToCheck,
-            never
-          >;
-          type Result = IsExact<Actual, Expected>;
+        describe('Type: unknown', () => {
+          type Type = unknown;
 
-          assertType<IsValid>(IS_TRUE);
-          assertType<Result>(IS_TRUE);
+          it('should return true', () => {
+            type Expected = true;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
         });
 
-        it('should return true for void type', () => {
-          type Expected = true;
-          type Effect = TypeToCheck extends void ? true : false;
-          type IsValid = IsExact<Effect, Expected>;
-          type Actual = _CheckSpecial<
-            TypeToCheck,
-            void
-          >;
-          type Result = IsExact<Actual, Expected>;
+        describe('Type: never', () => {
+          type Type = never;
 
-          assertType<IsValid>(IS_TRUE);
-          assertType<Result>(IS_TRUE);
+          it('should return true', () => {
+            type Expected = true;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
         });
 
-        it('should return true for unknown type', () => {
-          type Expected = true;
-          type Effect = TypeToCheck extends unknown ? true : false;
-          type IsValid = IsExact<Effect, Expected>;
-          type Actual = _CheckSpecial<
-            TypeToCheck,
-            unknown
-          >;
-          type Result = IsExact<Actual, Expected>;
+        describe('Type: void', () => {
+          type Type = void;
 
-          assertType<IsValid>(IS_TRUE);
-          assertType<Result>(IS_TRUE);
+          it('should return true', () => {
+            type Expected = true;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
         });
 
-        it('should return true for string type', () => {
-          type Expected = true;
-          type Effect = TypeToCheck extends string ? true : false;
-          type IsValid = IsExact<Effect, Expected>;
-          type Actual = _CheckSpecial<
-            TypeToCheck,
-            string
-          >;
-          type Result = IsExact<Actual, Expected>;
+        describe('Type: string', () => {
+          type Type = string;
 
-          assertType<IsValid>(IS_TRUE);
-          assertType<Result>(IS_TRUE);
+          it('should return true', () => {
+            type Expected = true;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('Type: Nil', () => {
+          type Type = Nil;
+
+          it('should return true', () => {
+            type Expected = true;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('Type: object', () => {
+          type Type = ObjectType;
+
+          it('should return true', () => {
+            type Expected = true;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
         });
       });
 
-      describe('$AsUnified', () => {
-        type Settings = $AsUnified;
+      describe('TargetType: unknown', () => {
+        type TargetType = unknown;
 
-        it('should return true for any type', () => {
-          type Expected = true;
-          type Effect = [TypeToCheck] extends [AnyType] ? true : false;
-          type IsValid = IsExact<Effect, Expected>;
-          type Actual = _CheckSpecial<TypeToCheck, AnyType, Settings>;
-          type Result = IsExact<Actual, Expected>;
+        describe('Type: any', () => {
+          type Type = AnyType;
 
-          assertType<IsValid>(IS_TRUE);
-          assertType<Result>(IS_TRUE);
+          it('should return true', () => {
+            type Expected = true;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
         });
 
-        it('should return true for never type', () => {
-          type Expected = true;
-          type Effect = [TypeToCheck] extends [never] ? true : false;
-          type IsValid = IsExact<Effect, Expected>;
-          type Actual = _CheckSpecial<TypeToCheck, never, Settings>;
-          type Result = IsExact<Actual, Expected>;
+        describe('Type: unknown', () => {
+          type Type = unknown;
 
-          assertType<IsValid>(IS_TRUE);
-          assertType<Result>(IS_TRUE);
+          it('should return true', () => {
+            type Expected = true;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
         });
 
-        it('should return true for void type', () => {
-          type Expected = true;
-          type Effect = [TypeToCheck] extends [void] ? true : false;
-          type IsValid = IsExact<Effect, Expected>;
-          type Actual = _CheckSpecial<TypeToCheck, void, Settings>;
-          type Result = IsExact<Actual, Expected>;
+        describe('Type: never', () => {
+          type Type = never;
 
-          assertType<IsValid>(IS_TRUE);
-          assertType<Result>(IS_TRUE);
+          it('should return false', () => {
+            type Expected = false;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
         });
 
-        it('should return true for unknown type', () => {
-          type Expected = true;
-          type Effect = [TypeToCheck] extends [unknown] ? true : false;
-          type IsValid = IsExact<Effect, Expected>;
-          type Actual = _CheckSpecial<TypeToCheck, unknown, Settings>;
-          type Result = IsExact<Actual, Expected>;
+        describe('Type: void', () => {
+          type Type = void;
 
-          assertType<IsValid>(IS_TRUE);
-          assertType<Result>(IS_TRUE);
+          it('should return false', () => {
+            type Expected = false;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
         });
 
-        it('should return true for string type', () => {
-          type Expected = true;
-          type Effect = [TypeToCheck] extends [string] ? true : false;
-          type IsValid = IsExact<Effect, Expected>;
-          type Actual = _CheckSpecial<TypeToCheck, string, Settings>;
-          type Result = IsExact<Actual, Expected>;
+        describe('Type: string', () => {
+          type Type = string;
 
-          assertType<IsValid>(IS_TRUE);
-          assertType<Result>(IS_TRUE);
+          it('should return false', () => {
+            type Expected = false;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('Type: Nil', () => {
+          type Type = Nil;
+
+          it('should return false', () => {
+            type Expected = false;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('Type: object', () => {
+          type Type = ObjectType;
+
+          it('should return false', () => {
+            type Expected = false;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+      });
+
+      describe('TargetType: never', () => {
+        type TargetType = never;
+
+        describe('Type: any', () => {
+          type Type = AnyType;
+
+          it('should return true', () => {
+            type Expected = true;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('Type: unknown', () => {
+          type Type = unknown;
+
+          it('should return true', () => {
+            type Expected = true;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('Type: never', () => {
+          type Type = never;
+
+          it('should return true', () => {
+            type Expected = true;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('Type: void', () => {
+          type Type = void;
+
+          it('should return true', () => {
+            type Expected = true;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('Type: string', () => {
+          type Type = string;
+
+          it('should return true', () => {
+            type Expected = true;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('Type: Nil', () => {
+          type Type = Nil;
+
+          it('should return true', () => {
+            type Expected = true;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('Type: object', () => {
+          type Type = ObjectType;
+
+          it('should return true', () => {
+            type Expected = true;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+      });
+
+      describe('TargetType: void', () => {
+        type TargetType = void;
+
+        describe('Type: any', () => {
+          type Type = AnyType;
+
+          it('should return true', () => {
+            type Expected = true;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('Type: unknown', () => {
+          type Type = unknown;
+
+          it('should return true', () => {
+            type Expected = true;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('Type: never', () => {
+          type Type = never;
+
+          it('should return false', () => {
+            type Expected = false;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('Type: void', () => {
+          type Type = void;
+
+          it('should return true', () => {
+            type Expected = true;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('Type: string', () => {
+          type Type = string;
+
+          it('should return false', () => {
+            type Expected = false;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('Type: Nil', () => {
+          type Type = Nil;
+
+          it('should return false', () => {
+            type Expected = false;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('Type: object', () => {
+          type Type = ObjectType;
+
+          it('should return false', () => {
+            type Expected = false;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+      });
+
+      describe('TargetType: string', () => {
+        type TargetType = string;
+
+        describe('Type: any', () => {
+          type Type = AnyType;
+
+          it('should return true', () => {
+            type Expected = true;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('Type: unknown', () => {
+          type Type = unknown;
+
+          it('should return true', () => {
+            type Expected = true;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('Type: never', () => {
+          type Type = never;
+
+          it('should return false', () => {
+            type Expected = false;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('Type: void', () => {
+          type Type = void;
+
+          it('should return false', () => {
+            type Expected = false;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('Type: string', () => {
+          type Type = string;
+
+          it('should return true', () => {
+            type Expected = true;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('Type: Nil', () => {
+          type Type = Nil;
+
+          it('should return false', () => {
+            type Expected = false;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('Type: object', () => {
+          type Type = ObjectType;
+
+          it('should return false', () => {
+            type Expected = false;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+      });
+
+      describe('TargetType: Nil', () => {
+        type TargetType = Nil;
+
+        describe('Type: any', () => {
+          type Type = AnyType;
+
+          it('should return true', () => {
+            type Expected = true;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('Type: unknown', () => {
+          type Type = unknown;
+
+          it('should return true', () => {
+            type Expected = true;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('Type: never', () => {
+          type Type = never;
+
+          it('should return false', () => {
+            type Expected = false;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('Type: void', () => {
+          type Type = void;
+
+          it('should return false', () => {
+            type Expected = false;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('Type: string', () => {
+          type Type = string;
+
+          it('should return false', () => {
+            type Expected = false;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('Type: Nil', () => {
+          type Type = Nil;
+
+          it('should return true', () => {
+            type Expected = true;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('Type: object', () => {
+          type Type = ObjectType;
+
+          it('should return false', () => {
+            type Expected = false;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+      });
+
+      describe('TargetType: object', () => {
+        type TargetType = ObjectType;
+
+        describe('Type: any', () => {
+          type Type = AnyType;
+
+          it('should return true', () => {
+            type Expected = true;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('Type: unknown', () => {
+          type Type = unknown;
+
+          it('should return true', () => {
+            type Expected = true;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('Type: never', () => {
+          type Type = never;
+
+          it('should return false', () => {
+            type Expected = false;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('Type: void', () => {
+          type Type = void;
+
+          it('should return false', () => {
+            type Expected = false;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('Type: string', () => {
+          type Type = string;
+
+          it('should return false', () => {
+            type Expected = false;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('Type: Nil', () => {
+          type Type = Nil;
+
+          it('should return false', () => {
+            type Expected = false;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('Type: object', () => {
+          type Type = ObjectType;
+
+          it('should return true', () => {
+            type Expected = true;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
         });
       });
     });
+    
+    describe('$AsUnified', () => {
+      type Settings = $AsReversed & $AsUnified;
 
-    describe('$AsReversed', () => {
-      describe('$AsDistributed (default)', () => {
-        type Settings = $AsReversed;
+      describe('TargetType: any', () => {
+        type TargetType = AnyType;
 
-        it('should return false for any type', () => {
-          type Expected = false;
-          type Effect = [AnyType] extends [TypeToCheck] ? true : false;
-          type IsValid = IsExact<Effect, Expected>;
-          type Actual = _CheckSpecial<
-            TypeToCheck,
-            AnyType,
-            Settings
-          >;
-          type Result = IsExact<Actual, Expected>;
+        describe('Type: any', () => {
+          type Type = AnyType;
 
-          assertType<IsValid>(IS_TRUE);
-          assertType<Result>(IS_TRUE);
+          it('should return true', () => {
+            type Expected = true;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
         });
 
-        it('should return true for never type', () => {
-          type Expected = true;
-          type Effect = [never] extends [TypeToCheck] ? true : false;
-          type IsValid = IsExact<Effect, Expected>;
-          type Actual = _CheckSpecial<TypeToCheck, never, Settings>;
-          type Result = IsExact<Actual, Expected>;
+        describe('Type: unknown', () => {
+          type Type = unknown;
 
-          assertType<IsValid>(IS_TRUE);
-          assertType<Result>(IS_TRUE);
+          it('should return false', () => {
+            type Expected = false;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
         });
 
-        it('should return false for void type', () => {
-          type Expected = false;
-          type Effect = [void] extends [TypeToCheck] ? true : false;
-          type IsValid = IsExact<Effect, Expected>;
-          type Actual = _CheckSpecial<TypeToCheck, void, Settings>;
-          type Result = IsExact<Actual, Expected>;
+        describe('Type: never', () => {
+          type Type = never;
 
-          assertType<IsValid>(IS_TRUE);
-          assertType<Result>(IS_TRUE);
+          it('should return false', () => {
+            type Expected = false;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
         });
 
-        it('should return false for unknown type', () => {
-          type Expected = false;
-          type Effect = [unknown] extends [TypeToCheck] ? true : false;
-          type IsValid = IsExact<Effect, Expected>;
-          type Actual = _CheckSpecial<TypeToCheck, unknown, Settings>;
-          type Result = IsExact<Actual, Expected>;
+        describe('Type: void', () => {
+          type Type = void;
 
-          assertType<IsValid>(IS_TRUE);
-          assertType<Result>(IS_TRUE);
+          it('should return false', () => {
+            type Expected = false;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
         });
 
-        it('should return false for string type', () => {
-          type Expected = false;
-          type Effect = [string] extends [TypeToCheck] ? true : false;
-          type IsValid = IsExact<Effect, Expected>;
-          type Actual = _CheckSpecial<TypeToCheck, string, Settings>;
-          type Result = IsExact<Actual, Expected>;
+        describe('Type: string', () => {
+          type Type = string;
 
-          assertType<IsValid>(IS_TRUE);
-          assertType<Result>(IS_TRUE);
-        });
-      });
+          it('should return false', () => {
+            type Expected = false;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
 
-      describe('$AsUnified', () => {
-        type Settings = $AsReversed & $AsUnified;
-
-        it('should return false for any type', () => {
-          type Expected = false;
-          type Effect = [AnyType] extends [TypeToCheck] ? true : false;
-          type IsValid = IsExact<Effect, Expected>;
-          type Actual = _CheckSpecial<TypeToCheck, AnyType, Settings>;
-          type Result = IsExact<Actual, Expected>;
-
-          assertType<IsValid>(IS_TRUE);
-          assertType<Result>(IS_TRUE);
+            assertType<Result>(IS_TRUE);
+          });
         });
 
-        it('should return true for never type', () => {
-          type Expected = true;
-          type Effect = [never] extends [TypeToCheck] ? true : false;
-          type IsValid = IsExact<Effect, Expected>;
-          type Actual = _CheckSpecial<TypeToCheck, never, Settings>;
-          type Result = IsExact<Actual, Expected>;
+        describe('Type: Nil', () => {
+          type Type = Nil;
 
-          assertType<IsValid>(IS_TRUE);
-          assertType<Result>(IS_TRUE);
+          it('should return false', () => {
+            type Expected = false;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
         });
 
-        it('should return false for void type', () => {
-          type Expected = false;
-          type Effect = [void] extends [TypeToCheck] ? true : false;
-          type IsValid = IsExact<Effect, Expected>;
-          type Actual = _CheckSpecial<TypeToCheck, void, Settings>;
-          type Result = IsExact<Actual, Expected>;
+        describe('Type: object', () => {
+          type Type = ObjectType;
 
-          assertType<IsValid>(IS_TRUE);
-          assertType<Result>(IS_TRUE);
-        });
+          it('should return false', () => {
+            type Expected = false;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
 
-        it('should return false for unknown type', () => {
-          type Expected = false;
-          type Effect = [unknown] extends [TypeToCheck] ? true : false;
-          type IsValid = IsExact<Effect, Expected>;
-          type Actual = _CheckSpecial<TypeToCheck, unknown, Settings>;
-          type Result = IsExact<Actual, Expected>;
-
-          assertType<IsValid>(IS_TRUE);
-          assertType<Result>(IS_TRUE);
-        });
-
-        it('should return false for string type', () => {
-          type Expected = false;
-          type Effect = [string] extends [TypeToCheck] ? true : false;
-          type IsValid = IsExact<Effect, Expected>;
-          type Actual = _CheckSpecial<TypeToCheck, string, Settings>;
-          type Result = IsExact<Actual, Expected>;
-
-          assertType<IsValid>(IS_TRUE);
-          assertType<Result>(IS_TRUE);
-        });
-      });
-    });
-  });
-
-  describe('void', () => {
-    type TypeToCheck = void;
-
-    describe('$AsForward (default)', () => {
-      describe('$AsDistributed (default)', () => {
-        it('should return true for any type', () => {
-          type Expected = true;
-          type Effect = TypeToCheck extends AnyType ? true : false;
-          type IsValid = IsExact<Effect, Expected>;
-          type Actual = _CheckSpecial<
-            TypeToCheck,
-            AnyType
-          >;
-          type Result = IsExact<Actual, Expected>;
-
-          assertType<IsValid>(IS_TRUE);
-          assertType<Result>(IS_TRUE);
-        });
-
-        it('should return false for never type', () => {
-          type Expected = false;
-          type Effect = TypeToCheck extends never ? true : false;
-          type IsValid = IsExact<Effect, Expected>;
-          type Actual = _CheckSpecial<
-            TypeToCheck,
-            never
-          >;
-          type Result = IsExact<Actual, Expected>;
-
-          assertType<IsValid>(IS_TRUE);
-          assertType<Result>(IS_TRUE);
-        });
-
-        it('should return true for void type', () => {
-          type Expected = true;
-          type Effect = TypeToCheck extends void ? true : false;
-          type IsValid = IsExact<Effect, Expected>;
-          type Actual = _CheckSpecial<
-            TypeToCheck,
-            void
-          >;
-          type Result = IsExact<Actual, Expected>;
-
-          assertType<IsValid>(IS_TRUE);
-          assertType<Result>(IS_TRUE);
-        });
-
-        it('should return true for unknown type', () => {
-          type Expected = true;
-          type Effect = TypeToCheck extends unknown ? true : false;
-          type IsValid = IsExact<Effect, Expected>;
-          type Actual = _CheckSpecial<
-            TypeToCheck,
-            unknown
-          >;
-          type Result = IsExact<Actual, Expected>;
-
-          assertType<IsValid>(IS_TRUE);
-          assertType<Result>(IS_TRUE);
-        });
-
-        it('should return false for string type', () => {
-          type Expected = false;
-          type Effect = TypeToCheck extends string ? true : false;
-          type IsValid = IsExact<Effect, Expected>;
-          type Actual = _CheckSpecial<
-            TypeToCheck,
-            string
-          >;
-          type Result = IsExact<Actual, Expected>;
-
-          assertType<IsValid>(IS_TRUE);
-          assertType<Result>(IS_TRUE);
+            assertType<Result>(IS_TRUE);
+          });
         });
       });
 
-      describe('$AsUnified', () => {
-        type Settings = $AsUnified;
+      describe('TargetType: unknown', () => {
+        type TargetType = unknown;
 
-        it('should return true for any type', () => {
-          type Expected = true;
-          type Effect = [TypeToCheck] extends [AnyType] ? true : false;
-          type IsValid = IsExact<Effect, Expected>;
-          type Actual = _CheckSpecial<TypeToCheck, AnyType, Settings>;
-          type Result = IsExact<Actual, Expected>;
+        describe('Type: any', () => {
+          type Type = AnyType;
 
-          assertType<IsValid>(IS_TRUE);
-          assertType<Result>(IS_TRUE);
+          it('should return true', () => {
+            type Expected = true;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
         });
 
-        it('should return false for never type', () => {
-          type Expected = false;
-          type Effect = [TypeToCheck] extends [never] ? true : false;
-          type IsValid = IsExact<Effect, Expected>;
-          type Actual = _CheckSpecial<TypeToCheck, never, Settings>;
-          type Result = IsExact<Actual, Expected>;
+        describe('Type: unknown', () => {
+          type Type = unknown;
 
-          assertType<IsValid>(IS_TRUE);
-          assertType<Result>(IS_TRUE);
+          it('should return true', () => {
+            type Expected = true;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
         });
 
-        it('should return true for void type', () => {
-          type Expected = true;
-          type Effect = [TypeToCheck] extends [void] ? true : false;
-          type IsValid = IsExact<Effect, Expected>;
-          type Actual = _CheckSpecial<TypeToCheck, void, Settings>;
-          type Result = IsExact<Actual, Expected>;
+        describe('Type: never', () => {
+          type Type = never;
 
-          assertType<IsValid>(IS_TRUE);
-          assertType<Result>(IS_TRUE);
+          it('should return false', () => {
+            type Expected = false;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
         });
 
-        it('should return true for unknown type', () => {
-          type Expected = true;
-          type Effect = [TypeToCheck] extends [unknown] ? true : false;
-          type IsValid = IsExact<Effect, Expected>;
-          type Actual = _CheckSpecial<TypeToCheck, unknown, Settings>;
-          type Result = IsExact<Actual, Expected>;
+        describe('Type: void', () => {
+          type Type = void;
 
-          assertType<IsValid>(IS_TRUE);
-          assertType<Result>(IS_TRUE);
+          it('should return false', () => {
+            type Expected = false;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
         });
 
-        it('should return false for string type', () => {
-          type Expected = false;
-          type Effect = [TypeToCheck] extends [string] ? true : false;
-          type IsValid = IsExact<Effect, Expected>;
-          type Actual = _CheckSpecial<TypeToCheck, string, Settings>;
-          type Result = IsExact<Actual, Expected>;
+        describe('Type: string', () => {
+          type Type = string;
 
-          assertType<IsValid>(IS_TRUE);
-          assertType<Result>(IS_TRUE);
-        });
-      });
-    });
+          it('should return false', () => {
+            type Expected = false;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
 
-    describe('$AsReversed', () => {
-      describe('$AsDistributed (default)', () => {
-        type Settings = $AsReversed;
-
-        it('should return false for any type', () => {
-          type Expected = false;
-          type Effect = [AnyType] extends TypeToCheck ? true : false;
-          type IsValid = IsExact<Effect, Expected>;
-          type Actual = _CheckSpecial<
-            TypeToCheck,
-            AnyType,
-            Settings
-          >;
-          type Result = IsExact<Actual, Expected>;
-
-          assertType<IsValid>(IS_TRUE); // Figure out difference between Effect and Result
-          assertType<Result>(IS_TRUE);
+            assertType<Result>(IS_TRUE);
+          });
         });
 
-        it('should return true for never type', () => {
-          type Expected = true;
-          type Effect = never extends TypeToCheck ? true : false;
-          type IsValid = IsExact<Effect, Expected>;
-          type Actual = _CheckSpecial<TypeToCheck, never, Settings>;
-          type Result = IsExact<Actual, Expected>;
+        describe('Type: Nil', () => {
+          type Type = Nil;
 
-          assertType<IsValid>(IS_TRUE);
-          assertType<Result>(IS_TRUE);
+          it('should return false', () => {
+            type Expected = false;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
         });
 
-        it('should return true for void type', () => {
-          type Expected = true;
-          type Effect = void extends TypeToCheck ? true : false;
-          type IsValid = IsExact<Effect, Expected>;
-          type Actual = _CheckSpecial<TypeToCheck, void, Settings>;
-          type Result = IsExact<Actual, Expected>;
+        describe('Type: object', () => {
+          type Type = ObjectType;
 
-          assertType<IsValid>(IS_TRUE);
-          assertType<Result>(IS_TRUE);
-        });
+          it('should return false', () => {
+            type Expected = false;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
 
-        it('should return false for unknown type', () => {
-          type Expected = false;
-          type Effect = unknown extends TypeToCheck ? true : false;
-          type IsValid = IsExact<Effect, Expected>;
-          type Actual = _CheckSpecial<TypeToCheck, unknown, Settings>;
-          type Result = IsExact<Actual, Expected>;
-
-          assertType<IsValid>(IS_TRUE);
-          assertType<Result>(IS_TRUE);
-        });
-
-        it('should return false for string type', () => {
-          type Expected = false;
-          type Effect = string extends TypeToCheck ? true : false;
-          type IsValid = IsExact<Effect, Expected>;
-          type Actual = _CheckSpecial<TypeToCheck, string, Settings>;
-          type Result = IsExact<Actual, Expected>;
-
-          assertType<IsValid>(IS_TRUE);
-          assertType<Result>(IS_TRUE);
+            assertType<Result>(IS_TRUE);
+          });
         });
       });
 
-      describe('$AsUnified', () => {
-        type Settings = $AsReversed & $AsUnified;
+      describe('TargetType: never', () => {
+        type TargetType = never;
 
-        it('should return true for any type', () => {
-          type Expected = true;
-          type Effect = [AnyType] extends [TypeToCheck] ? true : false;
-          type IsValid = IsExact<Effect, Expected>;
-          type Actual = _CheckSpecial<TypeToCheck, AnyType, Settings>;
-          type Result = IsExact<Actual, Expected>;
+        describe('Type: any', () => {
+          type Type = AnyType;
 
-          assertType<IsValid>(IS_TRUE);
-          assertType<Result>(IS_TRUE);
+          it('should return false', () => {
+            type Expected = false;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
         });
 
-        it('should return true for never type', () => {
-          type Expected = true;
-          type Effect = [never] extends [TypeToCheck] ? true : false;
-          type IsValid = IsExact<Effect, Expected>;
-          type Actual = _CheckSpecial<TypeToCheck, never, Settings>;
-          type Result = IsExact<Actual, Expected>;
+        describe('Type: unknown', () => {
+          type Type = unknown;
 
-          assertType<IsValid>(IS_TRUE);
-          assertType<Result>(IS_TRUE);
+          it('should return false', () => {
+            type Expected = false;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
         });
 
-        it('should return true for void type', () => {
-          type Expected = true;
-          type Effect = [void] extends [TypeToCheck] ? true : false;
-          type IsValid = IsExact<Effect, Expected>;
-          type Actual = _CheckSpecial<TypeToCheck, void, Settings>;
-          type Result = IsExact<Actual, Expected>;
+        describe('Type: never', () => {
+          type Type = never;
 
-          assertType<IsValid>(IS_TRUE);
-          assertType<Result>(IS_TRUE);
+          it('should return true', () => {
+            type Expected = true;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
         });
 
-        it('should return false for unknown type', () => {
-          type Expected = false;
-          type Effect = [unknown] extends [TypeToCheck] ? true : false;
-          type IsValid = IsExact<Effect, Expected>;
-          type Actual = _CheckSpecial<TypeToCheck, unknown, Settings>;
-          type Result = IsExact<Actual, Expected>;
+        describe('Type: void', () => {
+          type Type = void;
 
-          assertType<IsValid>(IS_TRUE);
-          assertType<Result>(IS_TRUE);
+          it('should return false', () => {
+            type Expected = false;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
         });
 
-        it('should return false for string type', () => {
-          type Expected = false;
-          type Effect = [string] extends [TypeToCheck] ? true : false;
-          type IsValid = IsExact<Effect, Expected>;
-          type Actual = _CheckSpecial<TypeToCheck, string, Settings>;
-          type Result = IsExact<Actual, Expected>;
+        describe('Type: string', () => {
+          type Type = string;
 
-          assertType<IsValid>(IS_TRUE);
-          assertType<Result>(IS_TRUE);
+          it('should return true', () => {
+            type Expected = true;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('Type: Nil', () => {
+          type Type = Nil;
+
+          it('should return true', () => {
+            type Expected = true;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('Type: object', () => {
+          type Type = ObjectType;
+
+          it('should return true', () => {
+            type Expected = true;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+      });
+
+      describe('TargetType: void', () => {
+        type TargetType = void;
+
+        describe('Type: any', () => {
+          type Type = AnyType;
+
+          it('should return true', () => {
+            type Expected = true;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('Type: unknown', () => {
+          type Type = unknown;
+
+          it('should return false', () => {
+            type Expected = false;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('Type: never', () => {
+          type Type = never;
+
+          it('should return false', () => {
+            type Expected = false;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('Type: void', () => {
+          type Type = void;
+
+          it('should return true', () => {
+            type Expected = true;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('Type: string', () => {
+          type Type = string;
+
+          it('should return false', () => {
+            type Expected = false;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('Type: Nil', () => {
+          type Type = Nil;
+
+          it('should return false', () => {
+            type Expected = false;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('Type: object', () => {
+          type Type = ObjectType;
+
+          it('should return false', () => {
+            type Expected = false;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+      });
+
+      describe('TargetType: string', () => {
+        type TargetType = string;
+
+        describe('Type: any', () => {
+          type Type = AnyType;
+
+          it('should return true', () => {
+            type Expected = true;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('Type: unknown', () => {
+          type Type = unknown;
+
+          it('should return false', () => {
+            type Expected = false;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('Type: never', () => {
+          type Type = never;
+
+          it('should return false', () => {
+            type Expected = false;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('Type: void', () => {
+          type Type = void;
+
+          it('should return false', () => {
+            type Expected = false;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('Type: string', () => {
+          type Type = string;
+
+          it('should return true', () => {
+            type Expected = true;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('Type: Nil', () => {
+          type Type = Nil;
+
+          it('should return false', () => {
+            type Expected = false;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('Type: object', () => {
+          type Type = ObjectType;
+
+          it('should return false', () => {
+            type Expected = false;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+      });
+
+      describe('TargetType: Nil', () => {
+        type TargetType = Nil;
+
+        describe('Type: any', () => {
+          type Type = AnyType;
+
+          it('should return true', () => {
+            type Expected = true;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('Type: unknown', () => {
+          type Type = unknown;
+
+          it('should return false', () => {
+            type Expected = false;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('Type: never', () => {
+          type Type = never;
+
+          it('should return false', () => {
+            type Expected = false;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('Type: void', () => {
+          type Type = void;
+
+          it('should return false', () => {
+            type Expected = false;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('Type: string', () => {
+          type Type = string;
+
+          it('should return false', () => {
+            type Expected = false;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('Type: Nil', () => {
+          type Type = Nil;
+
+          it('should return true', () => {
+            type Expected = true;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('Type: object', () => {
+          type Type = ObjectType;
+
+          it('should return false', () => {
+            type Expected = false;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+      });
+
+      describe('TargetType: object', () => {
+        type TargetType = ObjectType;
+
+        describe('Type: any', () => {
+          type Type = AnyType;
+
+          it('should return true', () => {
+            type Expected = true;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('Type: unknown', () => {
+          type Type = unknown;
+
+          it('should return false', () => {
+            type Expected = false;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('Type: never', () => {
+          type Type = never;
+
+          it('should return false', () => {
+            type Expected = false;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('Type: void', () => {
+          type Type = void;
+
+          it('should return false', () => {
+            type Expected = false;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('Type: string', () => {
+          type Type = string;
+
+          it('should return false', () => {
+            type Expected = false;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('Type: Nil', () => {
+          type Type = Nil;
+
+          it('should return false', () => {
+            type Expected = false;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
+        });
+
+        describe('Type: object', () => {
+          type Type = ObjectType;
+
+          it('should return true', () => {
+            type Expected = true;
+            type Actual = _CheckSpecial<TargetType, Type, Settings>;
+            type Result = IsExact<Actual, Expected>;
+
+            assertType<Result>(IS_TRUE);
+          });
         });
       });
     });

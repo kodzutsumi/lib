@@ -1,10 +1,7 @@
-import type { IsAny } from '../is_any.ts';
-import type { IsSpecial } from '../is_special.ts';
-
-import type { StandardCapabilities, StandardDefaultSettings } from './types.ts';
 import type { _CheckOrdinary } from './_check_ordinary.ts';
-import type { _CheckAny } from './_check_any.ts';
 import type { _CheckSpecial } from './_check_special.ts';
+import type { _IsSpecial } from './_is_special.ts';
+import type { StandardCapabilities, StandardDefaultSettings } from './types.ts';
 
 /**
  * Handles the core logic of the type check, including special handling for `any`, `never`, `void`, and `unknown` types, as well as applying the specified capabilities for strictness and distribution.
@@ -24,7 +21,6 @@ export type _HandleTypeCheck<
   TargetType,
   Type,
   Settings extends StandardCapabilities = StandardDefaultSettings,
-> = IsAny<TargetType> extends true ? _CheckAny<TargetType, Type, Settings>
-  : IsSpecial<TargetType> extends true
+> = _IsSpecial<TargetType> extends true
     ? _CheckSpecial<TargetType, Type, Settings>
   : _CheckOrdinary<TargetType, Type, Settings>;
