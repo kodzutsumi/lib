@@ -1,3 +1,5 @@
+// Copyright 2020 - present integereleven. All rights reserved. MIT license.
+
 import type { $AsUnsafe } from '@kz/util/capability';
 
 import type { StandardCapabilities } from './types.ts';

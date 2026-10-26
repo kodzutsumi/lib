@@ -1,3 +1,5 @@
+// Copyright 2020 - present integereleven. All rights reserved. MIT license.
+
 /**
  * The host URL for the i11n documentation site.
  *

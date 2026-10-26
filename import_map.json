@@ -6,6 +6,10 @@
     "@std/testing/bdd": "jsr:@std/testing@^1.0.13/bdd",
     "@std/testing/types": "jsr:@std/testing@^1.0.13/types",
 
+    "@kz/internal": "jsr:@kz/internal@^0.0.1",
+    "@kz/internal/constants": "jsr:@kz/internal@^0.0.1/constants",
+    "@kz/testing": "jsr:@kz/testing@^0.0.1",
+    "@kz/testing/suite": "jsr:@kz/testing@^0.0.1/suite",
     "@kz/core": "jsr:@kz/core@^0.0.1",
     "@kz/core/exception": "jsr:@kz/core@^0.0.1/exception",
     "@kz/core/type": "jsr:@kz/core@^0.0.1/type",

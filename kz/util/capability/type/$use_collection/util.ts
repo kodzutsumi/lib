@@ -1,3 +1,5 @@
+// Copyright 2020 - present integereleven. All rights reserved. MIT license.
+
 import type { $CollectionTarget, $UseCollection } from './consumer.ts';
 
 /**

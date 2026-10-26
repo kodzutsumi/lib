@@ -1,3 +1,5 @@
+// Copyright 2020 - present integereleven. All rights reserved. MIT license.
+
 import type { $AsSetter } from '@kz/util/capability';
 import type { StandardCapabilities, StandardDefaultSettings } from './types.ts';
 import type { RetrieveValue } from './retrieve_value.ts';

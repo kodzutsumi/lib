@@ -1,3 +1,5 @@
+// Copyright 2020 - present integereleven. All rights reserved. MIT license.
+
 import type { $UseElse } from '../$use_else/mod.ts';
 import type { $AsLoose, $AsStrict, $UseStrict } from '../$use_strict/mod.ts';
 import type { $UseThen } from '../$use_then/mod.ts';

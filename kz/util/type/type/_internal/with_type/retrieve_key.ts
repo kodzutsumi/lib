@@ -1,3 +1,5 @@
+// Copyright 2020 - present integereleven. All rights reserved. MIT license.
+
 import type { $AsExcluded, $AsLoose, $AsUnified } from '@kz/util/capability';
 
 import type { StandardCapabilities, StandardDefaultSettings } from './types.ts';

@@ -1,3 +1,5 @@
+// Copyright 2020 - present integereleven. All rights reserved. MIT license.
+
 /**
  * Determines the result type based on a boolean operand and specified "then" and "else" types.
  *

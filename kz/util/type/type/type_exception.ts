@@ -1,3 +1,5 @@
+// Copyright 2020 - present integereleven. All rights reserved. MIT license.
+
 import type { Brand } from '@kz/util/nominal';
 import type { KnownTypeExceptions } from './_internal/mod.ts';
 
@@ -14,7 +16,6 @@ export type TypeException<Type, Message extends string> = Message extends
     message: Message;
     url: `https://docs.i11n.io/ex2/ts/0x0?message=${Message}`;
   }, 'TypeException'>;
-// Copyright 2020 - present integereleven. All rights reserved. MIT license.
 
 /**
  * @internal

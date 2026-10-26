@@ -1,23 +1,25 @@
-import { describe, it } from '@std/testing/bdd';
-import { assertType, type IsExact } from '@std/testing/types';
-import type { $AsDistributed, $AsLoose, $AsUnsafe } from '@kz/util/capability';
+// Copyright 2020 - present integereleven. All rights reserved. MIT license.
 
-import type { Any } from '../../any.ts';
+// import { describe, it } from '@std/testing/bdd';
+// import { assertType, type IsExact } from '@std/testing/types';
+// import type { $AsDistributed, $AsLoose, $AsUnsafe } from '@kz/util/capability';
 
-import type { CheckType } from './check_type.ts';
+// import type { Any } from '../../any.ts';
 
-type AnyType = Any<'i11n#testing'>;
+// import type { CheckType } from './check_type.ts';
 
-const IS_TRUE = true;
+// type AnyType = Any<'i11n#testing'>;
 
-/**
- * Tests the safety result.
- */
-//TODO(@ebntly): Add tests for $AsSafe and $AsUnsafe
-describe('CheckType', () => {
-  describe('$AsSafe (default)', () => {
-    });
+// const IS_TRUE = true;
 
-  describe('$AsUnsafe', () => {
-  });
-});
+// /**
+//  * Tests the safety result.
+//  */
+// //TODO(@ebntly): Add tests for $AsSafe and $AsUnsafe
+// describe('CheckType', () => {
+//   describe('$AsSafe (default)', () => {
+//     });
+
+//   describe('$AsUnsafe', () => {
+//   });
+// });

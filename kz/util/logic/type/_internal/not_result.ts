@@ -1,3 +1,5 @@
+// Copyright 2020 - present integereleven. All rights reserved. MIT license.
+
 import type { ToBoolean } from '@kz/util/boolean';
 import type { $AsInverted } from '@kz/util/capability';
 

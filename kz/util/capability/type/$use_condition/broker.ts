@@ -1,3 +1,5 @@
+// Copyright 2020 - present integereleven. All rights reserved. MIT license.
+
 import type { $Else } from '../$use_else/mod.ts';
 import type { $Then } from '../$use_then/mod.ts';
 

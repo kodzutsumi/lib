@@ -1,3 +1,5 @@
+// Copyright 2020 - present integereleven. All rights reserved. MIT license.
+
 import type { $PickElse } from '../$use_else/mod.ts';
 import type { $PickThen } from '../$use_then/mod.ts';
 

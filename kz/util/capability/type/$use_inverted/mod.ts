@@ -1,3 +1,5 @@
+// Copyright 2020 - present integereleven. All rights reserved. MIT license.
+
 export type { $AsInitial, $AsInverted } from './broker.ts';
 export type { $UseInverted } from './consumer.ts';
 export { type $UseInvertedKey, $UseInvertedKeyString } from './constant.ts';

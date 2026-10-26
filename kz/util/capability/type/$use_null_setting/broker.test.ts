@@ -1,11 +1,10 @@
+// Copyright 2020 - present integereleven. All rights reserved. MIT license.
+
 import { describe, it } from '@std/testing/bdd';
 import { assertType, type Has, type IsExact } from '@std/testing/types';
-import type {
-  $AsForward,
-  $AsNullSetting,
-  $UseNullSetting,
-} from '@kz/util/capability';
-import { Permit } from '@kz/util/lint';
+
+import type { $AsNullSetting, $UseNullSetting } from '@kz/util/capability';
+import type { Permit } from '@kz/util/lint';
 
 const IS_TRUE = true;
 

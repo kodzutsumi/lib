@@ -1,3 +1,5 @@
+// Copyright 2020 - present integereleven. All rights reserved. MIT license.
+
 export type { AndResult } from './and_result.ts';
 export type { GetLogicResult } from './get_logic_result.ts';
 export type { NotResult } from './not_result.ts';

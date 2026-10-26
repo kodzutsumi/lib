@@ -1,3 +1,5 @@
+// Copyright 2020 - present integereleven. All rights reserved. MIT license.
+
 // // Copyright 2020 - present integereleven. All rights reserved. MIT license.
 
 // import type { ConditionOf, UseElse, UseThen } from '@kz/util/capability';

@@ -11,6 +11,5 @@ import type { $AsUnified, $UseUnified } from '@kz/util/capability';
  * @template Settings - A combination of capabilities that determine the behavior of the check (default is `DefaultSettings`).
  * @returns The modified settings with `$AsUnified` applied if `$UseUnified` is not present, or the original settings if it is present.
  */
-export type ApplyUnified<Settings> = Settings extends $UseUnified
-  ? Settings
+export type ApplyUnified<Settings> = Settings extends $UseUnified ? Settings
   : Settings & $AsUnified;

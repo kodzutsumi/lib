@@ -1,3 +1,5 @@
+// Copyright 2020 - present integereleven. All rights reserved. MIT license.
+
 import { describe, it } from '@std/testing/bdd';
 import { assertType, type IsExact } from '@std/testing/types';
 import type { Any, Nil } from '@kz/util/type';
@@ -24,20 +26,19 @@ describe('_IsAny', () => {
   describe('Type: unknown', () => {
     type Type = unknown;
 
-    it('should return false',() => {
+    it('should return false', () => {
       type Expected = false;
       type Actual = _IsAny<Type>;
       type Result = IsExact<Actual, Expected>;
 
       assertType<Result>(IS_TRUE);
-
     });
   });
 
   describe('Type: never', () => {
     type Type = never;
 
-    it('should return false',() => {
+    it('should return false', () => {
       type Expected = false;
       type Actual = _IsAny<Type>;
       type Result = IsExact<Actual, Expected>;
@@ -49,7 +50,7 @@ describe('_IsAny', () => {
   describe('Type: void', () => {
     type Type = void;
 
-    it('should return false',() => {
+    it('should return false', () => {
       type Expected = false;
       type Actual = _IsAny<Type>;
       type Result = IsExact<Actual, Expected>;
@@ -61,7 +62,7 @@ describe('_IsAny', () => {
   describe('Type: string', () => {
     type Type = string;
 
-    it('should return false',() => {
+    it('should return false', () => {
       type Expected = false;
       type Actual = _IsAny<Type>;
       type Result = IsExact<Actual, Expected>;
@@ -73,7 +74,7 @@ describe('_IsAny', () => {
   describe('Type: Nil', () => {
     type Type = Nil;
 
-    it('should return false',() => {
+    it('should return false', () => {
       type Expected = false;
       type Actual = _IsAny<Type>;
       type Result = IsExact<Actual, Expected>;
@@ -89,7 +90,7 @@ describe('_IsAny', () => {
       office: string;
     };
 
-    it('should return false',() => {
+    it('should return false', () => {
       type Expected = false;
       type Actual = _IsAny<Type>;
       type Result = IsExact<Actual, Expected>;
@@ -97,6 +98,4 @@ describe('_IsAny', () => {
       assertType<Result>(IS_TRUE);
     });
   });
-  
-
 });

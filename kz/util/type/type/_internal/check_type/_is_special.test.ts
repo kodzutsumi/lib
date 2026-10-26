@@ -1,3 +1,5 @@
+// Copyright 2020 - present integereleven. All rights reserved. MIT license.
+
 import { describe, it } from '@std/testing/bdd';
 import { assertType, type IsExact } from '@std/testing/types';
 import type { Any, Nil } from '@kz/util/type';
@@ -16,7 +18,7 @@ describe('_IsSpecial', () => {
       type Expected = true;
       type Actual = _IsSpecial<Type>;
       type Result = IsExact<Actual, Expected>;
-      
+
       assertType<Result>(IS_TRUE);
     });
   });
@@ -57,7 +59,7 @@ describe('_IsSpecial', () => {
     });
   });
 
-  describe('Type: string', () => {    
+  describe('Type: string', () => {
     type Type = string;
 
     it('should return false', () => {
@@ -69,7 +71,7 @@ describe('_IsSpecial', () => {
     });
   });
 
-  describe('Type: Nil', () => {    
+  describe('Type: Nil', () => {
     type Type = Nil;
 
     it('should return false', () => {
@@ -81,10 +83,10 @@ describe('_IsSpecial', () => {
     });
   });
 
-  describe('Type: Object', () => {    
+  describe('Type: Object', () => {
     type Type = {
       firstName: string;
-      lastName: string;      
+      lastName: string;
       office: string;
     };
 

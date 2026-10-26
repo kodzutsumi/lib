@@ -1,3 +1,5 @@
+// Copyright 2020 - present integereleven. All rights reserved. MIT license.
+
 import type { $UseInvertedKeyString } from './constant.ts';
 
 /**

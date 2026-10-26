@@ -1,3 +1,5 @@
+// Copyright 2020 - present integereleven. All rights reserved. MIT license.
+
 export type { $AsPredicate, $AsStream } from './broker.ts';
 export type { $UseStream } from './consumer.ts';
 export { type $UseStreamKey, $UseStreamKeyString } from './constant.ts';

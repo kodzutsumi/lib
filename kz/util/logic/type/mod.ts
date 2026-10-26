@@ -1,3 +1,5 @@
+// Copyright 2020 - present integereleven. All rights reserved. MIT license.
+
 export type { And } from './and.ts';
 export type { If } from './if.ts';
 export type { Not } from './not.ts';

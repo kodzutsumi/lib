@@ -1,3 +1,5 @@
+// Copyright 2020 - present integereleven. All rights reserved. MIT license.
+
 import type { $AsSetter, $CollectionTarget } from '@kz/util/capability';
 import type { StandardCapabilities, StandardDefaultSettings } from './types.ts';
 import type { UpdateCollection } from './update_collection.ts';

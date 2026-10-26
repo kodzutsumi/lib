@@ -1,3 +1,5 @@
+// Copyright 2020 - present integereleven. All rights reserved. MIT license.
+
 import type { _ToBoolString } from './_to_bool_string.ts';
 
 /**

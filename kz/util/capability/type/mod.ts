@@ -1,3 +1,5 @@
+// Copyright 2020 - present integereleven. All rights reserved. MIT license.
+
 export * from './$use_collection/mod.ts';
 export * from './$use_condition/mod.ts';
 export * from './$use_default/mod.ts';

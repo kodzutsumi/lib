@@ -1,11 +1,13 @@
+// Copyright 2020 - present integereleven. All rights reserved. MIT license.
+
 import type {
   $AsNullSetting,
-  $UseSetter,
   $UseCollection,
   $UseDefault,
   $UseExcluded,
   $UseNullSetting,
   $UseOf,
+  $UseSetter,
   $UseStrict,
   $UseUnified,
 } from '@kz/util/capability';

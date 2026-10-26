@@ -1,3 +1,5 @@
+// Copyright 2020 - present integereleven. All rights reserved. MIT license.
+
 import type { GetLogicResult } from './_internal/mod.ts';
 
 import type { LogicCapabilities } from './logic_capabilities.ts';

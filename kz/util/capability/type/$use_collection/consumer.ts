@@ -1,3 +1,5 @@
+// Copyright 2020 - present integereleven. All rights reserved. MIT license.
+
 import type { $UseCollectionKeyString } from './constant.ts';
 
 export type $CollectionTarget = 'entries' | 'keys' | 'values';

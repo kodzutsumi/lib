@@ -12,6 +12,6 @@ import type { $DefaultOf, $UseDefault } from '@kz/util/capability';
  * @template DefaultType - The type to use as the default if `$UseDefault` is not present.
  * @returns The modified settings with the default type applied if `$UseDefault` is not present, or the original settings if it is present.
  */
-export type ApplyDefault<Settings, DefaultType> =
-  Settings extends $UseDefault ? Settings
-    : Settings & $DefaultOf<DefaultType>;
+export type ApplyDefault<Settings, DefaultType> = Settings extends $UseDefault
+  ? Settings
+  : Settings & $DefaultOf<DefaultType>;

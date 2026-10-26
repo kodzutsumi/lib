@@ -1,0 +1,10 @@
+{
+  "name": "@kz/testing",
+  "version": "0.0.1",
+
+  "exports": {
+    "./suite": "./suite/mod.ts",
+    "./types": "./types/mod.ts",
+    "./utils": "./utils/mod.ts"
+  }
+}

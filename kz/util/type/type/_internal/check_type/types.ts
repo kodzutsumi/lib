@@ -1,11 +1,13 @@
+// Copyright 2020 - present integereleven. All rights reserved. MIT license.
+
 import type {
   $AsDistributed,
-  $UseOf,
-  $UseUnsafe,
-  $UseUnified,
-  $AsSafe,
-  $UseReversed,
   $AsForward,
+  $AsSafe,
+  $UseOf,
+  $UseReversed,
+  $UseUnified,
+  $UseUnsafe,
 } from '@kz/util/capability';
 
 /**
@@ -42,4 +44,3 @@ export type StandardDefaultSettings =
   & $AsDistributed
   & $AsForward
   & $AsSafe;
-

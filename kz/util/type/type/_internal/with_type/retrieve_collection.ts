@@ -1,3 +1,5 @@
+// Copyright 2020 - present integereleven. All rights reserved. MIT license.
+
 import type { $CollectionTarget } from '@kz/util/capability';
 
 import type { TypeException } from '../../type_exception.ts';

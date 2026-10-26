@@ -1,3 +1,5 @@
+// Copyright 2020 - present integereleven. All rights reserved. MIT license.
+
 import { describe, it } from '@std/testing/bdd';
 import { assertType, type IsExact } from '@std/testing/types';
 import type {
@@ -642,7 +644,7 @@ describe('_CheckOrdinary', () => {
         });
       });
     });
-    
+
     describe('$AsUnified', () => {
       type Settings = $AsForward & $AsUnified;
 
@@ -1263,7 +1265,7 @@ describe('_CheckOrdinary', () => {
       });
     });
   });
-  
+
   describe('$AsReversed', () => {
     describe('$AsDistributed (default/implied)', () => {
       type Settings = $AsReversed & $AsDistributed;
@@ -1884,7 +1886,7 @@ describe('_CheckOrdinary', () => {
         });
       });
     });
-    
+
     describe('$AsUnified', () => {
       type Settings = $AsReversed & $AsUnified;
 

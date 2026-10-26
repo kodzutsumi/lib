@@ -1,3 +1,5 @@
+// Copyright 2020 - present integereleven. All rights reserved. MIT license.
+
 import type { $AsMajority, $AsRunoff } from './broker.ts';
 import type { $UseVote } from './consumer.ts';
 

@@ -1,3 +1,5 @@
+// Copyright 2020 - present integereleven. All rights reserved. MIT license.
+
 import type { StandardCapabilities, StandardDefaultSettings } from './types.ts';
 import type { UpdateValue } from './update_value.ts';
 

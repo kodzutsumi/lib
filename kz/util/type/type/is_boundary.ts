@@ -1,5 +1,4 @@
 // Copyright 2020 - present integereleven. All rights reserved. MIT license.
-// Copyright 2020 - present integereleven. All rights reserved. MIT license.
 
 import type { LogicCapabilities, Or } from '@kz/util/logic';
 

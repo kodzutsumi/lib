@@ -1,3 +1,5 @@
+// Copyright 2020 - present integereleven. All rights reserved. MIT license.
+
 import type { $AsDeep, $AsShallow, $Level } from './broker.ts';
 import type { $UseDepthKey } from './constant.ts';
 import type { $DepthValue, $UseDepth } from './consumer.ts';

@@ -1,3 +1,5 @@
+// Copyright 2020 - present integereleven. All rights reserved. MIT license.
+
 import { describe, it } from '@std/testing/bdd';
 import { assertType, type IsExact } from '@std/testing/types';
 import type { Any, Nil } from '@kz/util/type';
@@ -105,7 +107,7 @@ describe('_HandleTypeCheck', () => {
           });
         });
       });
-      
+
       describe('TargetType: unknown', () => {
         type TargetType = unknown;
 
@@ -197,8 +199,7 @@ describe('_HandleTypeCheck', () => {
           });
         });
       });
-      
-      
+
       describe('TargetType: never', () => {
         type TargetType = never;
 
@@ -255,7 +256,7 @@ describe('_HandleTypeCheck', () => {
 
           it('should return false', () => {
             type Expected = false;
-            
+
             type Actual = _HandleTypeCheck<TargetType, Type>;
             type Result = IsExact<Actual, Expected>;
 

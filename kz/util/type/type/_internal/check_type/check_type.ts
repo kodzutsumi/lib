@@ -1,3 +1,5 @@
+// Copyright 2020 - present integereleven. All rights reserved. MIT license.
+
 import type { _ApplySafety } from './_apply_safety.ts';
 import type { _HandleTypeCheck } from './_handle_type_check.ts';
 import type { StandardCapabilities, StandardDefaultSettings } from './types.ts';

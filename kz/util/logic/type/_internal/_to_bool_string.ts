@@ -1,3 +1,5 @@
+// Copyright 2020 - present integereleven. All rights reserved. MIT license.
+
 /**
  * Converts a boolean operand to its string representation.
  *

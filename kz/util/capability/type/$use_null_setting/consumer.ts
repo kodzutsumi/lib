@@ -1,3 +1,5 @@
+// Copyright 2020 - present integereleven. All rights reserved. MIT license.
+
 import type { Permit } from '@kz/util/lint';
 
 type NullSetting = Permit<

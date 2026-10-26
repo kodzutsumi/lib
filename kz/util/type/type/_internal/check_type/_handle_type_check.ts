@@ -1,3 +1,5 @@
+// Copyright 2020 - present integereleven. All rights reserved. MIT license.
+
 import type { _CheckOrdinary } from './_check_ordinary.ts';
 import type { _CheckSpecial } from './_check_special.ts';
 import type { _IsSpecial } from './_is_special.ts';
@@ -22,5 +24,5 @@ export type _HandleTypeCheck<
   Type,
   Settings extends StandardCapabilities = StandardDefaultSettings,
 > = _IsSpecial<TargetType> extends true
-    ? _CheckSpecial<TargetType, Type, Settings>
+  ? _CheckSpecial<TargetType, Type, Settings>
   : _CheckOrdinary<TargetType, Type, Settings>;

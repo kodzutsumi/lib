@@ -1,3 +1,5 @@
+// Copyright 2020 - present integereleven. All rights reserved. MIT license.
+
 import type { BannedTypePermitter } from './_internal/mod.ts';
 import type { BannedTypes } from './banned_types.ts';
 
