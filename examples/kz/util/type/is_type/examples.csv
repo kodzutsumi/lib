@@ -1,0 +1,4 @@
+ID,Name,TargetType,UseOfType,UseDefault,UseCollection,UseStrict,UseUnified,UseCondition,UseStream,UseInversion,UseSafe,Description
+no_of_type,Missing `Of<Type>`,string,None,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,Returns a `TypeException` for missing `Of<Type>`.
+special_any_any,any is any,any,any,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,Returns `true`.
+special_any_never

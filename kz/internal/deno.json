@@ -1,0 +1,7 @@
+{
+  "name": "@kz/internal",
+  "version": "0.0.1",
+  "exports": {
+    "./constants": "./constants/mod.ts"
+  }
+}

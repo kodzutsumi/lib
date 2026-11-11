@@ -1,0 +1,22 @@
+// Copyright 2020 - present integereleven. All rights reserved. MIT license.
+
+import type { GetLogicResult, XorResult } from './_internal/mod.ts';
+
+import type { LogicCapabilities } from './logic_capabilities.ts';
+import type { LogicDefaults } from './logic_defaults.ts';
+
+/**
+ * Computes the result of a logical XOR operation based on the provided operands and settings.
+ *
+ * @example //TODO(@ebntly): Add an example
+ *
+ * @template OperandA - The first boolean operand.
+ * @template OperandB - The second boolean operand.
+ * @template Settings - The logic capabilities settings.
+ * @returns The result of the logical XOR operation based on the values of `OperandA` and `OperandB`.
+ */
+export type Xor<
+  OperandA extends boolean,
+  OperandB extends boolean,
+  Settings extends LogicCapabilities = LogicDefaults,
+> = GetLogicResult<XorResult<OperandA, OperandB>, Settings>;
